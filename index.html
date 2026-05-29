@@ -2,102 +2,86 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>BocaBella - Loja</title>
     <style>
         body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #fdf6f5; color: #5a4a4a; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-        /* CABEÇALHO COM ÍCONES PROFISSIONAIS */
+        /* CABEÇALHO */
         header { background: #fff; padding: 20px 0; border-bottom: 1px solid #f0e0e0; }
         .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
         .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
         .search-container { flex-grow: 1; max-width: 500px; }
         .search-bar { width: 100%; padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; outline: none; background-color: #f9f9f9; }
         .header-icons { display: flex; align-items: center; gap: 20px; }
-        .header-icons svg { width: 26px; height: 26px; fill: #5a4a4a; cursor: pointer; transition: 0.3s; }
-
-        /* NAVEGAÇÃO */
+        .header-icons svg { width: 26px; height: 26px; fill: #5a4a4a; cursor: pointer; }
         nav { display: flex; justify-content: center; gap: 40px; margin-top: 20px; padding-bottom: 10px; }
         nav a { text-decoration: none; color: #5a4a4a; font-weight: bold; text-transform: uppercase; font-size: 14px; }
 
-        /* PRODUTOS E BANNERS */
+        /* ESTRUTURA E BANNERS */
         .banner-principal { width: 100%; height: 350px; background: #ece0e0; margin: 20px 0; border-radius: 8px; }
         .lista-produtos { display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
         .produto-card { background: white; padding: 15px; border-radius: 8px; border: 1px solid #f0e0e0; width: 200px; text-align: center; }
+        .grid-banners-cat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
+        .banner-cat { height: 150px; background: #e5c9c9; border-radius: 8px; }
+        .mosaico-montblanc { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; gap: 15px; margin: 40px 0; }
+        .item-mosaico { border-radius: 8px; overflow: hidden; background: #eee; }
+        .span-row { grid-row: span 2; }
+        .secao-destaque { display: flex; gap: 30px; margin: 40px 0; align-items: center; }
+        .banner-lateral { width: 300px; height: 400px; background: #e5c9c9; border-radius: 8px; flex-shrink: 0; }
         .banner-final-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
         .banner-final { height: 250px; background: #e5c9c9; border-radius: 8px; }
 
         /* BOAS VINDAS E AVALIAÇÕES */
         .secao-boas-vindas { background: #f0ecec; padding: 40px; border-radius: 8px; display: flex; gap: 30px; align-items: center; margin: 40px 0; }
-        .avaliacoes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px; }
+        .avaliacoes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 30px 0; }
         .card-avaliacao { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
 
-        /* RODAPÉ */
-        footer { background: #f0ebe5; padding: 50px 0; margin-top: 60px; font-size: 13px; }
+        /* INSTAGRAM E RODAPÉ */
+        .secao-instagram { background: #f4f2f0; padding: 40px 0; text-align: center; }
+        .grid-instagram { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 20px 0; }
+        .insta-post { height: 180px; background: #e5c9c9; border-radius: 4px; }
+        footer { background: #f0ebe5; color: #5a4a4a; padding: 50px 0; margin-top: 60px; font-size: 13px; }
         .footer-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="container">
             <div class="top-bar">
                 <div class="logo">BOCABELLA</div>
                 <div class="search-container"><input type="text" class="search-bar" placeholder="O que você procura?"></div>
                 <div class="header-icons">
-                    <!-- Ícones Restaurados -->
                     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M3 6h18l-2 10H5L3 6zm4 12c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM4.02 4l-.46-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H4.02z"/></svg>
                 </div>
             </div>
-            <nav>
-                <a href="#">Maquiagem</a><a href="#">Perfumes</a><a href="#">Skincare</a>
-                <a href="#">Cabelos</a><a href="#">Só na BocaBella</a><a href="#">Ofertas</a>
-            </nav>
+            <nav><a href="#">Maquiagem</a><a href="#">Perfumes</a><a href="#">Skincare</a><a href="#">Cabelos</a><a href="#">Só na BocaBella</a><a href="#">Ofertas</a></nav>
         </div>
     </header>
 
     <main class="container">
-        <!-- BANNERS FINAIS -->
-        <div class="banner-final-grid">
-            <div class="banner-final">Banner 1</div>
-            <div class="banner-final">Banner 2</div>
-        </div>
+        <div class="banner-principal">Banner Rotativo</div>
+        <div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div><div class="produto-card">Prod 4</div></div>
+        <div class="grid-banners-cat"><div class="banner-cat">Cat 1</div><div class="banner-cat">Cat 2</div><div class="banner-cat">Cat 3</div><div class="banner-cat">Cat 4</div></div>
+        
+        <section class="secao-destaque"><div class="banner-lateral">Banner CH</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></section>
+        <section class="secao-destaque"><div class="banner-lateral">Banner YSL</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></section>
 
-        <!-- LISTA DE PRODUTOS ABAIXO DOS BANNERS -->
-        <div class="lista-produtos">
-            <div class="produto-card">Prod Extra 1</div>
-            <div class="produto-card">Prod Extra 2</div>
-            <div class="produto-card">Prod Extra 3</div>
-            <div class="produto-card">Prod Extra 4</div>
-        </div>
+        <div class="mosaico-montblanc"><div class="item-mosaico">Logo</div><div class="item-mosaico span-row">Perfume</div><div class="item-mosaico">Oferta</div></div>
+        
+        <div class="banner-final-grid"><div class="banner-final">Banner 1</div><div class="banner-final">Banner 2</div></div>
+        <div class="lista-produtos"><div class="produto-card">Prod Extra 1</div><div class="produto-card">Prod Extra 2</div><div class="produto-card">Prod Extra 3</div><div class="produto-card">Prod Extra 4</div></div>
 
-        <!-- BOAS VINDAS -->
-        <section class="secao-boas-vindas">
-            <div style="width: 300px; height: 250px; background: #e5c9c9; border-radius: 8px;">Imagem</div>
-            <div style="padding-left: 20px;">
-                <h3>Bem-vinda(o) à BOCABELLA!</h3>
-                <p>Somos uma comunidade apaixonada pelo poder transformador da beleza!</p>
-            </div>
-        </section>
-
-        <!-- AVALIAÇÕES -->
-        <section class="avaliacoes-grid">
-            <div class="card-avaliacao">★★★★★<br>Ótimo<br><small>Maria A.</small></div>
-            <div class="card-avaliacao">★★★★★<br>Entrega rápida!<br><small>Caroline M.</small></div>
-            <div class="card-avaliacao">★★★★★<br>Atendimento nota 10!<br><small>Julia S.</small></div>
-            <div class="card-avaliacao">★★★★★<br>Bem embalado.<br><small>Renata M.</small></div>
-        </section>
+        <section class="secao-boas-vindas"><div class="banner-lateral" style="height: 250px;">Imagem</div><div><h3>Bem-vinda(o) à BOCABELLA!</h3><p>Somos uma comunidade apaixonada pela beleza.</p></div></section>
+        <section class="avaliacoes-grid"><div class="card-avaliacao">★★★★★ Ótimo</div><div class="card-avaliacao">★★★★★ Rápido</div><div class="card-avaliacao">★★★★★ Top</div><div class="card-avaliacao">★★★★★ Perfeito</div></section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-cols">
-                <div><h4>Atendimento</h4></div><div><h4>Institucional</h4></div><div><h4>Destaques</h4></div><div><h4>Minha Conta</h4></div><div><h4>Siga-nos</h4></div>
-            </div>
-        </div>
-    </footer>
+    <section class="secao-instagram"><div class="container"><h3>Instagram</h3><div class="grid-instagram"><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div></div></div></section>
+
+    <footer><div class="container"><div class="footer-cols"><div><h4>Atendimento</h4></div><div><h4>Institucional</h4></div><div><h4>Destaques</h4></div><div><h4>Minha Conta</h4></div><div><h4>Siga-nos</h4></div></div></div></footer>
 </body>
 </html>
