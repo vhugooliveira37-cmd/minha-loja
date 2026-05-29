@@ -3,51 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #fcf9f7; color: #333; }
-        
+        /* Paleta de Cores: Rosados suaves e neutros */
+        body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #fdf6f5; color: #5a4a4a; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
         /* Cabeçalho */
-        header { background: #fff; padding: 20px 40px; border-bottom: 1px solid #eee; }
+        header { background: #fff; padding: 20px 0; border-bottom: 1px solid #f0e0e0; }
         .top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-        
-        /* Logo estilo Sephora */
-        .logo { font-size: 32px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #000; }
-        
-        /* Busca e Ícones */
-        .search-box { flex: 1; margin: 0 40px; }
-        .search-box input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        .icons { display: flex; gap: 20px; font-size: 20px; }
-        
-        /* Menu Navegação */
-        nav { display: flex; justify-content: center; gap: 30px; padding: 10px; background: #fff; border-bottom: 1px solid #eee; }
-        nav a { text-decoration: none; color: #4a4a4a; font-size: 14px; font-weight: 600; text-transform: uppercase; }
+        .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .search-box input { width: 500px; padding: 10px; border: 1px solid #e0d0d0; border-radius: 4px; }
+        .icons { display: flex; gap: 20px; font-size: 20px; color: #5a4a4a; }
+        nav { display: flex; justify-content: center; gap: 30px; }
+        nav a { text-decoration: none; color: #5a4a4a; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+
+        /* Banners e Produtos */
+        .banner-principal { width: 100%; height: 350px; background: #f2e6e6; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: #a98d8d; border-radius: 8px; }
+        .banner-categoria { display: flex; gap: 20px; margin-bottom: 30px; }
+        .cat-item { flex: 1; height: 120px; background: #e5c9c9; color: white; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: bold; }
+        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
+        .produto-card { background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #f0e0e0; }
+        .banner-meio { width: 100%; height: 120px; background: #f2e6e6; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; color: #a98d8d; border-radius: 8px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="top-bar">
-            <div class="logo">BocaBella</div>
-            
-            <div class="search-box">
-                <input type="text" placeholder="O que você procura?">
+        <div class="container">
+            <div class="top-bar">
+                <div class="logo">BOCABELLA</div>
+                <div class="search-box"><input type="text" placeholder="O que você procura?"></div>
+                <div class="icons"><span>👤</span> <span>🤍</span> <span>🛍️</span></div>
             </div>
+            <nav>
+                <a href="#">Cabelos</a><a href="#">Perfumes</a><a href="#">Skincare</a>
+                <a href="#">Cuidados Pessoais</a><a href="#">Maquiagem</a><a href="#">Outlet</a>
+            </nav>
+        </div>
+    </header>
 
-            <div class="icons">
-                <span>👤</span> <!-- Login -->
-                <span>🤍</span> <!-- Favoritos -->
-                <span>🛍️</span> <!-- Sacola -->
-            </div>
+    <div class="container">
+        <!-- 1. Banners -->
+        <div class="banner-principal">Banner Rotativo 1</div>
+
+        <!-- 2. Categorias -->
+        <div class="banner-categoria">
+            <div class="cat-item">Cabelos</div>
+            <div class="cat-item">Perfumes</div>
+            <div class="cat-item">Skincare</div>
         </div>
 
-        <nav>
-            <a href="#">Cabelos</a>
-            <a href="#">Perfumes</a>
-            <a href="#">Skincare</a>
-            <a href="#">Cuidados Pessoais</a>
-            <a href="#">Maquiagem</a>
-            <a href="#">Outlet</a>
-        </nav>
-    </header>
+        <!-- 3. Primeiros Produtos -->
+        <h3>Favoritos</h3>
+        <div class="grade-produtos">
+            <div class="produto-card">Produto 1</div>
+            <div class="produto-card">Produto 2</div>
+            <div class="produto-card">Produto 3</div>
+            <div class="produto-card">Produto 4</div>
+        </div>
+
+        <!-- 4. Banner Promoção -->
+        <div class="banner-meio">Banner de Promoção</div>
+
+        <!-- 5. Mais produtos -->
+        <h3>Novidades</h3>
+        <div class="grade-produtos">
+            <div class="produto-card">Produto A</div>
+            <div class="produto-card">Produto B</div>
+            <div class="produto-card">Produto C</div>
+            <div class="produto-card">Produto D</div>
+        </div>
+    </div>
 
 </body>
 </html>
