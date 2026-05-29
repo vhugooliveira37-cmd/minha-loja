@@ -6,19 +6,17 @@
         body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #fdf6f5; color: #5a4a4a; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-        /* Cabeçalho Corrigido */
+        /* Cabeçalho */
         header { background: #fff; padding: 15px 0; border-bottom: 1px solid #f0e0e0; }
         .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-        .logo { font-size: 24px; font-weight: bold; letter-spacing: 1px; flex-shrink: 0; }
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; flex-shrink: 0; }
         .search-wrapper { flex-grow: 1; display: flex; justify-content: center; }
         .search-bar { width: 100%; max-width: 500px; padding: 10px 20px; border-radius: 25px; border: 1px solid #ccc; outline: none; }
         .nav-icons { display: flex; align-items: center; gap: 20px; flex-shrink: 0; font-size: 20px; }
         .icon-item { position: relative; cursor: pointer; }
-        
-        .dropdown { display: none; position: absolute; top: 150%; right: 0; width: 280px; background: white; border: 1px solid #ddd; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; border-radius: 8px; }
+        .dropdown { display: none; position: absolute; top: 150%; right: 0; width: 280px; background: white; border: 1px solid #ddd; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; border-radius: 8px; font-size: 13px; }
         .icon-item:hover .dropdown { display: block; }
         .btn-entrar { background: #d00; color: white; padding: 10px; text-align: center; border-radius: 4px; display: block; text-decoration: none; font-weight: bold; margin-top: 10px; }
-
         nav { display: flex; justify-content: center; gap: 30px; margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
         nav a { text-decoration: none; color: #5a4a4a; font-size: 13px; font-weight: bold; text-transform: uppercase; }
 
@@ -39,10 +37,14 @@
         .secao-instagram { background: #f4f2f0; padding: 40px 0; margin-top: 40px; text-align: center; }
         .grid-instagram { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 20px 0; }
         .insta-post { height: 180px; background: #e5c9c9; border-radius: 4px; }
-        
+        .secao-cadastro { background: #e6e0d9; padding: 40px; text-align: center; }
+        .form-cadastro { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .btn-cadastro { background: #a04a3a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+
         /* Rodapé */
         footer { background: #f0ebe5; color: #5a4a4a; padding: 50px 0 20px 0; margin-top: 60px; font-size: 13px; }
         .footer-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 40px; }
+        .footer-bottom { border-top: 1px solid #dcd8d0; padding-top: 30px; text-align: center; }
     </style>
 </head>
 <body>
@@ -72,17 +74,45 @@
         <div class="secao-destaque"><div class="banner-lateral">Banner CH</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></div>
         <div class="mosaico-montblanc"><div class="item-mosaico">Logo</div><div class="item-mosaico span-row">Perfume</div><div class="item-mosaico">Oferta</div></div>
         <div class="banner-final-grid"><div class="banner-final">Banner 1</div><div class="banner-final">Banner 2</div></div>
-        <div class="secao-boas-vindas"><h3>Bem-vinda(o) à BOCABELLA!</h3></div>
+        
+        <div class="secao-boas-vindas">
+            <div class="banner-lateral" style="height: 250px;">Imagem</div>
+            <div>
+                <h3>Bem-vinda(o) à BOCABELLA!</h3>
+                <p>Aqui, valorizamos o autocuidado e o bem-estar. Em nosso site, você encontra uma curadoria das melhores marcas.</p>
+            </div>
+        </div>
+
+        <h3>Avaliações</h3>
+        <div class="lista-produtos"><div class="produto-card">Avaliação 1</div><div class="produto-card">Avaliação 2</div><div class="produto-card">Avaliação 3</div></div>
+    </div>
+
+    <div class="secao-instagram">
+        <div class="container">
+            <h3>Acompanhe as novidades no nosso instagram</h3>
+            <div class="grid-instagram"><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div></div>
+        </div>
+    </div>
+
+    <div class="secao-cadastro">
+        <div class="container">
+            <p>Cadastre-se e ganhe um cupom!</p>
+            <div class="form-cadastro"><input type="text" placeholder="Nome"><input type="email" placeholder="E-mail"><button class="btn-cadastro">Cadastrar</button></div>
+        </div>
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-cols">
-                <div><h4>Atendimento</h4></div>
-                <div><h4>Institucional</h4></div>
-                <div><h4>Destaques</h4></div>
-                <div><h4>Minha Conta</h4></div>
-                <div><h4>Siga-nos</h4></div>
+                <div><h4>Atendimento</h4><a href="mailto:comercialbocabella@gmail.com">comercialbocabella@gmail.com</a></div>
+                <div><h4>Institucional</h4><a href="#">Sobre a BocaBella</a></div>
+                <div><h4>Destaques</h4><a href="#">Novidades</a></div>
+                <div><h4>Minha Conta</h4><a href="#">Login</a></div>
+                <div><h4>Siga-nos</h4><p>TikTok | Instagram</p></div>
+            </div>
+            <div class="footer-bottom">
+                <p>FORMAS DE PAGAMENTO: Mastercard • VISA • PIX</p>
+                <p>© 2026 BocaBella. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
