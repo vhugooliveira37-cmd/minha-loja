@@ -15,21 +15,18 @@
         nav { display: flex; justify-content: center; gap: 30px; margin-top: 10px; }
         nav a { text-decoration: none; color: #5a4a4a; font-size: 13px; font-weight: bold; text-transform: uppercase; }
 
-        /* Estrutura de Banners e Grades */
+        /* Banners e Estruturas */
         .banner-principal { width: 100%; height: 350px; background: #ece0e0; margin: 20px 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-        .banner-categorias { display: flex; gap: 20px; margin-bottom: 40px; }
-        .cat-box { flex: 1; height: 120px; background: #e5c9c9; display: flex; align-items: center; justify-content: center; color: white; border-radius: 8px; font-weight: bold; }
-        .grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
-        .produto-card { background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #f0e0e0; height: 250px; }
         
-        /* Novas Seções de Destaque */
+        /* 4 Banners de categoria conforme Imagem 3 */
+        .mosaico-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 40px 0; }
+        .mosaico-banner { height: 200px; background: #e5c9c9; border-radius: 8px; }
+
+        /* Seções de Destaque */
         .secao-destaque { display: flex; gap: 30px; margin: 40px 0; align-items: center; }
         .banner-lateral { width: 300px; height: 400px; background: #e5c9c9; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
         .lista-produtos { display: flex; gap: 20px; flex: 1; }
-        
-        /* Mosaico */
-        .mosaico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
-        .mosaico-pequeno { height: 150px; background: #ece0e0; border-radius: 8px; }
+        .produto-card { background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #f0e0e0; height: 250px; width: 200px; }
     </style>
 </head>
 <body>
@@ -49,24 +46,27 @@
     </header>
 
     <div class="container">
-        <!-- 1. Banners Originais -->
+        <!-- 1. Início: Banner Rotativo -->
         <div class="banner-principal">Banner Rotativo</div>
-        <div class="banner-categorias">
-            <div class="cat-box">Cabelos</div>
-            <div class="cat-box">Perfumes</div>
-            <div class="cat-box">Skincare</div>
-        </div>
 
-        <!-- 2. Grade de Produtos original -->
-        <h3>Favoritos</h3>
-        <div class="grade-produtos">
+        <!-- 2. "Os Favoritos Asiáticos" e produtos -->
+        <h3>Os Favoritos Asiáticos</h3>
+        <div class="lista-produtos">
             <div class="produto-card">Produto 1</div>
             <div class="produto-card">Produto 2</div>
             <div class="produto-card">Produto 3</div>
             <div class="produto-card">Produto 4</div>
         </div>
 
-        <!-- 3. Nova Seção: Destaque CH 212 -->
+        <!-- 3. 4 Banners de categoria -->
+        <div class="mosaico-grid">
+            <div class="mosaico-banner">Banner 1</div>
+            <div class="mosaico-banner">Banner 2</div>
+            <div class="mosaico-banner">Banner 3</div>
+            <div class="mosaico-banner">Banner 4</div>
+        </div>
+
+        <!-- 4. Continuação (Carolina Herrera 212) -->
         <h3>Conheça Carolina Herrera 212</h3>
         <div class="secao-destaque">
             <div class="banner-lateral">Imagem Lateral</div>
@@ -75,24 +75,6 @@
                 <div class="produto-card">Prod 2</div>
                 <div class="produto-card">Prod 3</div>
             </div>
-        </div>
-
-        <!-- 4. Nova Seção: Celebre o dia dos namorados -->
-        <h3>Celebre o dia dos namorados com YSL</h3>
-        <div class="secao-destaque">
-            <div class="banner-lateral">Imagem Lateral</div>
-            <div class="lista-produtos">
-                <div class="produto-card">Prod 1</div>
-                <div class="produto-card">Prod 2</div>
-                <div class="produto-card">Prod 3</div>
-            </div>
-        </div>
-
-        <!-- 5. Nova Seção: Mosaico -->
-        <h3>Destaques Montblanc</h3>
-        <div class="mosaico-grid">
-            <div class="mosaico-pequeno">Banner</div>
-            <div class="mosaico-pequeno">Banner</div>
         </div>
     </div>
 
