@@ -12,9 +12,13 @@
         .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
         .search-container { flex-grow: 1; margin: 0 30px; }
         .search-bar { width: 100%; max-width: 400px; padding: 10px 20px; border-radius: 25px; border: 1px solid #ccc; outline: none; }
-        .header-icons { display: flex; align-items: center; gap: 20px; font-size: 20px; }
         
-        .atendimento-wrapper { position: relative; cursor: pointer; }
+        /* Ícones Corrigidos */
+        .header-icons { display: flex; align-items: center; gap: 25px; font-size: 24px; color: #5a4a4a; }
+        .header-icons span { cursor: pointer; transition: opacity 0.2s; }
+        .header-icons span:hover { opacity: 0.7; }
+        
+        .atendimento-wrapper { position: relative; cursor: pointer; color: #5a4a4a; }
         .dropdown-atendimento { display: none; position: absolute; top: 100%; right: 0; width: 250px; background: white; border: 1px solid #ddd; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 100; }
         .atendimento-wrapper:hover .dropdown-atendimento { display: block; }
         
