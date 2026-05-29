@@ -108,6 +108,7 @@ header{
     opacity:0;
     visibility:hidden;
     transition:0.3s;
+    z-index:999;
 }
 
 .icon-wrapper:hover .tooltip-box{
@@ -312,6 +313,123 @@ nav a:hover{
     transform:scale(1.05);
 }
 
+/* PERFUME SECTIONS */
+
+.perfume-section{
+    margin-bottom:90px;
+}
+
+.perfume-title{
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:30px;
+}
+
+.perfume-layout{
+    display:flex;
+    gap:35px;
+    align-items:flex-start;
+}
+
+.perfume-banner{
+    width:320px;
+    flex-shrink:0;
+}
+
+.perfume-banner img{
+    width:100%;
+    border-radius:24px;
+}
+
+.perfume-products{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.perfume-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.perfume-card h4{
+    margin-top:14px;
+    font-size:14px;
+}
+
+.perfume-card p{
+    margin-top:10px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* MOSAICO */
+
+.mosaico{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:15px;
+    margin-bottom:60px;
+}
+
+.mosaico-left{
+    display:grid;
+    gap:15px;
+}
+
+.mosaico-box{
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.mosaico-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.mosaico-big{
+    height:520px;
+}
+
+.mosaico-small{
+    height:252px;
+}
+
+/* PRODUTOS ABAIXO */
+
+.lista-produtos-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:90px;
+}
+
+.produto-bottom{
+    width:24%;
+}
+
+.produto-bottom img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:22px;
+}
+
+.produto-bottom h4{
+    margin-top:15px;
+    font-size:15px;
+}
+
+.produto-bottom p{
+    margin-top:8px;
+    font-size:24px;
+    font-weight:bold;
+}
+
 /* BANNERS FINAIS */
 
 .banners-finais{
@@ -321,13 +439,16 @@ nav a:hover{
     margin-bottom:90px;
 }
 
-/* NOVA ÁREA PRODUTOS */
+/* PRODUTOS PREMIUM */
+
+.produtos-premium{
+    margin-bottom:100px;
+}
 
 .produtos-premium-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:22px;
-    margin-bottom:90px;
 }
 
 .produto-premium{
@@ -413,10 +534,6 @@ nav a:hover{
 
 .avaliacoes{
     margin-bottom:100px;
-}
-
-.avaliacoes h2{
-    text-align:center;
 }
 
 .avaliacoes-grid{
@@ -510,6 +627,7 @@ nav a:hover{
     background:#d86f52;
     color:white;
     font-weight:bold;
+    cursor:pointer;
 }
 
 /* FOOTER */
@@ -566,6 +684,7 @@ footer{
     }
 
     .mini-banners,
+    .perfume-products,
     .produtos-premium-grid,
     .avaliacoes-grid,
     .instagram-grid,
@@ -574,9 +693,14 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .sobre-loja{
+    .perfume-layout,
+    .sobre-loja,
+    .lista-produtos-bottom{
         flex-direction:column;
-        text-align:center;
+    }
+
+    .produto-bottom{
+        width:100%;
     }
 
 }
@@ -639,7 +763,7 @@ footer{
 
 <main class="container">
 
-<!-- BANNER PRINCIPAL -->
+<!-- BANNER -->
 
 <div class="banner-principal">
 
@@ -668,7 +792,7 @@ Comprar agora
 <!-- PRODUTOS -->
 
 <h2 class="section-title">
-Os queridinhos ✨
+Os queridinhos dos asiáticos ✨
 </h2>
 
 <div class="lista-produtos">
@@ -694,264 +818,3 @@ Os queridinhos ✨
 <button class="botao-comprar">Comprar agora</button>
 </div>
 </div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">CHANEL</div>
-<div class="produto-nome">Perfume Coco Mademoiselle</div>
-<div class="produto-preco-antigo">R$ 399,90</div>
-<div class="produto-preco">R$ 149,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">YSL</div>
-<div class="produto-nome">Batom Matte Premium</div>
-<div class="produto-preco-antigo">R$ 119,90</div>
-<div class="produto-preco">R$ 49,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-</div>
-
-<!-- BANNERS -->
-
-<section class="banners-finais">
-
-<div class="mini-banner">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-<div class="mini-banner">
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-</section>
-
-<!-- NOVOS PRODUTOS -->
-
-<h2 class="section-title">
-Perfumes em destaque
-</h2>
-
-<div class="produtos-premium-grid">
-
-<div class="produto-premium">
-<div class="desconto">-18%</div>
-<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-premium-info">
-<h4>Versace Dylan Blue</h4>
-<span>R$ 799,90</span>
-<p>R$ 570,90</p>
-</div>
-</div>
-
-<div class="produto-premium">
-<div class="desconto">-27%</div>
-<img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59b80?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-premium-info">
-<h4>Issey Miyake</h4>
-<span>R$ 725,90</span>
-<p>R$ 531,90</p>
-</div>
-</div>
-
-<div class="produto-premium">
-<div class="desconto">-18%</div>
-<img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-premium-info">
-<h4>Versace Crystal Noir</h4>
-<span>R$ 699,90</span>
-<p>R$ 508,90</p>
-</div>
-</div>
-
-<div class="produto-premium">
-<div class="desconto">-12%</div>
-<img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-premium-info">
-<h4>Drop D'issey</h4>
-<span>R$ 689,90</span>
-<p>R$ 611,90</p>
-</div>
-</div>
-
-</div>
-
-<!-- SOBRE -->
-
-<section class="sobre-loja">
-
-<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop">
-
-<div>
-
-<h2>Bem-vinda(o) à BOCABELLA!</h2>
-
-<p>
-Somos apaixonados pelo poder da beleza e autoestima.
-Aqui você encontra os perfumes e cosméticos mais desejados da internet, com qualidade premium e preços especiais.
-</p>
-
-</div>
-
-</section>
-
-<!-- AVALIAÇÕES -->
-
-<section class="avaliacoes">
-
-<h2 class="section-title">
-Avaliações
-</h2>
-
-<div class="avaliacoes-grid">
-
-<div class="avaliacao-card">
-<div class="stars">★★★★★</div>
-<p>Amei minha compra. Entrega super rápida!</p>
-<strong>Juliana S.</strong>
-</div>
-
-<div class="avaliacao-card">
-<div class="stars">★★★★★</div>
-<p>Produtos chegaram perfeitos e muito bem embalados.</p>
-<strong>Maria F.</strong>
-</div>
-
-<div class="avaliacao-card">
-<div class="stars">★★★★★</div>
-<p>Site muito bonito e fácil de comprar.</p>
-<strong>Luciana C.</strong>
-</div>
-
-<div class="avaliacao-card">
-<div class="stars">★★★★★</div>
-<p>Perfumes incríveis. Virei cliente fiel.</p>
-<strong>Danubia F.</strong>
-</div>
-
-</div>
-
-</section>
-
-<!-- INSTAGRAM -->
-
-<section class="instagram-section">
-
-<h2 class="instagram-title">
-Acompanhe nosso Instagram
-</h2>
-
-<div class="instagram-user">
-@bocabella.br
-</div>
-
-<div class="instagram-grid">
-
-<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<!-- NEWSLETTER -->
-
-<section class="newsletter">
-
-<h3>
-Ganhe 10% OFF
-</h3>
-
-<p>
-Cadastre-se para receber promoções exclusivas.
-</p>
-
-<div class="newsletter-form">
-
-<input type="text" placeholder="Seu nome">
-
-<input type="email" placeholder="Seu e-mail">
-
-<button>
-Cadastrar
-</button>
-
-</div>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-logo">
-BOCABELLA
-</div>
-
-<p style="color:#666; line-height:1.8;">
-Sua loja premium de perfumes e cosméticos.
-</p>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Atendimento</h4>
-
-<a href="#">Meus pedidos</a>
-<a href="#">Trocas</a>
-<a href="#">Contato</a>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Institucional</h4>
-
-<a href="#">Quem somos</a>
-<a href="#">Privacidade</a>
-<a href="#">Termos</a>
-
-</div>
-
-<div class="footer-column">
-
-<h4>Redes sociais</h4>
-
-<a href="#">Instagram</a>
-<a href="#">TikTok</a>
-<a href="#">Facebook</a>
-
-</div>
-
-</div>
-
-<div class="footer-copy">
-© 2026 BOCABELLA — Todos os direitos reservados.
-</div>
-
-</div>
-
-</footer>
-
-</body>
-</html>
