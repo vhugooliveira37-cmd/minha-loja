@@ -6,32 +6,23 @@
         body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #fdf6f5; color: #5a4a4a; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-        /* Cabeçalho Ajustado */
+        /* Cabeçalho Corrigido */
         header { background: #fff; padding: 15px 0; border-bottom: 1px solid #f0e0e0; }
-        .top-bar { display: flex; align-items: center; justify-content: space-between; position: relative; }
-        .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .top-bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 1px; flex-shrink: 0; }
+        .search-wrapper { flex-grow: 1; display: flex; justify-content: center; }
+        .search-bar { width: 100%; max-width: 500px; padding: 10px 20px; border-radius: 25px; border: 1px solid #ccc; outline: none; }
+        .nav-icons { display: flex; align-items: center; gap: 20px; flex-shrink: 0; font-size: 20px; }
+        .icon-item { position: relative; cursor: pointer; }
         
-        /* Busca e ícones próximos */
-        .header-main-group { display: flex; align-items: center; flex-grow: 1; justify-content: flex-end; gap: 20px; }
-        .search-container { flex-grow: 1; max-width: 400px; margin-right: 10px; }
-        .search-bar { width: 100%; padding: 10px 20px; border-radius: 25px; border: 1px solid #ccc; outline: none; }
-        
-        .header-icons { display: flex; align-items: center; gap: 15px; font-size: 20px; }
-        
-        /* Menu Atendimento Compacto */
-        .atendimento-wrapper { position: relative; cursor: pointer; display: flex; align-items: center; }
-        .dropdown-atendimento { 
-            display: none; position: absolute; top: 120%; right: 0; width: 220px; 
-            background: white; border: 1px solid #ddd; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 100;
-            font-size: 12px;
-        }
-        .atendimento-wrapper:hover .dropdown-atendimento { display: block; }
-        .dropdown-atendimento h4 { margin: 0 0 10px 0; font-size: 13px; }
-        
+        .dropdown { display: none; position: absolute; top: 150%; right: 0; width: 280px; background: white; border: 1px solid #ddd; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; border-radius: 8px; }
+        .icon-item:hover .dropdown { display: block; }
+        .btn-entrar { background: #d00; color: white; padding: 10px; text-align: center; border-radius: 4px; display: block; text-decoration: none; font-weight: bold; margin-top: 10px; }
+
         nav { display: flex; justify-content: center; gap: 30px; margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
         nav a { text-decoration: none; color: #5a4a4a; font-size: 13px; font-weight: bold; text-transform: uppercase; }
 
-        /* Conteúdo mantido */
+        /* Conteúdo da Loja */
         .banner-principal { width: 100%; height: 350px; background: #ece0e0; margin: 20px 0; border-radius: 8px; }
         .lista-produtos { display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap; }
         .produto-card { background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #f0e0e0; width: 200px; }
@@ -39,7 +30,6 @@
         .banner-cat { height: 150px; background: #e5c9c9; border-radius: 8px; }
         .mosaico-montblanc { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; gap: 15px; margin: 40px 0; }
         .item-mosaico { border-radius: 8px; overflow: hidden; background: #eee; }
-        .item-mosaico img { width: 100%; height: 100%; object-fit: cover; }
         .span-row { grid-row: span 2; }
         .secao-destaque { display: flex; gap: 30px; margin: 40px 0; align-items: center; }
         .banner-lateral { width: 300px; height: 400px; background: #e5c9c9; border-radius: 8px; }
@@ -49,17 +39,10 @@
         .secao-instagram { background: #f4f2f0; padding: 40px 0; margin-top: 40px; text-align: center; }
         .grid-instagram { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 20px 0; }
         .insta-post { height: 180px; background: #e5c9c9; border-radius: 4px; }
-        .secao-cadastro { background: #e6e0d9; padding: 40px; text-align: center; }
-        .form-cadastro { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .btn-cadastro { background: #a04a3a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-
+        
         /* Rodapé */
         footer { background: #f0ebe5; color: #5a4a4a; padding: 50px 0 20px 0; margin-top: 60px; font-size: 13px; }
         .footer-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 40px; }
-        .footer-cols h4 { margin-bottom: 15px; text-transform: uppercase; color: #8e7a7a; }
-        .footer-cols a { display: block; color: #5a4a4a; text-decoration: none; margin-bottom: 8px; }
-        .footer-bottom { border-top: 1px solid #dcd8d0; padding-top: 30px; text-align: center; }
-        .pagamento-icons { margin: 20px 0; font-size: 24px; color: #8e7a7a; }
     </style>
 </head>
 <body>
@@ -68,20 +51,11 @@
         <div class="container">
             <div class="top-bar">
                 <div class="logo">BOCABELLA</div>
-                
-                <div class="header-main-group">
-                    <div class="search-container"><input type="text" class="search-bar" placeholder="Buscar"></div>
-                    <div class="header-icons">
-                        <div class="atendimento-wrapper">
-                            💬
-                            <div class="dropdown-atendimento">
-                                <h4>ATENDIMENTO AO CLIENTE</h4>
-                                <p>Entre em contato com nosso suporte</p>
-                                <a href="#">SAIBA MAIS</a>
-                            </div>
-                        </div>
-                        <span>🏪</span><span>🤍</span><span>👤</span><span>🛍️</span>
-                    </div>
+                <div class="search-wrapper"><input type="text" class="search-bar" placeholder="Buscar"></div>
+                <div class="nav-icons">
+                    <div class="icon-item">🤍<div class="dropdown"><strong>MINHA WISHLIST</strong><a href="#" class="btn-entrar">ENTRAR</a></div></div>
+                    <div class="icon-item">👤<div class="dropdown"><strong>JÁ TEM UMA CONTA</strong><input type="text" placeholder="Email ou CPF" style="width:100%; margin:10px 0;"><a href="#" class="btn-entrar">ENTRAR</a></div></div>
+                    <div class="icon-item">🛍️</div>
                 </div>
             </div>
             <nav>
@@ -96,40 +70,19 @@
         <div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div><div class="produto-card">Prod 4</div></div>
         <div class="grid-banners-cat"><div class="banner-cat">Cat 1</div><div class="banner-cat">Cat 2</div><div class="banner-cat">Cat 3</div><div class="banner-cat">Cat 4</div></div>
         <div class="secao-destaque"><div class="banner-lateral">Banner CH</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></div>
-        <div class="secao-destaque"><div class="banner-lateral">Banner YSL</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></div>
-        <div class="secao-destaque"><div class="banner-lateral">Banner Gloss</div><div class="lista-produtos"><div class="produto-card">Prod 1</div><div class="produto-card">Prod 2</div><div class="produto-card">Prod 3</div></div></div>
         <div class="mosaico-montblanc"><div class="item-mosaico">Logo</div><div class="item-mosaico span-row">Perfume</div><div class="item-mosaico">Oferta</div></div>
-        <div class="lista-produtos"><div class="produto-card">Prod Extra 1</div><div class="produto-card">Prod Extra 2</div><div class="produto-card">Prod Extra 3</div><div class="produto-card">Prod Extra 4</div></div>
         <div class="banner-final-grid"><div class="banner-final">Banner 1</div><div class="banner-final">Banner 2</div></div>
-        
-        <div class="secao-boas-vindas">
-            <div class="banner-lateral" style="height: 250px;">Imagem</div>
-            <div>
-                <h3>Bem-vinda(o) à BOCABELLA!</h3>
-                <p>Somos uma comunidade apaixonada pelo poder transformador da beleza!</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="secao-instagram">
-        <div class="container">
-            <h3>Acompanhe as novidades no nosso instagram</h3>
-            <div class="grid-instagram"><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div><div class="insta-post"></div></div>
-        </div>
+        <div class="secao-boas-vindas"><h3>Bem-vinda(o) à BOCABELLA!</h3></div>
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-cols">
-                <div><h4>Atendimento</h4><a href="#">Fale Conosco</a><a href="mailto:comercialbocabella@gmail.com">comercialbocabella@gmail.com</a></div>
-                <div><h4>Institucional</h4><a href="#">Sobre a BocaBella</a><a href="#">Segurança</a></div>
-                <div><h4>Destaques</h4><a href="#">Novidades</a><a href="#">Ofertas</a></div>
-                <div><h4>Minha Conta</h4><a href="#">Meus Pedidos</a></div>
-                <div><h4>Siga-nos</h4><p>TikTok | Facebook | YouTube</p></div>
-            </div>
-            <div class="footer-bottom">
-                <p>FORMAS DE PAGAMENTO</p>
-                <div class="pagamento-icons">💳 Mastercard • VISA • AMEX • ELO • PIX</div>
+                <div><h4>Atendimento</h4></div>
+                <div><h4>Institucional</h4></div>
+                <div><h4>Destaques</h4></div>
+                <div><h4>Minha Conta</h4></div>
+                <div><h4>Siga-nos</h4></div>
             </div>
         </div>
     </footer>
