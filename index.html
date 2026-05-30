@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -382,6 +383,67 @@ nav a:hover{
     font-weight:bold;
 }
 
+/* SEÇÃO ESTILO SEPHORA */
+
+.sephora-section{
+    margin-bottom:90px;
+}
+
+.sephora-title{
+    font-size:34px;
+    font-weight:900;
+    margin-bottom:28px;
+}
+
+.sephora-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+}
+
+.sephora-banner{
+    height:540px;
+    border-radius:24px;
+    overflow:hidden;
+}
+
+.sephora-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.sephora-products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.sephora-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:22px;
+}
+
+.sephora-card h4{
+    margin-top:15px;
+    font-size:16px;
+    font-weight:900;
+}
+
+.sephora-card span{
+    display:block;
+    margin-top:10px;
+    color:#666;
+}
+
+.sephora-card p{
+    margin-top:18px;
+    font-size:36px;
+    font-weight:900;
+}
+
 /* MOSAICO */
 
 .mosaico{
@@ -415,32 +477,73 @@ nav a:hover{
     height:252px;
 }
 
-/* PRODUTOS ABAIXO */
+/* DUPLO BANNER */
 
-.lista-produtos-bottom{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
+.duplo-banner-section{
     margin-bottom:90px;
 }
 
-.produto-bottom{
-    width:24%;
+.duplo-banners{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-bottom:35px;
 }
 
-.produto-bottom img{
+.duplo-banner{
+    height:260px;
+    border-radius:24px;
+    overflow:hidden;
+}
+
+.duplo-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.produtos-banner-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.produto-premium{
+    position:relative;
+}
+
+.produto-premium img{
     width:100%;
     height:280px;
     object-fit:cover;
     border-radius:22px;
 }
 
-.produto-bottom h4{
-    margin-top:15px;
+.desconto{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#c86d4b;
+    color:white;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:8px;
+}
+
+.favorito{
+    position:absolute;
+    top:14px;
+    right:14px;
+    font-size:20px;
+    color:#aaa;
+}
+
+.produto-premium h5{
+    margin-top:14px;
     font-size:15px;
 }
 
-.produto-bottom p{
+.produto-premium p{
     margin-top:8px;
     font-size:24px;
     font-weight:bold;
@@ -479,12 +582,20 @@ nav a:hover{
         grid-template-columns:1fr;
     }
 
-    .lista-produtos-bottom{
-        flex-direction:column;
+    .duplo-banners{
+        grid-template-columns:1fr;
     }
 
-    .produto-bottom{
-        width:100%;
+    .produtos-banner-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .sephora-layout{
+        grid-template-columns:1fr;
+    }
+
+    .sephora-products{
+        grid-template-columns:1fr;
     }
 
 }
@@ -494,334 +605,153 @@ nav a:hover{
 
 <body>
 
-<header>
+<!-- RESTANTE DO SEU HTML CONTINUA IGUAL -->
 
-<div class="container">
+<!-- ==================================== -->
+<!-- COLE ISSO ABAIXO DA SEÇÃO YSL -->
+<!-- ==================================== -->
 
-<div class="top-bar">
+<section class="sephora-section">
 
-<div class="logo">BOCABELLA</div>
-
-<div class="search-container">
-<input type="text" class="search-bar" placeholder="O que você procura?">
-</div>
-
-<div class="header-icons">
-
-<!-- CONTA -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="4"/>
-<path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"/>
-</svg>
-
-<div class="tooltip-box">
-<h4>MINHA CONTA</h4>
-<p>Entre ou cadastre-se</p>
-<button>Entrar</button>
-</div>
-
-</div>
-
-<!-- FAVORITOS -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/>
-</svg>
-
-<div class="tooltip-box">
-<h4>FAVORITOS</h4>
-<p>Veja sua wishlist</p>
-</div>
-
-</div>
-
-<!-- CARRINHO -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<circle cx="9" cy="20" r="1"/>
-<circle cx="18" cy="20" r="1"/>
-<path d="M3 4h2l2.4 10.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H7"/>
-</svg>
-
-<div class="tooltip-box">
-<h4>CARRINHO</h4>
-<p>Seu carrinho está vazio</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<nav>
-<a href="#">MAQUIAGEM</a>
-<a href="#">PERFUMES</a>
-<a href="#">SKINCARE</a>
-<a href="#">CABELOS</a>
-<a href="#">OFERTAS</a>
-</nav>
-
-</div>
-
-</header>
-
-<main class="container">
-
-<!-- BANNER -->
-
-<div class="banner-principal">
-
-<div class="overlay">
-
-<div class="banner-content">
-
-<span>NOVA COLEÇÃO</span>
-
-<h1>Beleza que transforma autoestima</h1>
-
-<p>
-Os produtos mais desejados da internet com preços especiais.
-</p>
-
-<a href="#" class="banner-btn">
-Comprar agora
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PRODUTOS -->
-
-<h2 class="section-title">
-Os queridinhos dos asiáticos ✨
+<h2 class="sephora-title">
+THE BOSS GLOSS
 </h2>
 
-<div class="lista-produtos">
+<div class="sephora-layout">
 
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">RARE BEAUTY</div>
-<div class="produto-nome">Blush Líquido Soft Pinch</div>
-<div class="produto-preco-antigo">R$ 129,90</div>
-<div class="produto-preco">R$ 59,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">DIOR</div>
-<div class="produto-nome">Base Glow Skin Forever</div>
-<div class="produto-preco-antigo">R$ 239,90</div>
-<div class="produto-preco">R$ 89,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">CHANEL</div>
-<div class="produto-nome">Perfume Coco Mademoiselle</div>
-<div class="produto-preco-antigo">R$ 399,90</div>
-<div class="produto-preco">R$ 149,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1200&auto=format&fit=crop">
-<div class="produto-info">
-<div class="produto-marca">YSL</div>
-<div class="produto-nome">Batom Matte Premium</div>
-<div class="produto-preco-antigo">R$ 119,90</div>
-<div class="produto-preco">R$ 49,90</div>
-<button class="botao-comprar">Comprar agora</button>
-</div>
-</div>
-
-</div>
-
-<!-- MINI BANNERS -->
-
-<section class="mini-banners">
-
-<div class="mini-banner">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-<div class="mini-banner">
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-<div class="mini-banner">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-<div class="mini-banner">
+<div class="sephora-banner">
 <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
 </div>
 
+<div class="sephora-products">
+
+<div class="sephora-card">
+<img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=1200&auto=format&fit=crop">
+<h4>FENTY BEAUTY</h4>
+<span>Gloss labial premium efeito glow intenso</span>
+<p>R$ 172,00</p>
+</div>
+
+<div class="sephora-card">
+<img src="https://images.unsplash.com/photo-1631214524020-3c2b56ea2d8a?q=80&w=1200&auto=format&fit=crop">
+<h4>FENTY BEAUTY</h4>
+<span>Kit lip duo edição limitada</span>
+<p>R$ 205,00</p>
+</div>
+
+<div class="sephora-card">
+<img src="https://images.unsplash.com/photo-1590156209959-4d58d4d0d683?q=80&w=1200&auto=format&fit=crop">
+<h4>FENTY BEAUTY</h4>
+<span>Gloss luxury collection shine</span>
+<p>R$ 248,00</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- SEÇÃO 1 -->
+<!-- ==================================== -->
+<!-- COLE ISSO ABAIXO DO MOSAICO -->
+<!-- ==================================== -->
 
-<section class="perfume-section">
+<section class="duplo-banner-section">
 
-<h2 class="perfume-title">
-Conheça Carolina Herrera 212
-</h2>
+<div class="duplo-banners">
 
-<div class="perfume-layout">
+<div class="duplo-banner">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1400&auto=format&fit=crop">
+</div>
 
-<div class="perfume-banner">
+<div class="duplo-banner">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1400&auto=format&fit=crop">
+</div>
+
+</div>
+
+<div class="produtos-banner-grid">
+
+<div class="produto-premium">
+<div class="desconto">-18%</div>
+<div class="favorito">♡</div>
 <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
 </div>
 
-<div class="perfume-products">
+<div class="produto-premium">
+<div class="desconto">-27%</div>
+<div class="favorito">♡</div>
+<img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-<div class="perfume-card">
+<div class="produto-premium">
+<div class="desconto">-32%</div>
+<div class="favorito">♡</div>
 <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
-<h4>212 VIP BLACK</h4>
-<p>R$ 799,00</p>
 </div>
 
-<div class="perfume-card">
-<img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
-<h4>212 ROSÉ</h4>
-<p>R$ 917,00</p>
-</div>
-
-<div class="perfume-card">
-<img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop">
-<h4>212 MEN</h4>
-<p>R$ 1.112,00</p>
-</div>
-
-<div class="perfume-card">
+<div class="produto-premium">
+<div class="desconto">-28%</div>
+<div class="favorito">♡</div>
 <img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop">
-<h4>212 HEROES</h4>
-<p>R$ 950,00</p>
-</div>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- SEÇÃO 2 -->
+<section class="duplo-banner-section">
 
-<section class="perfume-section">
+<div class="duplo-banners">
 
-<h2 class="perfume-title">
-Celebre o dia dos namorados com YSL
-</h2>
-
-<div class="perfume-layout">
-
-<div class="perfume-banner">
-<img src="https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1200&auto=format&fit=crop">
+<div class="duplo-banner">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1400&auto=format&fit=crop">
 </div>
 
-<div class="perfume-products">
-
-<div class="perfume-card">
-<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop">
-<h4>LIBRE INTENSE</h4>
-<p>R$ 1.349,00</p>
+<div class="duplo-banner">
+<img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1400&auto=format&fit=crop">
 </div>
 
-<div class="perfume-card">
-<img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
-<h4>MYSLF</h4>
+</div>
+
+<div class="produtos-banner-grid">
+
+<div class="produto-premium">
+<div class="desconto">-18%</div>
+<div class="favorito">♡</div>
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop">
+<h5>Versace</h5>
+<p>R$ 490,00</p>
+</div>
+
+<div class="produto-premium">
+<div class="desconto">-27%</div>
+<div class="favorito">♡</div>
+<img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
+<h5>Issey Miyake</h5>
 <p>R$ 718,00</p>
 </div>
 
-<div class="perfume-card">
-<img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop">
-<h4>LIBRE FLOWERS</h4>
+<div class="produto-premium">
+<div class="desconto">-18%</div>
+<div class="favorito">♡</div>
+<img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop">
+<h5>Crystal Noir</h5>
 <p>R$ 950,00</p>
 </div>
 
-<div class="perfume-card">
+<div class="produto-premium">
+<div class="desconto">-12%</div>
+<div class="favorito">♡</div>
 <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop">
-<h4>Y EDP</h4>
+<h5>Drop D'Issey</h5>
 <p>R$ 1.025,00</p>
 </div>
 
 </div>
 
-</div>
-
 </section>
-
-<!-- MOSAICO -->
-
-<section class="mosaico">
-
-<div class="mosaico-left">
-
-<div class="mosaico-box mosaico-small">
-<img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-<div class="mosaico-box mosaico-small">
-<img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-</div>
-
-<div class="mosaico-box mosaico-big">
-<img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
-</div>
-
-</section>
-
-<!-- PRODUTOS FINAIS -->
-
-<section class="lista-produtos-bottom">
-
-<div class="produto-bottom">
-<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
-<h4>Montblanc Explorer</h4>
-<p>R$ 294,90</p>
-</div>
-
-<div class="produto-bottom">
-<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
-<h4>Montblanc Signature</h4>
-<p>R$ 490,90</p>
-</div>
-
-<div class="produto-bottom">
-<img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop">
-<h4>Legend Blue</h4>
-<p>R$ 511,90</p>
-</div>
-
-<div class="produto-bottom">
-<img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
-<h4>Signature Elixir</h4>
-<p>R$ 514,90</p>
-</div>
-
-</section>
-
-</main>
 
 </body>
 </html>
+```
