@@ -2,12 +2,12 @@
 <html lang="pt-br">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BOCABELLA</title>
 
-<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,51 +26,20 @@ RESET
 }
 
 /* =========================
-PALETA PREMIUM
+VARIÁVEIS
 ========================= */
 
 :root{
 
     --rosa:#d8a7b1;
-    --rosa-hover:#c7929d;
-    --rosa-claro:#fdf7f9;
-
-    --bege:#f6f1ec;
+    --rosa2:#f8d7df;
 
     --preto:#111111;
+    --cinza:#666666;
 
-    --cinza:#777777;
-    --cinza-claro:#f8f8f8;
+    --bg:#ffffff;
+    --bg2:#faf7f5;
 
-    --borda:#ececec;
-
-    --sombra:
-    0 10px 35px rgba(0,0,0,0.06);
-
-    --sombra-hover:
-    0 18px 50px rgba(0,0,0,0.10);
-
-}
-
-/* =========================
-SCROLL
-========================= */
-
-html{
-    scroll-behavior:smooth;
-}
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#f3f3f3;
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--rosa);
-    border-radius:20px;
 }
 
 /* =========================
@@ -79,25 +48,14 @@ BODY
 
 body{
 
-    font-family:'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 
-    background:white;
+    background:var(--bg);
 
     color:var(--preto);
 
     overflow-x:hidden;
 
-    -webkit-font-smoothing:antialiased;
-
-}
-
-/* =========================
-SELECTION
-========================= */
-
-::selection{
-    background:var(--rosa);
-    color:white;
 }
 
 /* =========================
@@ -105,70 +63,41 @@ CONTAINER
 ========================= */
 
 .container{
+
     width:92%;
-    max-width:1400px;
+    max-width:1450px;
+
     margin:auto;
+
 }
 
 /* =========================
-BARRA BENEFÍCIOS
+TOPBAR
 ========================= */
 
-.benefits-bar{
+.topbar{
 
     background:#111;
 
     color:white;
 
-    padding:12px 0;
+    padding:10px 0;
 
-    overflow:hidden;
-
-    position:relative;
+    font-size:12px;
 
 }
 
-.benefits-track{
+.topbar-content{
 
     display:flex;
 
-    gap:50px;
-
-    white-space:nowrap;
-
-    animation:scrollBenefits 28s linear infinite;
-
-    font-size:13px;
-
-    font-weight:500;
-
-}
-
-.benefits-track span{
-
-    display:flex;
+    justify-content:space-between;
 
     align-items:center;
 
-    gap:10px;
+    flex-wrap:wrap;
 
-    opacity:0.92;
-
-}
-
-.benefits-track strong{
-    color:#fff;
-}
-
-@keyframes scrollBenefits{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
+    gap:15px;
 
 }
 
@@ -178,13 +107,7 @@ HEADER
 
 header{
 
-    background:
-    rgba(255,255,255,0.92);
-
-    backdrop-filter:blur(16px);
-
-    border-bottom:
-    1px solid rgba(0,0,0,0.04);
+    background:white;
 
     position:sticky;
 
@@ -192,23 +115,23 @@ header{
 
     z-index:999;
 
-    transition:0.35s ease;
+    border-bottom:1px solid #f1f1f1;
 
 }
 
 /* =========================
-TOP BAR
+HEADER CONTENT
 ========================= */
 
-.top-bar{
+.header-content{
+
+    height:90px;
 
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
-
-    padding:22px 0;
 
     gap:30px;
 
@@ -220,334 +143,13 @@ LOGO
 
 .logo{
 
-    font-size:31px;
+    font-size:28px;
 
     font-weight:900;
 
-    letter-spacing:7px;
+    letter-spacing:5px;
 
     color:var(--preto);
-
-    cursor:pointer;
-
-    transition:0.35s ease;
-
-    user-select:none;
-
-    position:relative;
-
-}
-
-.logo::after{
-
-    content:'';
-
-    position:absolute;
-
-    left:0;
-    bottom:-6px;
-
-    width:0%;
-
-    height:3px;
-
-    background:var(--rosa);
-
-    border-radius:30px;
-
-    transition:0.35s ease;
-
-}
-
-.logo:hover{
-
-    color:var(--rosa);
-
-    transform:translateY(-2px);
-
-}
-
-.logo:hover::after{
-    width:100%;
-}
-
-/* =========================
-BUSCA
-========================= */
-
-.search-container{
-
-    flex:1;
-
-    max-width:560px;
-
-    position:relative;
-
-}
-
-/* ÍCONE BUSCA */
-
-.search-icon{
-
-    position:absolute;
-
-    left:22px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:18px;
-
-    opacity:0.5;
-
-}
-
-/* INPUT */
-
-.search-bar{
-
-    width:100%;
-
-    padding:
-    17px 24px 17px 55px;
-
-    border-radius:60px;
-
-    border:
-    1px solid var(--borda);
-
-    background:#fafafa;
-
-    outline:none;
-
-    font-size:14px;
-
-    font-family:'Poppins', sans-serif;
-
-    transition:0.35s ease;
-
-}
-
-.search-bar::placeholder{
-    color:#999;
-}
-
-.search-bar:focus{
-
-    border-color:var(--rosa);
-
-    background:white;
-
-    box-shadow:
-    0 0 0 6px rgba(216,167,177,0.12);
-
-}
-
-/* =========================
-HEADER ICONS
-========================= */
-
-.header-icons{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-}
-
-/* =========================
-WRAPPER
-========================= */
-
-.icon-wrapper{
-
-    position:relative;
-
-    width:48px;
-    height:48px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    transition:0.3s ease;
-
-    cursor:pointer;
-
-}
-
-.icon-wrapper:hover{
-
-    background:var(--rosa-claro);
-
-    transform:translateY(-3px);
-
-}
-
-/* =========================
-SVG
-========================= */
-
-.icon-wrapper svg{
-
-    width:24px;
-    height:24px;
-
-    stroke:#2b1d1d;
-
-    stroke-width:1.8;
-
-    fill:none;
-
-    transition:0.3s ease;
-
-}
-
-.icon-wrapper:hover svg{
-
-    stroke:var(--rosa);
-
-    transform:scale(1.08);
-
-}
-
-/* =========================
-CONTADOR
-========================= */
-
-.icon-count{
-
-    position:absolute;
-
-    top:-2px;
-    right:-2px;
-
-    width:21px;
-    height:21px;
-
-    border-radius:50%;
-
-    background:var(--rosa);
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    box-shadow:
-    0 6px 14px rgba(216,167,177,0.35);
-
-}
-
-/* =========================
-TOOLTIP
-========================= */
-
-.tooltip-box{
-
-    position:absolute;
-
-    top:58px;
-
-    right:-70px;
-
-    width:250px;
-
-    background:white;
-
-    border-radius:24px;
-
-    padding:24px;
-
-    box-shadow:
-    0 22px 55px rgba(0,0,0,0.12);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:0.35s ease;
-
-    z-index:999;
-
-    border:
-    1px solid #f2f2f2;
-
-}
-
-.icon-wrapper:hover .tooltip-box{
-
-    opacity:1;
-
-    visibility:visible;
-
-    top:68px;
-
-}
-
-.tooltip-box h4{
-
-    margin-bottom:10px;
-
-    font-size:14px;
-
-    font-weight:700;
-
-}
-
-.tooltip-box p{
-
-    font-size:13px;
-
-    color:var(--cinza);
-
-    margin-bottom:16px;
-
-    line-height:1.6;
-
-}
-
-.tooltip-box button{
-
-    width:100%;
-
-    border:none;
-
-    background:var(--preto);
-
-    color:white;
-
-    padding:14px;
-
-    border-radius:15px;
-
-    font-weight:600;
-
-    font-family:'Poppins', sans-serif;
-
-    cursor:pointer;
-
-    transition:0.3s ease;
-
-}
-
-.tooltip-box button:hover{
-
-    background:var(--rosa);
-
-    transform:translateY(-2px);
 
 }
 
@@ -555,25 +157,17 @@ TOOLTIP
 MENU
 ========================= */
 
-nav{
+.menu{
 
     display:flex;
 
-    justify-content:center;
+    gap:28px;
 
     align-items:center;
 
-    gap:42px;
-
-    padding-bottom:18px;
-
 }
 
-/* =========================
-LINKS MENU
-========================= */
-
-nav a{
+.menu a{
 
     text-decoration:none;
 
@@ -581,781 +175,98 @@ nav a{
 
     font-size:13px;
 
-    font-weight:600;
+    font-weight:500;
 
-    letter-spacing:1px;
+    transition:0.3s ease;
 
     position:relative;
 
-    transition:0.3s ease;
-
 }
 
-/* LINHA HOVER */
-
-nav a::after{
-
-    content:'';
-
-    position:absolute;
-
-    bottom:-9px;
-
-    left:0;
-
-    width:0%;
-
-    height:2px;
-
-    background:var(--rosa);
-
-    border-radius:30px;
-
-    transition:0.3s ease;
-
-}
-
-nav a:hover{
+.menu a:hover{
 
     color:var(--rosa);
 
 }
 
-nav a:hover::after{
-
-    width:100%;
-
-}
-
 /* =========================
-ANIMAÇÃO SUAVE
+SEARCH
 ========================= */
 
-.fade-up{
+.search-box{
 
-    animation:fadeUp 0.8s ease;
-
-}
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* =========================
-RESPONSIVO
-========================= */
-
-@media(max-width:768px){
-
-    .benefits-track{
-        gap:30px;
-        font-size:12px;
-    }
-
-    .top-bar{
-
-        flex-direction:column;
-
-        gap:20px;
-
-    }
-
-    .search-container{
-
-        width:100%;
-
-        max-width:100%;
-
-    }
-
-    .logo{
-
-        font-size:26px;
-
-        letter-spacing:5px;
-
-    }
-
-    .header-icons{
-
-        gap:12px;
-
-    }
-
-    nav{
-
-        flex-wrap:wrap;
-
-        gap:18px;
-
-        padding-bottom:20px;
-
-    }
-
-    nav a{
-
-        font-size:11px;
-
-    }
-
-    .tooltip-box{
-        display:none;
-    }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- =========================
-BARRA BENEFÍCIOS
-========================= -->
-
-<section class="benefits-bar">
-
-    <div class="benefits-track">
-
-        <span>✨ <strong>Frete grátis</strong> acima de R$199</span>
-
-        <span>💳 Parcele em até 12x sem juros</span>
-
-        <span>🚚 Entrega rápida para todo Brasil</span>
-
-        <span>🔒 Compra 100% segura</span>
-
-        <span>🎁 Cashback em compras selecionadas</span>
-
-        <span>✨ <strong>Frete grátis</strong> acima de R$199</span>
-
-        <span>💳 Parcele em até 12x sem juros</span>
-
-        <span>🚚 Entrega rápida para todo Brasil</span>
-
-    </div>
-
-</section>
-
-<header>
-
-<div class="container">
-
-<div class="top-bar">
-
-<!-- LOGO -->
-
-<div class="logo">
-BOCABELLA
-</div>
-
-<!-- BUSCA -->
-
-<div class="search-container">
-
-    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-
-        <circle cx="11" cy="11" r="7"></circle>
-
-        <path d="M21 21L16.65 16.65"></path>
-
-    </svg>
-
-<input
-type="text"
-class="search-bar"
-placeholder="Buscar perfumes, maquiagens, skincare..."
->
-
-</div>
-
-<!-- ÍCONES -->
-
-<div class="header-icons">
-
-<!-- CONTA -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="4"/>
-<path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"/>
-</svg>
-
-<div class="tooltip-box">
-
-<h4>MINHA CONTA</h4>
-
-<p>
-Entre na sua conta e acompanhe seus pedidos.
-</p>
-
-<button>
-Entrar
-</button>
-
-</div>
-
-</div>
-
-<!-- FAVORITOS -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/>
-</svg>
-
-<div class="icon-count">
-2
-</div>
-
-<div class="tooltip-box">
-
-<h4>FAVORITOS</h4>
-
-<p>
-Você possui itens salvos na wishlist.
-</p>
-
-</div>
-
-</div>
-
-<!-- CARRINHO -->
-
-<div class="icon-wrapper">
-
-<svg viewBox="0 0 24 24">
-<circle cx="9" cy="20" r="1"/>
-<circle cx="18" cy="20" r="1"/>
-<path d="M3 4h2l2.4 10.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H7"/>
-</svg>
-
-<div class="icon-count">
-3
-</div>
-
-<div class="tooltip-box">
-
-<h4>CARRINHO</h4>
-
-<p>
-Você possui produtos esperando no carrinho.
-</p>
-
-<button>
-Finalizar compra
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MENU -->
-
-<nav>
-
-<a href="#">
-MAQUIAGEM
-</a>
-
-<a href="#">
-PERFUMES
-</a>
-
-<a href="#">
-SKINCARE
-</a>
-
-<a href="#">
-CABELOS
-</a>
-
-<a href="#">
-OFERTAS
-</a>
-
-<a href="#">
-LANÇAMENTOS
-</a>
-
-</nav>
-
-</div>
-
-</header>
-/* =========================
-MINI BANNERS PREMIUM
-========================= */
-
-.mini-banners{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-    margin-bottom:90px;
-}
-
-.mini-banner{
-    height:220px;
-    border-radius:28px;
-    overflow:hidden;
-    position:relative;
-    cursor:pointer;
-    box-shadow:0 12px 35px rgba(0,0,0,0.05);
-    transition:0.4s ease;
-}
-
-.mini-banner::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,0.28),
-        rgba(0,0,0,0.02)
-    );
-    opacity:0;
-    transition:0.4s ease;
-}
-
-.mini-banner:hover{
-    transform:translateY(-8px);
-    box-shadow:0 22px 45px rgba(0,0,0,0.12);
-}
-
-.mini-banner:hover::after{
-    opacity:1;
-}
-
-.mini-banner img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.6s ease;
-}
-
-.mini-banner:hover img{
-    transform:scale(1.08);
-}
-
-/* =========================
-SEÇÕES PERFUMES PREMIUM
-========================= */
-
-.perfume-section{
-    margin-bottom:110px;
-}
-
-.perfume-title{
-    font-size:42px;
-    font-weight:800;
-    margin-bottom:40px;
-    color:var(--preto);
-    letter-spacing:-1px;
-    position:relative;
-    display:inline-block;
-}
-
-.perfume-title::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    width:60%;
-    height:4px;
-    border-radius:20px;
-    background:linear-gradient(
-        to right,
-        var(--rosa),
-        transparent
-    );
-}
-
-/* LAYOUT */
-
-.perfume-layout{
-    display:flex;
-    gap:35px;
-    align-items:flex-start;
-}
-
-/* BANNER */
-
-.perfume-banner{
-    width:330px;
-    flex-shrink:0;
-    border-radius:30px;
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 18px 45px rgba(0,0,0,0.08);
-}
-
-.perfume-banner img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.6s ease;
-}
-
-.perfume-banner:hover img{
-    transform:scale(1.05);
-}
-
-/* GRID PRODUTOS */
-
-.perfume-products{
     flex:1;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
-}
 
-/* CARD */
+    max-width:420px;
 
-.perfume-card{
-    background:white;
-    border-radius:26px;
-    overflow:hidden;
-    padding-bottom:20px;
-    transition:0.4s ease;
-    border:1px solid #f1f1f1;
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
-    cursor:pointer;
-}
-
-.perfume-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(0,0,0,0.10);
-}
-
-/* IMAGEM */
-
-.perfume-card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    transition:0.5s ease;
-}
-
-.perfume-card:hover img{
-    transform:scale(1.05);
-}
-
-/* NOME */
-
-.perfume-card h4{
-    margin-top:18px;
-    padding:0 18px;
-    font-size:15px;
-    line-height:1.5;
-    color:var(--preto);
-    font-weight:700;
-}
-
-/* PREÇO */
-
-.perfume-card p{
-    margin-top:12px;
-    padding:0 18px;
-    font-size:28px;
-    font-weight:900;
-    color:var(--preto);
-}
-
-/* =========================
-RESPONSIVO
-========================= */
-
-@media(max-width:1100px){
-
-    .perfume-products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .mini-banners{
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .mini-banner{
-        height:240px;
-    }
-
-    .perfume-layout{
-        flex-direction:column;
-    }
-
-    .perfume-banner{
-        width:100%;
-    }
-
-    .perfume-title{
-        font-size:32px;
-    }
-
-    .perfume-products{
-        grid-template-columns:1fr;
-    }
-
-}
-/* =========================
-MOSAICO PREMIUM
-========================= */
-
-.mosaico{
-    display:grid;
-    grid-template-columns:1fr 2fr;
-    gap:20px;
-    margin-bottom:80px;
-}
-
-/* COLUNA ESQUERDA */
-
-.mosaico-left{
-    display:grid;
-    gap:20px;
-}
-
-/* BOX */
-
-.mosaico-box{
-    border-radius:30px;
-    overflow:hidden;
     position:relative;
-    cursor:pointer;
-    box-shadow:0 12px 35px rgba(0,0,0,0.06);
-    transition:0.4s ease;
+
 }
 
-/* OVERLAY */
+.search-box input{
 
-.mosaico-box::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.18),
-    rgba(0,0,0,0.02)
-    );
-    opacity:0;
-    transition:0.4s ease;
-}
-
-/* HOVER */
-
-.mosaico-box:hover{
-    transform:translateY(-6px);
-    box-shadow:0 20px 45px rgba(0,0,0,0.10);
-}
-
-.mosaico-box:hover::after{
-    opacity:1;
-}
-
-/* IMAGEM */
-
-.mosaico-box img{
     width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.6s ease;
-}
 
-/* ZOOM */
+    height:48px;
 
-.mosaico-box:hover img{
-    transform:scale(1.06);
-}
+    border-radius:50px;
 
-/* TAMANHOS */
+    border:1px solid #ececec;
 
-.mosaico-big{
-    height:540px;
-}
+    padding:0 22px;
 
-.mosaico-small{
-    height:260px;
+    outline:none;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#fafafa;
+
 }
 
 /* =========================
-PRODUTOS ABAIXO
+ICONS
 ========================= */
 
-.lista-produtos-bottom{
+.header-icons{
+
     display:flex;
-    justify-content:space-between;
-    gap:24px;
-    margin-bottom:110px;
+
+    gap:18px;
+
+    align-items:center;
+
 }
 
-/* CARD */
+.icon{
 
-.produto-bottom{
-    width:24%;
-    transition:0.35s ease;
-    cursor:pointer;
-}
+    width:42px;
 
-/* HOVER */
+    height:42px;
 
-.produto-bottom:hover{
-    transform:translateY(-8px);
-}
+    border-radius:50%;
 
-/* IMAGEM */
+    background:#fafafa;
 
-.produto-bottom img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:28px;
-    transition:0.45s ease;
-    box-shadow:0 12px 30px rgba(0,0,0,0.06);
-}
-
-/* ZOOM */
-
-.produto-bottom:hover img{
-    transform:scale(1.04);
-    box-shadow:0 20px 40px rgba(0,0,0,0.10);
-}
-
-/* TITULO */
-
-.produto-bottom h4{
-    margin-top:18px;
-    font-size:16px;
-    font-weight:700;
-    color:var(--preto);
-}
-
-/* PREÇO */
-
-.produto-bottom p{
-    margin-top:10px;
-    font-size:28px;
-    font-weight:900;
-    color:var(--preto);
-}
-
-/* =========================
-VITRINE SEPHORA
-========================= */
-
-.sephora-section{
     display:flex;
-    gap:35px;
-    margin-bottom:90px;
-    align-items:flex-start;
-}
 
-/* BANNER */
+    align-items:center;
 
-.sephora-banner-destaque{
-    width:320px;
-    flex-shrink:0;
-    border-radius:30px;
-    overflow:hidden;
-    box-shadow:0 18px 40px rgba(0,0,0,0.08);
-}
+    justify-content:center;
 
-/* IMAGEM */
-
-.sephora-banner-destaque img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.5s ease;
-}
-
-/* HOVER */
-
-.sephora-banner-destaque:hover img{
-    transform:scale(1.05);
-}
-
-/* GRID */
-
-.sephora-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    flex:1;
-}
-
-/* CARD */
-
-.product-card-simple{
-    border:1px solid #f1f1f1;
-    padding:18px;
-    border-radius:26px;
-    text-align:center;
-    transition:0.35s ease;
-    background:white;
-    box-shadow:0 10px 25px rgba(0,0,0,0.04);
     cursor:pointer;
+
+    transition:0.3s ease;
+
 }
 
-/* HOVER */
+.icon:hover{
 
-.product-card-simple:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.10);
-}
+    background:var(--rosa);
 
-/* IMAGEM */
+    color:white;
 
-.product-card-simple img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:14px;
-    transition:0.45s ease;
-}
+    transform:translateY(-3px);
 
-/* ZOOM */
-
-.product-card-simple:hover img{
-    transform:scale(1.04);
-}
-
-/* TITULO */
-
-.product-card-simple h4{
-    font-size:15px;
-    margin-bottom:8px;
-    font-weight:700;
-    color:var(--preto);
-}
-
-/* PREÇO */
-
-.product-card-simple p{
-    font-weight:900;
-    margin-top:8px;
-    font-size:24px;
-    color:var(--preto);
 }
 
 /* =========================
@@ -1364,631 +275,470 @@ RESPONSIVO
 
 @media(max-width:992px){
 
-    .mosaico{
-        grid-template-columns:1fr;
+    .menu{
+        display:none;
     }
 
-    .lista-produtos-bottom{
-        flex-wrap:wrap;
+    .search-box{
+        display:none;
     }
 
-    .produto-bottom{
-        width:48%;
-    }
+}
 
-    .sephora-section{
-        flex-direction:column;
-    }
+</style>
 
-    .sephora-banner-destaque{
-        width:100%;
-    }
+</head>
 
-    .sephora-grid{
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+    <div class="container topbar-content">
+
+        <span>
+            ✨ Frete grátis acima de R$199
+        </span>
+
+        <span>
+            💖 Mais de 15 mil clientes satisfeitas
+        </span>
+
+        <span>
+            🚚 Envio rápido para todo Brasil
+        </span>
+
+    </div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container header-content">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+            BOCABELLA
+        </div>
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+            <a href="#">Maquiagem</a>
+
+            <a href="#">Skincare</a>
+
+            <a href="#">Perfumes</a>
+
+            <a href="#">Ofertas</a>
+
+            <a href="#">Lançamentos</a>
+
+        </nav>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Buscar perfumes, maquiagens, skincare...">
+
+        </div>
+
+        <!-- ICONS -->
+
+        <div class="header-icons">
+
+            <div class="icon">♡</div>
+
+            <div class="icon">🛒</div>
+
+            <div class="icon">👤</div>
+
+        </div>
+
+    </div>
+
+</header>
+<style>
+
+/* =========================
+BANNER PRINCIPAL PREMIUM
+========================= */
+
+.banner-principal{
+
+    margin-top:35px;
+
+    height:620px;
+
+    border-radius:38px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,0.10);
+
+}
+
+/* OVERLAY */
+
+.banner-principal::after{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    to right,
+    rgba(0,0,0,0.78),
+    rgba(0,0,0,0.25)
+    );
+
+}
+
+/* =========================
+BANNER CONTENT
+========================= */
+
+.banner-content{
+
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:70px;
+
+    max-width:700px;
+
+}
+
+/* TEXT SMALL */
+
+.banner-content span{
+
+    color:#f7d9e0;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+/* TITLE */
+
+.banner-content h1{
+
+    font-size:74px;
+
+    line-height:1.02;
+
+    margin:22px 0;
+
+    color:white;
+
+    font-weight:900;
+
+}
+
+/* DESCRIPTION */
+
+.banner-content p{
+
+    color:#f3f3f3;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    max-width:560px;
+
+    margin-bottom:35px;
+
+}
+
+/* BUTTONS */
+
+.banner-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+/* BTN */
+
+.banner-btn{
+
+    height:56px;
+
+    padding:0 34px;
+
+    border-radius:60px;
+
+    border:none;
+
+    background:white;
+
+    color:black;
+
+    font-weight:700;
+
+    font-family:'Poppins',sans-serif;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+    font-size:14px;
+
+}
+
+.banner-btn:hover{
+
+    background:var(--rosa);
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+/* BTN 2 */
+
+.banner-btn-outline{
+
+    height:56px;
+
+    padding:0 34px;
+
+    border-radius:60px;
+
+    border:1px solid rgba(255,255,255,0.35);
+
+    background:transparent;
+
+    color:white;
+
+    font-weight:700;
+
+    font-family:'Poppins',sans-serif;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+    font-size:14px;
+
+}
+
+.banner-btn-outline:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+/* =========================
+BENEFÍCIOS
+========================= */
+
+.beneficios{
+
+    margin-top:35px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+/* CARD */
+
+.beneficio-card{
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,0.05);
+
+    transition:0.35s ease;
+
+    border:1px solid #f1f1f1;
+
+}
+
+.beneficio-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ICON */
+
+.beneficio-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    background:#fff3f5;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+/* TITLE */
+
+.beneficio-card h3{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+/* TEXT */
+
+.beneficio-card p{
+
+    color:#777;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:992px){
+
+    .beneficios{
+
         grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .banner-content h1{
+
+        font-size:54px;
+
     }
 
 }
 
 @media(max-width:768px){
 
-    .mosaico{
+    .banner-principal{
+
+        height:540px;
+
+        border-radius:28px;
+
+    }
+
+    .banner-content{
+
+        padding:35px;
+
+    }
+
+    .banner-content h1{
+
+        font-size:42px;
+
+    }
+
+    .beneficios{
+
         grid-template-columns:1fr;
-    }
 
-    .mosaico-big{
-        height:360px;
-    }
-
-    .mosaico-small{
-        height:220px;
-    }
-
-    .lista-produtos-bottom{
-        flex-direction:column;
-    }
-
-    .produto-bottom{
-        width:100%;
-    }
-
-    .produto-bottom img{
-        height:340px;
-    }
-
-    .sephora-grid{
-        grid-template-columns:1fr;
     }
 
 }
-<!-- MINI BANNERS PREMIUM -->
 
-<section class="mini-banners">
-
-<div class="mini-banner">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="mini-banner-overlay">
-        <span>Luxury Makeup</span>
-        <h3>Glow Collection</h3>
-    </div>
-</div>
-
-<div class="mini-banner">
-    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="mini-banner-overlay">
-        <span>Premium Skin</span>
-        <h3>Beauty Care</h3>
-    </div>
-</div>
-
-<div class="mini-banner">
-    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="mini-banner-overlay">
-        <span>New Season</span>
-        <h3>Soft Glam</h3>
-    </div>
-</div>
-
-<div class="mini-banner">
-    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
-
-    <div class="mini-banner-overlay">
-        <span>Exclusive</span>
-        <h3>Luxury Beauty</h3>
-    </div>
-</div>
-
-</section>
-
-<!-- SEÇÃO CAROLINA HERRERA -->
-
-<section class="perfume-section">
-
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; flex-wrap:wrap; gap:20px;">
-
-    <h2 class="perfume-title">
-        Conheça Carolina Herrera 212
-    </h2>
-
-    <a href="#" style="
-    text-decoration:none;
-    color:var(--rosa);
-    font-weight:600;
-    font-size:14px;
-    ">
-        Ver coleção completa →
-    </a>
-
-</div>
-
-<div class="perfume-layout">
+</style>
 
 <!-- BANNER -->
 
-<div class="perfume-banner">
+<section class="container">
 
-    <div style="position:relative; overflow:hidden; border-radius:30px;">
+    <div class="banner-principal">
 
-        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
+        <div class="banner-content">
 
-        <div style="
-        position:absolute;
-        inset:0;
-        background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-        display:flex;
-        align-items:flex-end;
-        padding:30px;
-        ">
+            <div>
 
-            <div style="color:white;">
-                <span style="
-                font-size:12px;
-                letter-spacing:2px;
-                text-transform:uppercase;
-                opacity:0.9;
-                ">
-                    Exclusivo
+                <span>
+                    LUXURY BEAUTY
                 </span>
 
-                <h3 style="
-                margin-top:10px;
-                font-size:30px;
-                font-weight:800;
-                ">
-                    212 Collection
-                </h3>
-            </div>
+                <h1>
+                    Sua beleza em outro nível ✨
+                </h1>
 
-        </div>
+                <p>
+                    Descubra os produtos mais desejados do universo beauty com uma experiência premium, sofisticada e exclusiva.
+                </p>
 
-    </div>
+                <div class="banner-buttons">
 
-</div>
+                    <button class="banner-btn">
+                        Comprar agora
+                    </button>
 
-<!-- PRODUTOS -->
+                    <button class="banner-btn-outline">
+                        Explorar coleção
+                    </button>
 
-<div class="perfume-products">
-
-<div class="perfume-card">
-
-    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
-
-    <h4>212 VIP BLACK</h4>
-
-    <p>R$ 799,00</p>
-
-</div>
-
-<div class="perfume-card">
-
-    <img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
-
-    <h4>212 ROSÉ</h4>
-
-    <p>R$ 917,00</p>
-
-</div>
-
-<div class="perfume-card">
-
-    <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop">
-
-    <h4>212 MEN</h4>
-
-    <p>R$ 1.112,00</p>
-
-</div>
-
-<div class="perfume-card">
-
-    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop">
-
-    <h4>212 HEROES</h4>
-
-    <p>R$ 950,00</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SEÇÃO YSL -->
-
-<section class="perfume-section">
-
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; flex-wrap:wrap; gap:20px;">
-
-    <h2 class="perfume-title">
-        Celebre o dia dos namorados com YSL
-    </h2>
-
-    <a href="#" style="
-    text-decoration:none;
-    color:var(--rosa);
-    font-weight:600;
-    font-size:14px;
-    ">
-        Descobrir →
-    </a>
-
-</div>
-
-<div class="perfume-layout">
-
-<!-- BANNER -->
-
-<div class="perfume-banner">
-
-    <div style="position:relative; overflow:hidden; border-radius:30px;">
-
-        <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1200&auto=format&fit=crop">
-
-        <div style="
-        position:absolute;
-        inset:0;
-        background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-        display:flex;
-        align-items:flex-end;
-        padding:30px;
-        ">
-
-            <div style="color:white;">
-
-                <span style="
-                font-size:12px;
-                letter-spacing:2px;
-                text-transform:uppercase;
-                opacity:0.9;
-                ">
-                    Luxury Edition
-                </span>
-
-                <h3 style="
-                margin-top:10px;
-                font-size:30px;
-                font-weight:800;
-                ">
-                    YSL Beauty
-                </h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- PRODUTOS -->
-
-<div class="perfume-products">
-
-<div class="perfume-card">
-    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop">
-    <h4>LIBRE INTENSE</h4>
-    <p>R$ 1.349,00</p>
-</div>
-
-<div class="perfume-card">
-    <img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
-    <h4>MYSLF</h4>
-    <p>R$ 718,00</p>
-</div>
-
-<div class="perfume-card">
-    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop">
-    <h4>LIBRE FLOWERS</h4>
-    <p>R$ 950,00</p>
-</div>
-
-<div class="perfume-card">
-    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop">
-    <h4>Y EDP</h4>
-    <p>R$ 1.025,00</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- THE BOSS GLOSS -->
-
-<h2 class="section-title">
-    THE BOSS GLOSS ✨
-</h2>
-
-<section class="sephora-section">
-
-<!-- BANNER -->
-
-<div class="sephora-banner-destaque">
-
-    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600">
-
-</div>
-
-<!-- GRID -->
-
-<div class="sephora-grid">
-
-<div class="product-card-simple">
-
-    <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=400">
-
-    <h4>GLOSS BOMB</h4>
-
-    <p>R$ 172,00</p>
-
-</div>
-
-<div class="product-card-simple">
-
-    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400">
-
-    <h4>LIP DRIP DUO</h4>
-
-    <p>R$ 205,00</p>
-
-</div>
-
-<div class="product-card-simple">
-
-    <img src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=400">
-
-    <h4>RAMADAN KIT</h4>
-
-    <p>R$ 248,00</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- MOSAICO PREMIUM -->
-
-<section class="mosaico">
-
-<div class="mosaico-left">
-
-<div class="mosaico-box mosaico-small">
-
-    <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-<div class="mosaico-box mosaico-small">
-
-    <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</div>
-
-<div class="mosaico-box mosaico-big">
-
-    <img src="https://images.unsplash.com/photo-1619994403073-2cec99c8d3b8?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-</section>
-<!-- PRODUTOS FINAIS PREMIUM -->
-
-<section class="lista-produtos-bottom">
-
-<div class="produto-bottom">
-
-    <div style="position:relative; overflow:hidden; border-radius:28px;">
-
-        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
-
-        <div style="
-        position:absolute;
-        top:18px;
-        left:18px;
-        background:white;
-        color:#111;
-        padding:8px 14px;
-        border-radius:30px;
-        font-size:12px;
-        font-weight:700;
-        box-shadow:0 5px 15px rgba(0,0,0,0.08);
-        ">
-            BEST SELLER
-        </div>
-
-    </div>
-
-    <h4>Montblanc Explorer</h4>
-
-    <p>R$ 294,90</p>
-
-</div>
-
-<div class="produto-bottom">
-
-    <div style="position:relative; overflow:hidden; border-radius:28px;">
-
-        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
-
-        <div style="
-        position:absolute;
-        top:18px;
-        left:18px;
-        background:#111;
-        color:white;
-        padding:8px 14px;
-        border-radius:30px;
-        font-size:12px;
-        font-weight:700;
-        ">
-            NEW
-        </div>
-
-    </div>
-
-    <h4>Montblanc Signature</h4>
-
-    <p>R$ 490,90</p>
-
-</div>
-
-<div class="produto-bottom">
-
-    <div style="position:relative; overflow:hidden; border-radius:28px;">
-
-        <img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop">
-
-        <div style="
-        position:absolute;
-        top:18px;
-        left:18px;
-        background:var(--rosa);
-        color:white;
-        padding:8px 14px;
-        border-radius:30px;
-        font-size:12px;
-        font-weight:700;
-        ">
-            PREMIUM
-        </div>
-
-    </div>
-
-    <h4>Legend Blue</h4>
-
-    <p>R$ 511,90</p>
-
-</div>
-
-<div class="produto-bottom">
-
-    <div style="position:relative; overflow:hidden; border-radius:28px;">
-
-        <img src="https://images.unsplash.com/photo-1615634262417-4d53f3b63c7f?q=80&w=1200&auto=format&fit=crop">
-
-        <div style="
-        position:absolute;
-        top:18px;
-        left:18px;
-        background:#fff3f5;
-        color:#111;
-        padding:8px 14px;
-        border-radius:30px;
-        font-size:12px;
-        font-weight:700;
-        ">
-            LUXURY
-        </div>
-
-    </div>
-
-    <h4>Signature Elixir</h4>
-
-    <p>R$ 514,90</p>
-
-</div>
-
-</section>
-
-<!-- BANNER DUPLO PREMIUM -->
-
-<section style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px;
-margin-bottom:40px;
-">
-
-    <!-- BANNER 1 -->
-
-    <div style="
-    position:relative;
-    height:340px;
-    border-radius:30px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 18px 40px rgba(0,0,0,0.08);
-    ">
-
-        <img 
-        src="https://images.unsplash.com/photo-1556228453-efd6c1ff047d?q=80&w=800"
-
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transition:0.6s ease;
-        ">
-
-        <div style="
-        position:absolute;
-        inset:0;
-        background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-        display:flex;
-        align-items:flex-end;
-        padding:35px;
-        ">
-
-            <div style="color:white;">
-
-                <span style="
-                font-size:12px;
-                letter-spacing:2px;
-                text-transform:uppercase;
-                ">
-                    Skincare
-                </span>
-
-                <h2 style="
-                margin-top:12px;
-                font-size:36px;
-                font-weight:800;
-                ">
-                    Beauty Essentials
-                </h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- BANNER 2 -->
-
-    <div style="
-    position:relative;
-    height:340px;
-    border-radius:30px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 18px 40px rgba(0,0,0,0.08);
-    ">
-
-        <img 
-        src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=800"
-
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transition:0.6s ease;
-        ">
-
-        <div style="
-        position:absolute;
-        inset:0;
-        background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-        display:flex;
-        align-items:flex-end;
-        padding:35px;
-        ">
-
-            <div style="color:white;">
-
-                <span style="
-                font-size:12px;
-                letter-spacing:2px;
-                text-transform:uppercase;
-                ">
-                    Luxury Makeup
-                </span>
-
-                <h2 style="
-                margin-top:12px;
-                font-size:36px;
-                font-weight:800;
-                ">
-                    New Glow Collection
-                </h2>
+                </div>
 
             </div>
 
@@ -1998,1095 +748,72 @@ margin-bottom:40px;
 
 </section>
 
-<!-- PRODUTOS PREMIUM 1 -->
+<!-- BENEFÍCIOS -->
 
-<div class="lista-produtos">
+<section class="container beneficios">
 
-<div class="produto-card">
+    <div class="beneficio-card">
 
-    <img class="produto-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800">
-
-    <div class="produto-info">
-
-        <div class="produto-marca">FENTY BEAUTY</div>
-
-        <h4 class="produto-nome">
-            Velvet Matte Lipstick
-        </h4>
-
-        <div class="produto-preco-antigo">
-            R$ 399,00
+        <div class="beneficio-icon">
+            🚚
         </div>
 
-        <p class="produto-preco">
-            R$ 260,00
-        </p>
-
-        <button class="botao-comprar">
-            Comprar agora
-        </button>
-
-    </div>
-
-</div>
-
-<div class="produto-card">
-
-    <img class="produto-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800">
-
-    <div class="produto-info">
-
-        <div class="produto-marca">DIOR</div>
-
-        <h4 class="produto-nome">
-            Glow Beauty Serum
-        </h4>
-
-        <div class="produto-preco-antigo">
-            R$ 420,00
-        </div>
-
-        <p class="produto-preco">
-            R$ 260,00
-        </p>
-
-        <button class="botao-comprar">
-            Comprar agora
-        </button>
-
-    </div>
-
-</div>
-
-<div class="produto-card">
-
-    <img class="produto-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800">
-
-    <div class="produto-info">
-
-        <div class="produto-marca">RARE BEAUTY</div>
-
-        <h4 class="produto-nome">
-            Premium Skin Glow
-        </h4>
-
-        <div class="produto-preco-antigo">
-            R$ 499,00
-        </div>
-
-        <p class="produto-preco">
-            R$ 260,00
-        </p>
-
-        <button class="botao-comprar">
-            Comprar agora
-        </button>
-
-    </div>
-
-</div>
-
-<div class="produto-card">
-
-    <img class="produto-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800">
-
-    <div class="produto-info">
-
-        <div class="produto-marca">YSL</div>
-
-        <h4 class="produto-nome">
-            Luxury Face Primer
-        </h4>
-
-        <div class="produto-preco-antigo">
-            R$ 390,00
-        </div>
-
-        <p class="produto-preco">
-            R$ 260,00
-        </p>
-
-        <button class="botao-comprar">
-            Comprar agora
-        </button>
-
-    </div>
-
-</div>
-
-</div>
-
-<!-- SEGUNDO BANNER PREMIUM -->
-
-<section style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px;
-margin-bottom:40px;
-">
-
-<div style="
-position:relative;
-height:340px;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 18px 40px rgba(0,0,0,0.08);
-">
-
-<img 
-src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800"
-
-style="
-width:100%;
-height:100%;
-object-fit:cover;
-">
-
-<div style="
-position:absolute;
-inset:0;
-background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-display:flex;
-align-items:flex-end;
-padding:35px;
-">
-
-<div style="color:white;">
-
-<span style="
-font-size:12px;
-letter-spacing:2px;
-text-transform:uppercase;
-">
-Gloss Collection
-</span>
-
-<h2 style="
-margin-top:12px;
-font-size:36px;
-font-weight:800;
-">
-Boss Beauty
-</h2>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="
-position:relative;
-height:340px;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 18px 40px rgba(0,0,0,0.08);
-">
-
-<img 
-src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=800"
-
-style="
-width:100%;
-height:100%;
-object-fit:cover;
-">
-
-<div style="
-position:absolute;
-inset:0;
-background:linear-gradient(to top, rgba(0,0,0,0.55), transparent);
-display:flex;
-align-items:flex-end;
-padding:35px;
-">
-
-<div style="color:white;">
-
-<span style="
-font-size:12px;
-letter-spacing:2px;
-text-transform:uppercase;
-">
-Exclusive Makeup
-</span>
-
-<h2 style="
-margin-top:12px;
-font-size:36px;
-font-weight:800;
-">
-Luxury Collection
-</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PRODUTOS PREMIUM 2 -->
-
-<div class="lista-produtos">
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800">
-
-<div class="produto-info">
-
-<div class="produto-marca">CHANEL</div>
-
-<h4 class="produto-nome">
-Perfume Elegance
-</h4>
-
-<div class="produto-preco-antigo">
-R$ 799,00
-</div>
-
-<p class="produto-preco">
-R$ 599,00
-</p>
-
-<button class="botao-comprar">
-Comprar agora
-</button>
-
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800">
-
-<div class="produto-info">
-
-<div class="produto-marca">GUCCI</div>
-
-<h4 class="produto-nome">
-Floral Essence
-</h4>
-
-<div class="produto-preco-antigo">
-R$ 899,00
-</div>
-
-<p class="produto-preco">
-R$ 599,00
-</p>
-
-<button class="botao-comprar">
-Comprar agora
-</button>
-
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800">
-
-<div class="produto-info">
-
-<div class="produto-marca">DIOR</div>
-
-<h4 class="produto-nome">
-Luxury Fragrance
-</h4>
-
-<div class="produto-preco-antigo">
-R$ 999,00
-</div>
-
-<p class="produto-preco">
-R$ 599,00
-</p>
-
-<button class="botao-comprar">
-Comprar agora
-</button>
-
-</div>
-</div>
-
-<div class="produto-card">
-<img class="produto-img" src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800">
-
-<div class="produto-info">
-
-<div class="produto-marca">YSL</div>
-
-<h4 class="produto-nome">
-Premium Elixir
-</h4>
-
-<div class="produto-preco-antigo">
-R$ 1.099,00
-</div>
-
-<p class="produto-preco">
-R$ 599,00
-</p>
-
-<button class="botao-comprar">
-Comprar agora
-</button>
-
-</div>
-</div>
-
-</div>
-
-<!-- SEÇÃO BEM-VINDO -->
-
-<section style="
-background:linear-gradient(135deg,#fff,#f8f2f3);
-padding:60px;
-border-radius:35px;
-display:flex;
-align-items:center;
-gap:50px;
-margin:90px 0;
-box-shadow:0 20px 45px rgba(0,0,0,0.05);
-flex-wrap:wrap;
-">
-
-<img 
-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
-
-style="
-width:320px;
-height:240px;
-object-fit:cover;
-border-radius:28px;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
-">
-
-<div style="flex:1; min-width:280px;">
-
-<span style="
-color:var(--rosa);
-font-weight:700;
-letter-spacing:2px;
-font-size:12px;
-text-transform:uppercase;
-">
-Sobre a BOCABELLA
-</span>
-
-<h2 style="
-margin:18px 0;
-font-size:42px;
-line-height:1.1;
-font-weight:800;
-color:var(--preto);
-">
-Sua autoestima começa aqui ✨
-</h2>
-
-<p style="
-color:#666;
-line-height:1.9;
-font-size:15px;
-max-width:700px;
-">
-Somos uma comunidade apaixonada pelo poder transformador da beleza. 
-Aqui, valorizamos o autocuidado, a autenticidade e o brilho único de cada pessoa.
-Na BOCABELLA você encontra produtos premium, tendências internacionais e os itens mais desejados do universo beauty.
-</p>
-
-<div style="
-display:flex;
-gap:20px;
-margin-top:30px;
-flex-wrap:wrap;
-">
-
-<div style="
-background:white;
-padding:18px 22px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-">
-
-<strong style="font-size:22px;">+15k</strong>
-
-<p style="font-size:13px; color:#777;">
-Clientes felizes
-</p>
-
-</div>
-
-<div style="
-background:white;
-padding:18px 22px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-">
-
-<strong style="font-size:22px;">24h</strong>
-
-<p style="font-size:13px; color:#777;">
-Envio rápido
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- SEÇÃO AVALIAÇÕES PREMIUM -->
-
-<section style="margin:100px 0;">
-
-    <div style="text-align:center; margin-bottom:50px;">
-
-        <span style="
-        color:var(--rosa);
-        letter-spacing:3px;
-        font-size:13px;
-        font-weight:700;
-        ">
-        FEEDBACKS REAIS
-        </span>
-
-        <h2 style="
-        font-size:48px;
-        margin-top:12px;
-        font-weight:900;
-        ">
-        O que nossas clientes dizem ✨
-        </h2>
-
-        <p style="
-        color:#777;
-        margin-top:15px;
-        font-size:16px;
-        ">
-        Mais de 15 mil clientes apaixonadas pela experiência BOCABELLA.
-        </p>
-
-    </div>
-
-    <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    ">
-
-        <!-- CARD -->
-
-        <div style="
-        background:white;
-        border:1px solid #f1f1f1;
-        padding:30px;
-        border-radius:28px;
-        transition:0.4s ease;
-        box-shadow:0 10px 30px rgba(0,0,0,0.04);
-        " onmouseover="this.style.transform='translateY(-10px)'"
-        onmouseout="this.style.transform='translateY(0px)'">
-
-            <div style="
-            display:flex;
-            align-items:center;
-            gap:14px;
-            margin-bottom:20px;
-            ">
-
-                <div style="
-                width:58px;
-                height:58px;
-                border-radius:50%;
-                background:linear-gradient(135deg,#f8d7df,#d8a7b1);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-weight:800;
-                font-size:18px;
-                ">
-                JS
-                </div>
-
-                <div>
-                    <h4 style="font-size:16px;">Jucelia S.</h4>
-                    <p style="font-size:13px;color:#888;">Cliente verificada</p>
-                </div>
-
-            </div>
-
-            <p style="
-            color:#666;
-            line-height:1.7;
-            margin-bottom:20px;
-            font-size:15px;
-            ">
-            “A BOCABELLA virou minha loja favorita! Tudo chega impecável e os produtos são incríveis.”
-            </p>
-
-            <div style="
-            color:#ffb400;
-            font-size:18px;
-            letter-spacing:3px;
-            ">
-            ★★★★★
-            </div>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div style="
-        background:white;
-        border:1px solid #f1f1f1;
-        padding:30px;
-        border-radius:28px;
-        transition:0.4s ease;
-        box-shadow:0 10px 30px rgba(0,0,0,0.04);
-        " onmouseover="this.style.transform='translateY(-10px)'"
-        onmouseout="this.style.transform='translateY(0px)'">
-
-            <div style="
-            display:flex;
-            align-items:center;
-            gap:14px;
-            margin-bottom:20px;
-            ">
-
-                <div style="
-                width:58px;
-                height:58px;
-                border-radius:50%;
-                background:linear-gradient(135deg,#f8d7df,#d8a7b1);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-weight:800;
-                font-size:18px;
-                ">
-                TP
-                </div>
-
-                <div>
-                    <h4 style="font-size:16px;">Tamara P.</h4>
-                    <p style="font-size:13px;color:#888;">Cliente premium</p>
-                </div>
-
-            </div>
-
-            <p style="
-            color:#666;
-            line-height:1.7;
-            margin-bottom:20px;
-            font-size:15px;
-            ">
-            “Produto impecável, entrega rápida e embalagem extremamente sofisticada.”
-            </p>
-
-            <div style="
-            color:#ffb400;
-            font-size:18px;
-            letter-spacing:3px;
-            ">
-            ★★★★★
-            </div>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div style="
-        background:white;
-        border:1px solid #f1f1f1;
-        padding:30px;
-        border-radius:28px;
-        transition:0.4s ease;
-        box-shadow:0 10px 30px rgba(0,0,0,0.04);
-        " onmouseover="this.style.transform='translateY(-10px)'"
-        onmouseout="this.style.transform='translateY(0px)'">
-
-            <div style="
-            display:flex;
-            align-items:center;
-            gap:14px;
-            margin-bottom:20px;
-            ">
-
-                <div style="
-                width:58px;
-                height:58px;
-                border-radius:50%;
-                background:linear-gradient(135deg,#f8d7df,#d8a7b1);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-weight:800;
-                font-size:18px;
-                ">
-                DS
-                </div>
-
-                <div>
-                    <h4 style="font-size:16px;">Daniela S.</h4>
-                    <p style="font-size:13px;color:#888;">Cliente verificada</p>
-                </div>
-
-            </div>
-
-            <p style="
-            color:#666;
-            line-height:1.7;
-            margin-bottom:20px;
-            font-size:15px;
-            ">
-            “Atendimento extremamente rápido e produtos originais. Recomendo demais.”
-            </p>
-
-            <div style="
-            color:#ffb400;
-            font-size:18px;
-            letter-spacing:3px;
-            ">
-            ★★★★★
-            </div>
-
-        </div>
-
-        <!-- CARD -->
-
-        <div style="
-        background:white;
-        border:1px solid #f1f1f1;
-        padding:30px;
-        border-radius:28px;
-        transition:0.4s ease;
-        box-shadow:0 10px 30px rgba(0,0,0,0.04);
-        " onmouseover="this.style.transform='translateY(-10px)'"
-        onmouseout="this.style.transform='translateY(0px)'">
-
-            <div style="
-            display:flex;
-            align-items:center;
-            gap:14px;
-            margin-bottom:20px;
-            ">
-
-                <div style="
-                width:58px;
-                height:58px;
-                border-radius:50%;
-                background:linear-gradient(135deg,#f8d7df,#d8a7b1);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:white;
-                font-weight:800;
-                font-size:18px;
-                ">
-                LT
-                </div>
-
-                <div>
-                    <h4 style="font-size:16px;">Lays T.</h4>
-                    <p style="font-size:13px;color:#888;">Cliente VIP</p>
-                </div>
-
-            </div>
-
-            <p style="
-            color:#666;
-            line-height:1.7;
-            margin-bottom:20px;
-            font-size:15px;
-            ">
-            “Cashback maravilhoso e experiência de compra extremamente elegante.”
-            </p>
-
-            <div style="
-            color:#ffb400;
-            font-size:18px;
-            letter-spacing:3px;
-            ">
-            ★★★★★
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- INSTAGRAM PREMIUM -->
-
-<section style="
-padding:100px 0;
-text-align:center;
-">
-
-    <span style="
-    color:var(--rosa);
-    letter-spacing:3px;
-    font-size:13px;
-    font-weight:700;
-    ">
-    @BOCABELLA
-    </span>
-
-    <h2 style="
-    font-size:48px;
-    margin:15px 0;
-    font-weight:900;
-    ">
-    Inspire-se no Instagram 💕
-    </h2>
-
-    <p style="
-    color:#777;
-    margin-bottom:45px;
-    ">
-    Tendências, lançamentos e produtos que viralizam.
-    </p>
-
-    <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:18px;
-    ">
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-        <div style="overflow:hidden;border-radius:24px;">
-            <img src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=1200&auto=format&fit=crop"
-            style="width:100%;height:220px;object-fit:cover;transition:0.5s;"
-            onmouseover="this.style.transform='scale(1.08)'"
-            onmouseout="this.style.transform='scale(1)'">
-        </div>
-
-    </div>
-
-</section>
-
-<!-- NEWSLETTER PREMIUM -->
-
-<section style="
-background:linear-gradient(135deg,#111,#1d1d1d);
-padding:70px 40px;
-border-radius:35px;
-margin-bottom:90px;
-color:white;
-text-align:center;
-position:relative;
-overflow:hidden;
-">
-
-    <div style="
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:rgba(216,167,177,0.12);
-    border-radius:50%;
-    top:-180px;
-    right:-120px;
-    "></div>
-
-    <span style="
-    color:#d8a7b1;
-    letter-spacing:3px;
-    font-size:13px;
-    font-weight:700;
-    ">
-    CLUBE EXCLUSIVO
-    </span>
-
-    <h2 style="
-    font-size:52px;
-    margin:18px 0;
-    font-weight:900;
-    ">
-    Ganhe 10% OFF na primeira compra
-    </h2>
-
-    <p style="
-    max-width:700px;
-    margin:auto;
-    color:#d6d6d6;
-    line-height:1.8;
-    margin-bottom:40px;
-    ">
-    Receba lançamentos, tendências e promoções exclusivas diretamente no seu email.
-    </p>
-
-    <form style="
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-    ">
-
-        <input type="text"
-        placeholder="Seu nome"
-        style="
-        padding:18px 22px;
-        border:none;
-        border-radius:60px;
-        width:250px;
-        font-family:'Poppins',sans-serif;
-        ">
-
-        <input type="email"
-        placeholder="Seu melhor e-mail"
-        style="
-        padding:18px 22px;
-        border:none;
-        border-radius:60px;
-        width:300px;
-        font-family:'Poppins',sans-serif;
-        ">
-
-        <button style="
-        border:none;
-        background:linear-gradient(135deg,#d8a7b1,#c98f9b);
-        color:white;
-        padding:18px 38px;
-        border-radius:60px;
-        font-weight:700;
-        cursor:pointer;
-        transition:0.4s;
-        ">
-        Quero meu cupom
-        </button>
-
-    </form>
-
-</section>
-
-<!-- FOOTER PREMIUM -->
-
-<footer style="
-background:#faf7f5;
-padding:80px 0 40px;
-border-top:1px solid #eee;
-">
-
-<div class="container">
-
-    <div style="
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
-    margin-bottom:60px;
-    ">
-
-        <!-- LOGO -->
-
-        <div>
-
-            <h2 style="
-            font-size:34px;
-            font-weight:900;
-            letter-spacing:5px;
-            margin-bottom:20px;
-            ">
-            BOCABELLA
-            </h2>
-
-            <p style="
-            color:#666;
-            line-height:1.8;
-            margin-bottom:25px;
-            ">
-            A beleza que valoriza sua autoestima com os produtos mais desejados do mundo.
-            </p>
-
-            <p style="margin-bottom:10px;">
-            📱 (11) 5039-3992
-            </p>
-
-            <p style="margin-bottom:10px;">
-            ✉ atendimento@bocabella.com.br
-            </p>
-
-        </div>
-
-        <!-- LINKS -->
-
-        <div>
-
-            <h4 style="
-            margin-bottom:22px;
-            font-size:18px;
-            ">
-            Atendimento
-            </h4>
-
-            <div style="
-            display:flex;
-            flex-direction:column;
-            gap:14px;
-            color:#666;
-            ">
-
-                <p>Minha conta</p>
-                <p>Meus pedidos</p>
-                <p>Fale conosco</p>
-                <p>Trocas e devoluções</p>
-
-            </div>
-
-        </div>
-
-        <!-- INSTITUCIONAL -->
-
-        <div>
-
-            <h4 style="
-            margin-bottom:22px;
-            font-size:18px;
-            ">
-            Institucional
-            </h4>
-
-            <div style="
-            display:flex;
-            flex-direction:column;
-            gap:14px;
-            color:#666;
-            ">
-
-                <p>Quem somos</p>
-                <p>Política de privacidade</p>
-                <p>Fretes e entregas</p>
-                <p>Cookies</p>
-
-            </div>
-
-        </div>
-
-        <!-- REDES -->
-
-        <div>
-
-            <h4 style="
-            margin-bottom:22px;
-            font-size:18px;
-            ">
-            Redes sociais
-            </h4>
-
-            <div style="
-            display:flex;
-            gap:14px;
-            ">
-
-                <div style="
-                width:48px;
-                height:48px;
-                border-radius:50%;
-                background:white;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                box-shadow:0 5px 15px rgba(0,0,0,0.06);
-                cursor:pointer;
-                ">
-                💕
-                </div>
-
-                <div style="
-                width:48px;
-                height:48px;
-                border-radius:50%;
-                background:white;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                box-shadow:0 5px 15px rgba(0,0,0,0.06);
-                cursor:pointer;
-                ">
-                📸
-                </div>
-
-                <div style="
-                width:48px;
-                height:48px;
-                border-radius:50%;
-                background:white;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                box-shadow:0 5px 15px rgba(0,0,0,0.06);
-                cursor:pointer;
-                ">
-                🎀
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- COPYRIGHT -->
-
-    <div style="
-    border-top:1px solid #e8e8e8;
-    padding-top:30px;
-    text-align:center;
-    color:#777;
-    line-height:1.8;
-    font-size:13px;
-    ">
+        <h3>
+            Frete rápido
+        </h3>
 
         <p>
-        © 2026 BOCABELLA — Todos os direitos reservados.
-        </p>
-
-        <p style="margin-top:10px;">
-        Alameda Surubiju, 1930 - Alphaville Industrial | Barueri - SP
+            Enviamos para todo Brasil com agilidade e segurança.
         </p>
 
     </div>
 
-</div>
+    <div class="beneficio-card">
 
-</footer>
+        <div class="beneficio-icon">
+            💖
+        </div>
 
-</body>
-</html>
+        <h3>
+            Produtos premium
+        </h3>
+
+        <p>
+            Trabalhamos apenas com os itens mais desejados do mundo beauty.
+        </p>
+
+    </div>
+
+    <div class="beneficio-card">
+
+        <div class="beneficio-icon">
+            🔒
+        </div>
+
+        <h3>
+            Compra segura
+        </h3>
+
+        <p>
+            Ambiente protegido e pagamentos totalmente seguros.
+        </p>
+
+    </div>
+
+    <div class="beneficio-card">
+
+        <div class="beneficio-icon">
+            ✨
+        </div>
+
+        <h3>
+            Experiência luxury
+        </h3>
+
+        <p>
+            Uma loja criada para transformar sua autoestima.
+        </p>
+
+    </div>
+
+</section>
