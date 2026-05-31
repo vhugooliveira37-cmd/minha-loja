@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BOCABELLA</title>
 
 <!-- GOOGLE FONTS -->
@@ -14,7 +15,9 @@
 
 <style>
 
-/* RESET */
+/* =========================
+RESET
+========================= */
 
 *{
     margin:0;
@@ -22,36 +25,84 @@
     box-sizing:border-box;
 }
 
-/* PALETA PREMIUM */
+/* =========================
+PALETA PREMIUM
+========================= */
 
 :root{
+
     --rosa:#d8a7b1;
     --rosa-hover:#c7929d;
-    --rosa-claro:#f8eef1;
+    --rosa-claro:#fdf7f9;
+
     --bege:#f6f1ec;
+
     --preto:#111111;
-    --cinza:#777;
+
+    --cinza:#777777;
     --cinza-claro:#f8f8f8;
+
     --borda:#ececec;
-    --sombra:0 10px 35px rgba(0,0,0,0.06);
-    --sombra-hover:0 15px 45px rgba(0,0,0,0.10);
+
+    --sombra:
+    0 10px 35px rgba(0,0,0,0.06);
+
+    --sombra-hover:
+    0 18px 50px rgba(0,0,0,0.10);
+
 }
 
-/* BODY */
+/* =========================
+SCROLL
+========================= */
 
 html{
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    background:white;
-    color:var(--preto);
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
+::-webkit-scrollbar{
+    width:10px;
 }
 
-/* CONTAINER */
+::-webkit-scrollbar-track{
+    background:#f3f3f3;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--rosa);
+    border-radius:20px;
+}
+
+/* =========================
+BODY
+========================= */
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background:white;
+
+    color:var(--preto);
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+/* =========================
+SELECTION
+========================= */
+
+::selection{
+    background:var(--rosa);
+    color:white;
+}
+
+/* =========================
+CONTAINER
+========================= */
 
 .container{
     width:92%;
@@ -59,63 +110,223 @@ body{
     margin:auto;
 }
 
-/* HEADER */
+/* =========================
+BARRA BENEFÍCIOS
+========================= */
+
+.benefits-bar{
+
+    background:#111;
+
+    color:white;
+
+    padding:12px 0;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.benefits-track{
+
+    display:flex;
+
+    gap:50px;
+
+    white-space:nowrap;
+
+    animation:scrollBenefits 28s linear infinite;
+
+    font-size:13px;
+
+    font-weight:500;
+
+}
+
+.benefits-track span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    opacity:0.92;
+
+}
+
+.benefits-track strong{
+    color:#fff;
+}
+
+@keyframes scrollBenefits{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+/* =========================
+HEADER
+========================= */
 
 header{
-    background:rgba(255,255,255,0.96);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid #f1f1f1;
+
+    background:
+    rgba(255,255,255,0.92);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(0,0,0,0.04);
+
     position:sticky;
+
     top:0;
+
     z-index:999;
+
     transition:0.35s ease;
+
 }
 
-/* TOP BAR */
+/* =========================
+TOP BAR
+========================= */
 
 .top-bar{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     padding:22px 0;
+
     gap:30px;
+
 }
 
-/* LOGO */
+/* =========================
+LOGO
+========================= */
 
 .logo{
-    font-size:30px;
+
+    font-size:31px;
+
     font-weight:900;
-    letter-spacing:6px;
+
+    letter-spacing:7px;
+
     color:var(--preto);
+
     cursor:pointer;
-    transition:0.3s ease;
+
+    transition:0.35s ease;
+
     user-select:none;
+
+    position:relative;
+
+}
+
+.logo::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0%;
+
+    height:3px;
+
+    background:var(--rosa);
+
+    border-radius:30px;
+
+    transition:0.35s ease;
+
 }
 
 .logo:hover{
+
     color:var(--rosa);
-    transform:scale(1.02);
+
+    transform:translateY(-2px);
+
 }
 
-/* BUSCA */
+.logo:hover::after{
+    width:100%;
+}
+
+/* =========================
+BUSCA
+========================= */
 
 .search-container{
+
     flex:1;
-    max-width:540px;
+
+    max-width:560px;
+
     position:relative;
+
 }
 
+/* ÍCONE BUSCA */
+
+.search-icon{
+
+    position:absolute;
+
+    left:22px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:18px;
+
+    opacity:0.5;
+
+}
+
+/* INPUT */
+
 .search-bar{
+
     width:100%;
-    padding:16px 24px;
-    border-radius:50px;
-    border:1px solid var(--borda);
+
+    padding:
+    17px 24px 17px 55px;
+
+    border-radius:60px;
+
+    border:
+    1px solid var(--borda);
+
     background:#fafafa;
+
     outline:none;
+
     font-size:14px;
+
     font-family:'Poppins', sans-serif;
-    transition:0.3s ease;
+
+    transition:0.35s ease;
+
 }
 
 .search-bar::placeholder{
@@ -123,489 +334,321 @@ header{
 }
 
 .search-bar:focus{
+
     border-color:var(--rosa);
+
     background:white;
-    box-shadow:0 0 0 5px rgba(216,167,177,0.12);
+
+    box-shadow:
+    0 0 0 6px rgba(216,167,177,0.12);
+
 }
 
-/* ÍCONES */
+/* =========================
+HEADER ICONS
+========================= */
 
 .header-icons{
+
     display:flex;
+
     align-items:center;
-    gap:18px;
+
+    gap:16px;
+
 }
 
-/* WRAPPER */
+/* =========================
+WRAPPER
+========================= */
 
 .icon-wrapper{
+
     position:relative;
-    width:46px;
-    height:46px;
+
+    width:48px;
+    height:48px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     border-radius:50%;
+
     transition:0.3s ease;
+
     cursor:pointer;
+
 }
 
 .icon-wrapper:hover{
+
     background:var(--rosa-claro);
-    transform:translateY(-2px);
+
+    transform:translateY(-3px);
+
 }
 
-/* SVG */
+/* =========================
+SVG
+========================= */
 
 .icon-wrapper svg{
+
     width:24px;
     height:24px;
+
     stroke:#2b1d1d;
+
     stroke-width:1.8;
+
     fill:none;
-    opacity:1 !important;
-    visibility:visible !important;
-    display:block;
-    overflow:visible;
+
     transition:0.3s ease;
+
 }
 
 .icon-wrapper:hover svg{
+
     stroke:var(--rosa);
+
     transform:scale(1.08);
+
 }
 
-/* CONTADOR */
+/* =========================
+CONTADOR
+========================= */
 
 .icon-count{
+
     position:absolute;
+
     top:-2px;
     right:-2px;
-    width:20px;
-    height:20px;
+
+    width:21px;
+    height:21px;
+
     border-radius:50%;
+
     background:var(--rosa);
+
     color:white;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-size:11px;
+
     font-weight:700;
-    box-shadow:0 5px 12px rgba(216,167,177,0.35);
+
+    box-shadow:
+    0 6px 14px rgba(216,167,177,0.35);
+
 }
 
-/* TOOLTIP */
+/* =========================
+TOOLTIP
+========================= */
 
 .tooltip-box{
+
     position:absolute;
+
     top:58px;
+
     right:-70px;
-    width:240px;
+
+    width:250px;
+
     background:white;
-    border-radius:22px;
-    padding:22px;
-    box-shadow:0 20px 45px rgba(0,0,0,0.12);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:
+    0 22px 55px rgba(0,0,0,0.12);
+
     opacity:0;
+
     visibility:hidden;
-    transition:0.3s ease;
+
+    transition:0.35s ease;
+
     z-index:999;
-    border:1px solid #f3f3f3;
+
+    border:
+    1px solid #f2f2f2;
+
 }
 
 .icon-wrapper:hover .tooltip-box{
+
     opacity:1;
+
     visibility:visible;
-    top:65px;
+
+    top:68px;
+
 }
 
 .tooltip-box h4{
+
     margin-bottom:10px;
+
     font-size:14px;
+
     font-weight:700;
+
 }
 
 .tooltip-box p{
+
     font-size:13px;
+
     color:var(--cinza);
-    margin-bottom:14px;
-    line-height:1.5;
+
+    margin-bottom:16px;
+
+    line-height:1.6;
+
 }
 
 .tooltip-box button{
+
     width:100%;
+
     border:none;
+
     background:var(--preto);
+
     color:white;
-    padding:13px;
-    border-radius:14px;
+
+    padding:14px;
+
+    border-radius:15px;
+
     font-weight:600;
+
     font-family:'Poppins', sans-serif;
+
     cursor:pointer;
+
     transition:0.3s ease;
+
 }
 
 .tooltip-box button:hover{
+
     background:var(--rosa);
+
     transform:translateY(-2px);
+
 }
 
-/* MENU */
+/* =========================
+MENU
+========================= */
 
 nav{
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     gap:42px;
+
     padding-bottom:18px;
+
 }
 
-/* LINKS MENU */
+/* =========================
+LINKS MENU
+========================= */
 
 nav a{
+
     text-decoration:none;
+
     color:var(--preto);
+
     font-size:13px;
+
     font-weight:600;
+
     letter-spacing:1px;
+
     position:relative;
+
     transition:0.3s ease;
+
 }
 
 /* LINHA HOVER */
 
 nav a::after{
+
     content:'';
+
     position:absolute;
-    bottom:-8px;
+
+    bottom:-9px;
+
     left:0;
+
     width:0%;
+
     height:2px;
+
     background:var(--rosa);
+
+    border-radius:30px;
+
     transition:0.3s ease;
-    border-radius:10px;
+
 }
 
 nav a:hover{
+
     color:var(--rosa);
+
 }
 
 nav a:hover::after{
+
     width:100%;
-}
 
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-    .top-bar{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    .search-container{
-        width:100%;
-        max-width:100%;
-    }
-
-    .logo{
-        font-size:26px;
-    }
-
-    .header-icons{
-        gap:12px;
-    }
-
-    nav{
-        flex-wrap:wrap;
-        gap:20px;
-        padding-bottom:20px;
-    }
-
-    nav a{
-        font-size:12px;
-    }
-
-    .tooltip-box{
-        display:none;
-    }
-
-}
-/* =========================
-BANNER PRINCIPAL PREMIUM
-========================= */
-
-.banner-principal{
-    margin-top:30px;
-    height:560px;
-    border-radius:34px;
-    overflow:hidden;
-    position:relative;
-    background:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    box-shadow:0 20px 60px rgba(0,0,0,0.10);
-    animation:fadeBanner 1s ease;
-}
-
-/* EFEITO LEVE DE ZOOM */
-
-.banner-principal::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.08);
-    z-index:1;
-}
-
-/* OVERLAY */
-
-.overlay{
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(
-    to right,
-    rgba(0,0,0,0.76),
-    rgba(0,0,0,0.28)
-    );
-    display:flex;
-    align-items:center;
-    padding:70px;
-    position:relative;
-    z-index:2;
-}
-
-/* CONTEÚDO */
-
-.banner-content{
-    color:white;
-    max-width:560px;
-    animation:fadeUp 1.1s ease;
-}
-
-/* TEXTO PEQUENO */
-
-.banner-content span{
-    letter-spacing:4px;
-    font-size:12px;
-    font-weight:600;
-    text-transform:uppercase;
-    color:#f0d9df;
-}
-
-/* TITULO */
-
-.banner-content h1{
-    font-size:68px;
-    margin:22px 0;
-    line-height:1.05;
-    font-weight:800;
-}
-
-/* DESCRIÇÃO */
-
-.banner-content p{
-    font-size:18px;
-    line-height:1.8;
-    color:#f5f5f5;
-    margin-bottom:35px;
-}
-
-/* BOTÃO */
-
-.banner-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    background:white;
-    color:black;
-    padding:17px 34px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:14px;
-    transition:0.35s ease;
-    box-shadow:0 10px 25px rgba(255,255,255,0.15);
-}
-
-/* HOVER BOTÃO */
-
-.banner-btn:hover{
-    background:var(--rosa);
-    color:white;
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(216,167,177,0.35);
 }
 
 /* =========================
-TÍTULOS
+ANIMAÇÃO SUAVE
 ========================= */
 
-.section-title{
-    font-size:44px;
-    font-weight:800;
-    margin:70px 0 35px;
-    color:var(--preto);
-    position:relative;
-    display:inline-block;
-    letter-spacing:-1px;
+.fade-up{
+
+    animation:fadeUp 0.8s ease;
+
 }
-
-/* LINHA DECORATIVA */
-
-.section-title::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    width:65%;
-    height:4px;
-    border-radius:20px;
-    background:linear-gradient(to right,var(--rosa),transparent);
-}
-
-/* =========================
-LISTA PRODUTOS
-========================= */
-
-.lista-produtos{
-    display:flex;
-    gap:24px;
-    flex-wrap:wrap;
-    margin-bottom:70px;
-}
-
-/* CARD */
-
-.produto-card{
-    background:white;
-    border:1px solid #f1f1f1;
-    border-radius:28px;
-    overflow:hidden;
-    width:300px;
-    transition:0.4s ease;
-    position:relative;
-    box-shadow:0 10px 30px rgba(0,0,0,0.04);
-}
-
-/* HOVER CARD */
-
-.produto-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 22px 45px rgba(0,0,0,0.10);
-}
-
-/* IMAGEM */
-
-.produto-img{
-    width:100%;
-    height:340px;
-    object-fit:cover;
-    transition:0.5s ease;
-}
-
-/* ZOOM IMAGEM */
-
-.produto-card:hover .produto-img{
-    transform:scale(1.05);
-}
-
-/* INFO */
-
-.produto-info{
-    padding:22px;
-}
-
-/* MARCA */
-
-.produto-marca{
-    color:var(--rosa);
-    font-size:11px;
-    letter-spacing:2px;
-    margin-bottom:10px;
-    font-weight:700;
-    text-transform:uppercase;
-}
-
-/* NOME */
-
-.produto-nome{
-    font-size:17px;
-    font-weight:700;
-    margin-bottom:14px;
-    line-height:1.5;
-    color:var(--preto);
-}
-
-/* PREÇO ANTIGO */
-
-.produto-preco-antigo{
-    text-decoration:line-through;
-    color:#999;
-    margin-bottom:8px;
-    font-size:14px;
-}
-
-/* PREÇO */
-
-.produto-preco{
-    font-size:30px;
-    font-weight:900;
-    margin-bottom:18px;
-    color:var(--preto);
-}
-
-/* BOTÃO */
-
-.botao-comprar{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:16px;
-    background:var(--preto);
-    color:white;
-    font-weight:700;
-    font-family:'Poppins', sans-serif;
-    cursor:pointer;
-    transition:0.35s ease;
-    font-size:14px;
-}
-
-/* HOVER BOTÃO */
-
-.botao-comprar:hover{
-    background:var(--rosa);
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(216,167,177,0.30);
-}
-
-/* =========================
-ANIMAÇÕES
-========================= */
 
 @keyframes fadeUp{
+
     from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(25px);
     }
 
     to{
         opacity:1;
         transform:translateY(0);
     }
-}
 
-@keyframes fadeBanner{
-    from{
-        opacity:0;
-        transform:scale(1.02);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
 }
 
 /* =========================
@@ -614,43 +657,248 @@ RESPONSIVO
 
 @media(max-width:768px){
 
-    .banner-principal{
-        height:480px;
-        border-radius:24px;
+    .benefits-track{
+        gap:30px;
+        font-size:12px;
     }
 
-    .overlay{
-        padding:35px;
+    .top-bar{
+
+        flex-direction:column;
+
+        gap:20px;
+
     }
 
-    .banner-content h1{
-        font-size:42px;
-    }
+    .search-container{
 
-    .banner-content p{
-        font-size:15px;
-        line-height:1.7;
-    }
-
-    .banner-btn{
         width:100%;
-        text-align:center;
+
+        max-width:100%;
+
     }
 
-    .section-title{
-        font-size:32px;
+    .logo{
+
+        font-size:26px;
+
+        letter-spacing:5px;
+
     }
 
-    .lista-produtos{
-        justify-content:center;
+    .header-icons{
+
+        gap:12px;
+
     }
 
-    .produto-card{
-        width:100%;
-        max-width:350px;
+    nav{
+
+        flex-wrap:wrap;
+
+        gap:18px;
+
+        padding-bottom:20px;
+
+    }
+
+    nav a{
+
+        font-size:11px;
+
+    }
+
+    .tooltip-box{
+        display:none;
     }
 
 }
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+BARRA BENEFÍCIOS
+========================= -->
+
+<section class="benefits-bar">
+
+    <div class="benefits-track">
+
+        <span>✨ <strong>Frete grátis</strong> acima de R$199</span>
+
+        <span>💳 Parcele em até 12x sem juros</span>
+
+        <span>🚚 Entrega rápida para todo Brasil</span>
+
+        <span>🔒 Compra 100% segura</span>
+
+        <span>🎁 Cashback em compras selecionadas</span>
+
+        <span>✨ <strong>Frete grátis</strong> acima de R$199</span>
+
+        <span>💳 Parcele em até 12x sem juros</span>
+
+        <span>🚚 Entrega rápida para todo Brasil</span>
+
+    </div>
+
+</section>
+
+<header>
+
+<div class="container">
+
+<div class="top-bar">
+
+<!-- LOGO -->
+
+<div class="logo">
+BOCABELLA
+</div>
+
+<!-- BUSCA -->
+
+<div class="search-container">
+
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+
+        <circle cx="11" cy="11" r="7"></circle>
+
+        <path d="M21 21L16.65 16.65"></path>
+
+    </svg>
+
+<input
+type="text"
+class="search-bar"
+placeholder="Buscar perfumes, maquiagens, skincare..."
+>
+
+</div>
+
+<!-- ÍCONES -->
+
+<div class="header-icons">
+
+<!-- CONTA -->
+
+<div class="icon-wrapper">
+
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="4"/>
+<path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"/>
+</svg>
+
+<div class="tooltip-box">
+
+<h4>MINHA CONTA</h4>
+
+<p>
+Entre na sua conta e acompanhe seus pedidos.
+</p>
+
+<button>
+Entrar
+</button>
+
+</div>
+
+</div>
+
+<!-- FAVORITOS -->
+
+<div class="icon-wrapper">
+
+<svg viewBox="0 0 24 24">
+<path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/>
+</svg>
+
+<div class="icon-count">
+2
+</div>
+
+<div class="tooltip-box">
+
+<h4>FAVORITOS</h4>
+
+<p>
+Você possui itens salvos na wishlist.
+</p>
+
+</div>
+
+</div>
+
+<!-- CARRINHO -->
+
+<div class="icon-wrapper">
+
+<svg viewBox="0 0 24 24">
+<circle cx="9" cy="20" r="1"/>
+<circle cx="18" cy="20" r="1"/>
+<path d="M3 4h2l2.4 10.5a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L21 7H7"/>
+</svg>
+
+<div class="icon-count">
+3
+</div>
+
+<div class="tooltip-box">
+
+<h4>CARRINHO</h4>
+
+<p>
+Você possui produtos esperando no carrinho.
+</p>
+
+<button>
+Finalizar compra
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MENU -->
+
+<nav>
+
+<a href="#">
+MAQUIAGEM
+</a>
+
+<a href="#">
+PERFUMES
+</a>
+
+<a href="#">
+SKINCARE
+</a>
+
+<a href="#">
+CABELOS
+</a>
+
+<a href="#">
+OFERTAS
+</a>
+
+<a href="#">
+LANÇAMENTOS
+</a>
+
+</nav>
+
+</div>
+
+</header>
 /* =========================
 MINI BANNERS PREMIUM
 ========================= */
@@ -662,80 +910,66 @@ MINI BANNERS PREMIUM
     margin-bottom:90px;
 }
 
-/* CARD BANNER */
-
 .mini-banner{
-    height:210px;
+    height:220px;
     border-radius:28px;
     overflow:hidden;
     position:relative;
     cursor:pointer;
-    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+    box-shadow:0 12px 35px rgba(0,0,0,0.05);
     transition:0.4s ease;
 }
-
-/* OVERLAY SUAVE */
 
 .mini-banner::after{
     content:'';
     position:absolute;
     inset:0;
     background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.22),
-    rgba(0,0,0,0.02)
+        to top,
+        rgba(0,0,0,0.28),
+        rgba(0,0,0,0.02)
     );
     opacity:0;
     transition:0.4s ease;
 }
 
-/* HOVER */
-
 .mini-banner:hover{
-    transform:translateY(-6px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.10);
+    transform:translateY(-8px);
+    box-shadow:0 22px 45px rgba(0,0,0,0.12);
 }
 
 .mini-banner:hover::after{
     opacity:1;
 }
 
-/* IMAGEM */
-
 .mini-banner img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:0.5s ease;
+    transition:0.6s ease;
 }
-
-/* ZOOM */
 
 .mini-banner:hover img{
     transform:scale(1.08);
 }
 
 /* =========================
-SEÇÕES PERFUME
+SEÇÕES PERFUMES PREMIUM
 ========================= */
 
 .perfume-section{
     margin-bottom:110px;
 }
 
-/* TITULO */
-
 .perfume-title{
-    font-size:34px;
+    font-size:42px;
     font-weight:800;
-    margin-bottom:35px;
+    margin-bottom:40px;
     color:var(--preto);
+    letter-spacing:-1px;
     position:relative;
     display:inline-block;
-    letter-spacing:-1px;
 }
-
-/* LINHA DECORATIVA */
 
 .perfume-title::after{
     content:'';
@@ -745,43 +979,44 @@ SEÇÕES PERFUME
     width:60%;
     height:4px;
     border-radius:20px;
-    background:linear-gradient(to right,var(--rosa),transparent);
+    background:linear-gradient(
+        to right,
+        var(--rosa),
+        transparent
+    );
 }
 
 /* LAYOUT */
 
 .perfume-layout{
     display:flex;
-    gap:38px;
+    gap:35px;
     align-items:flex-start;
 }
 
-/* BANNER LATERAL */
+/* BANNER */
 
 .perfume-banner{
-    width:320px;
+    width:330px;
     flex-shrink:0;
-    overflow:hidden;
     border-radius:30px;
-    box-shadow:0 18px 40px rgba(0,0,0,0.08);
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 18px 45px rgba(0,0,0,0.08);
 }
-
-/* IMAGEM BANNER */
 
 .perfume-banner img{
     width:100%;
-    border-radius:30px;
-    transition:0.5s ease;
-    display:block;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s ease;
 }
-
-/* HOVER */
 
 .perfume-banner:hover img{
     transform:scale(1.05);
 }
 
-/* GRID */
+/* GRID PRODUTOS */
 
 .perfume-products{
     flex:1;
@@ -790,17 +1025,22 @@ SEÇÕES PERFUME
     gap:24px;
 }
 
-/* CARD PERFUME */
+/* CARD */
 
 .perfume-card{
-    transition:0.35s ease;
+    background:white;
+    border-radius:26px;
+    overflow:hidden;
+    padding-bottom:20px;
+    transition:0.4s ease;
+    border:1px solid #f1f1f1;
+    box-shadow:0 10px 30px rgba(0,0,0,0.04);
     cursor:pointer;
 }
 
-/* HOVER CARD */
-
 .perfume-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.10);
 }
 
 /* IMAGEM */
@@ -809,33 +1049,30 @@ SEÇÕES PERFUME
     width:100%;
     height:260px;
     object-fit:cover;
-    border-radius:24px;
-    transition:0.45s ease;
-    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.5s ease;
 }
-
-/* ZOOM */
 
 .perfume-card:hover img{
-    transform:scale(1.04);
-    box-shadow:0 18px 35px rgba(0,0,0,0.10);
+    transform:scale(1.05);
 }
 
-/* TITULO */
+/* NOME */
 
 .perfume-card h4{
-    margin-top:16px;
+    margin-top:18px;
+    padding:0 18px;
     font-size:15px;
     line-height:1.5;
-    font-weight:700;
     color:var(--preto);
+    font-weight:700;
 }
 
 /* PREÇO */
 
 .perfume-card p{
     margin-top:12px;
-    font-size:26px;
+    padding:0 18px;
+    font-size:28px;
     font-weight:900;
     color:var(--preto);
 }
@@ -844,10 +1081,23 @@ SEÇÕES PERFUME
 RESPONSIVO
 ========================= */
 
-@media(max-width:992px){
+@media(max-width:1100px){
+
+    .perfume-products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
 
     .mini-banners{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .mini-banner{
+        height:240px;
     }
 
     .perfume-layout{
@@ -858,33 +1108,12 @@ RESPONSIVO
         width:100%;
     }
 
-    .perfume-products{
-        grid-template-columns:repeat(2,1fr);
-        width:100%;
-    }
-
-}
-
-@media(max-width:768px){
-
-    .mini-banners{
-        grid-template-columns:1fr;
-    }
-
-    .mini-banner{
-        height:240px;
-    }
-
     .perfume-title{
-        font-size:28px;
+        font-size:32px;
     }
 
     .perfume-products{
         grid-template-columns:1fr;
-    }
-
-    .perfume-card img{
-        height:320px;
     }
 
 }
