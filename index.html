@@ -1,212 +1,764 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BocaBella</title>
+<title>BocaBella | Beleza Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
 
+:root{
+
+    --preto:#111111;
+    --preto2:#1b1b1b;
+
+    --nude:#D8B7A3;
+    --rosa:#C98C8C;
+
+    --branco:#F8F6F4;
+    --cinza:#ece8e5;
+
+    --dourado:#C8A97E;
+
+    --texto:#444;
+
+    --shadow:0 10px 35px rgba(0,0,0,0.08);
+
+}
+
+/* RESET */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-background:#fff;
+
+    font-family:'Poppins',sans-serif;
+    background:var(--branco);
+    overflow-x:hidden;
+    color:var(--texto);
+
 }
 
-/* TOPO */
+html{
+    scroll-behavior:smooth;
+}
 
-.top-bar{
-background:#111;
-height:42px;
+/* SCROLL */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--rosa);
+    border-radius:30px;
+}
+
+/* TOPBAR */
+
+.topbar{
+
+    width:100%;
+    height:42px;
+
+    background:var(--preto);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.topbar-text{
+
+    position:absolute;
+
+    color:white;
+    font-size:13px;
+    font-weight:500;
+
+    letter-spacing:1px;
+
+    opacity:0;
+
+    animation:topbar 16s infinite;
+
+}
+
+.topbar-text:nth-child(2){
+    animation-delay:4s;
+}
+
+.topbar-text:nth-child(3){
+    animation-delay:8s;
+}
+
+.topbar-text:nth-child(4){
+    animation-delay:12s;
+}
+
+@keyframes topbar{
+
+    0%{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    5%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    25%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    30%{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    100%{
+        opacity:0;
+    }
+
 }
 
 /* HEADER */
 
-.header-container{
-max-width:1400px;
-margin:auto;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+header{
+
+    width:100%;
+    background:white;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    border-bottom:1px solid #eee;
+
 }
+
+.header-container{
+
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:22px 40px;
+
+}
+
+/* LOGO */
 
 .logo{
-font-size:42px;
-font-weight:700;
-color:#111;
-cursor:pointer;
+
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    user-select:none;
+
 }
 
+.logo .boca{
+    color:var(--preto);
+}
+
+.logo .bella{
+    color:var(--rosa);
+}
+
+/* SEARCH */
+
 .search-box{
-width:50%;
-position:relative;
+
+    width:480px;
+    height:54px;
+
+    background:var(--branco);
+
+    border-radius:60px;
+
+    border:1px solid #eee;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 22px;
+
 }
 
 .search-box input{
-width:100%;
-height:52px;
-border:none;
-background:#f3f3f3;
-border-radius:999px;
-padding:0 55px 0 20px;
-font-size:15px;
-outline:none;
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    background:none;
+
+    font-size:15px;
+    color:var(--texto);
+
 }
 
-.search-box button{
-position:absolute;
-right:5px;
-top:50%;
-transform:translateY(-50%);
-width:42px;
-height:42px;
-border:none;
-border-radius:50%;
-background:transparent;
-cursor:pointer;
-font-size:18px;
+.search-box i{
+
+    color:#888;
+    font-size:18px;
+
 }
 
-/* ICONES */
+/* ICONS */
 
-.icons{
-display:flex;
-gap:25px;
+.header-icons{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
 }
 
-.icon-item{
-position:relative;
-font-size:22px;
-cursor:pointer;
+.header-icons i{
+
+    font-size:22px;
+    color:var(--preto);
+
+    cursor:pointer;
+    transition:.3s;
+
 }
 
-.tooltip{
-position:absolute;
-top:38px;
-right:0;
-background:#fff;
-color:#111;
-min-width:180px;
-padding:12px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-opacity:0;
-visibility:hidden;
-transition:.25s;
-z-index:999;
-}
+.header-icons i:hover{
 
-.tooltip small{
-color:#777;
-}
+    color:var(--rosa);
+    transform:translateY(-3px);
 
-.icon-item:hover .tooltip{
-opacity:1;
-visibility:visible;
-transform:translateY(5px);
 }
 
 /* MENU */
 
 .menu{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:50px;
-border-top:1px solid #eee;
-border-bottom:1px solid #eee;
-height:60px;
+
+    width:100%;
+    background:white;
+
 }
 
-.menu a{
-text-decoration:none;
-color:#111;
-font-size:14px;
-font-weight:600;
-transition:.3s;
+.menu-container{
+
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    gap:45px;
+
+    padding:18px 20px;
+
 }
 
-.menu a:hover{
-color:#a30000;
+.menu-container a{
+
+    text-decoration:none;
+    color:var(--preto);
+
+    font-size:14px;
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
 }
 
-.exclusive{
-color:#a30000 !important;
+.menu-container a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:2px;
+
+    background:var(--rosa);
+
+    transition:.3s;
+
 }
 
-.offers{
-background:#a30000;
-color:#fff !important;
-padding:20px 25px;
-height:100%;
-display:flex;
-align-items:center;
+.menu-container a:hover{
+
+    color:var(--rosa);
+
 }
 
-/* BANNER */
+.menu-container a:hover::after{
 
-.hero-slider{
-position:relative;
-width:100%;
-height:550px;
-overflow:hidden;
+    width:100%;
+
 }
 
-.slide{
-position:absolute;
-inset:0;
-opacity:0;
-transition:opacity 1s ease;
+/* HERO */
+
+.hero{
+
+    width:100%;
+    min-height:90vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:90px 80px;
+
+    overflow:hidden;
+
 }
 
-.slide.active{
-opacity:1;
-z-index:2;
+/* IMAGEM HERO */
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.15)),
+    url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1974&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-2;
+
+    transform:scale(1.05);
+
 }
 
-.slide img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-@media(max-width:900px){
+.hero::after{
 
-.header-container{
-flex-direction:column;
-gap:15px;
-}
+    content:'';
 
-.search-box{
-width:100%;
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+
+    z-index:-1;
+
 }
 
-.menu{
-flex-wrap:wrap;
-gap:20px;
-height:auto;
-padding:15px;
+/* HERO CONTENT */
+
+.hero-content{
+
+    max-width:650px;
+    color:white;
+
 }
 
-.hero-slider{
-height:320px;
+.hero-mini{
+
+    font-size:13px;
+    letter-spacing:4px;
+
+    margin-bottom:22px;
+
+    color:var(--nude);
+
 }
 
-.logo{
-font-size:34px;
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:78px;
+    line-height:1.1;
+
+    margin-bottom:25px;
+
 }
+
+.hero p{
+
+    font-size:17px;
+    line-height:1.9;
+
+    color:#f2f2f2;
+
+    margin-bottom:35px;
+
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+}
+
+.hero-btn{
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.btn-primary{
+
+    background:var(--rosa);
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+    background:#b97575;
+
+}
+
+.btn-secondary{
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+    color:var(--preto);
+
+}
+
+/* FLOAT CARD */
+
+.float-card{
+
+    position:absolute;
+
+    right:80px;
+    bottom:70px;
+
+    width:320px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.18);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+.float-card h3{
+
+    font-size:26px;
+    margin-bottom:14px;
+
+}
+
+.float-card p{
+
+    font-size:14px;
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.float-card button{
+
+    width:100%;
+    height:52px;
+
+    border:none;
+    border-radius:50px;
+
+    background:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.float-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* CATEGORIAS */
+
+.categories{
+
+    width:100%;
+
+    margin-top:-70px;
+    position:relative;
+    z-index:10;
+
+    padding:0 30px 80px;
+
+}
+
+.categories-container{
+
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+/* CARD */
+
+.category-card{
+
+    height:240px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:.5s;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* IMG */
+
+.category-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.category-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* OVERLAY */
+
+.category-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(to top, rgba(0,0,0,0.70), rgba(0,0,0,0.05));
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:25px;
+
+}
+
+.category-overlay h3{
+
+    color:white;
+
+    font-size:26px;
+    font-family:'Playfair Display',serif;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1200px){
+
+    .search-box{
+        width:350px;
+    }
+
+    .hero h1{
+        font-size:62px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .menu{
+        display:none;
+    }
+
+    .search-box{
+        display:none;
+    }
+
+    .hero{
+
+        padding:70px 30px;
+        min-height:95vh;
+
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .float-card{
+
+        position:relative;
+
+        right:auto;
+        bottom:auto;
+
+        margin-top:40px;
+
+        width:100%;
+        max-width:420px;
+
+    }
+
+    .categories-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header-container{
+        padding:20px;
+    }
+
+    .logo{
+        font-size:35px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero-btn{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .categories{
+
+        margin-top:-40px;
+        padding:0 20px 70px;
+
+    }
+
+    .categories-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .category-card{
+
+        height:220px;
+
+    }
 
 }
 
@@ -215,128 +767,1124 @@ font-size:34px;
 
 <body>
 
-<div class="top-bar"></div>
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+    <div class="topbar-text">
+        FRETE GRÁTIS PARA TODO BRASIL ACIMA DE R$149
+    </div>
+
+    <div class="topbar-text">
+        5% OFF NO PIX + ENTREGA RÁPIDA
+    </div>
+
+    <div class="topbar-text">
+        PARCELAMENTO EM ATÉ 12X SEM JUROS
+    </div>
+
+    <div class="topbar-text">
+        PRODUTOS ORIGINAIS E PREMIUM
+    </div>
+
+</div>
+
+<!-- HEADER -->
 
 <header>
 
-<div class="header-container">
+    <div class="header-container">
 
-<div class="logo">
-BocaBella
-</div>
+        <!-- LOGO -->
 
-<div class="search-box">
-<input type="text" placeholder="O que você procura?">
+        <div class="logo">
 
-<button>
-<i class="fa-solid fa-magnifying-glass"></i>
-</button>
+            <span class="boca">Boca</span><span class="bella">Bella</span>
 
-</div>
+        </div>
 
-<div class="icons">
+        <!-- SEARCH -->
 
-<div class="icon-item">
+        <div class="search-box">
 
-<i class="fa-regular fa-user"></i>
+            <input type="text" placeholder="O que você está procurando?">
 
-<div class="tooltip">
-Minha Conta<br>
-<small>Entrar ou cadastrar</small>
-</div>
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-</div>
+        </div>
 
-<div class="icon-item">
+        <!-- ICONS -->
 
-<i class="fa-regular fa-heart"></i>
+        <div class="header-icons">
 
-<div class="tooltip">
-Favoritos<br>
-<small>Produtos salvos</small>
-</div>
+            <i class="fa-regular fa-heart"></i>
 
-</div>
+            <i class="fa-regular fa-user"></i>
 
-<div class="icon-item">
+            <i class="fa-solid fa-bag-shopping"></i>
 
-<i class="fa-solid fa-bag-shopping"></i>
+        </div>
 
-<div class="tooltip">
-Carrinho<br>
-<small>Ver compras</small>
-</div>
+    </div>
 
-</div>
+    <!-- MENU -->
 
-</div>
+    <div class="menu">
 
-</div>
+        <div class="menu-container">
 
-<nav class="menu">
+            <a href="#">MAQUIAGEM</a>
 
-<a href="#">MAQUIAGEM</a>
+            <a href="#">SKINCARE</a>
 
-<a href="#">PERFUMES</a>
+            <a href="#">PERFUMES</a>
 
-<a href="#">SKINCARE</a>
+            <a href="#">CABELOS</a>
 
-<a href="#">CABELOS</a>
+            <a href="#">LANÇAMENTOS</a>
 
-<a href="#" class="exclusive">
-SÓ NA BOCABELLA
-</a>
+            <a href="#">PROMOÇÕES</a>
 
-<a href="#" class="offers">
-OFERTAS
-</a>
+            <a href="#">MARCAS</a>
 
-</nav>
+        </div>
+
+    </div>
 
 </header>
 
-<section class="hero-slider">
+<!-- HERO -->
 
-<div class="slide active">
-<img src="imagens/banner1.jpg" alt="Banner 1">
-</div>
+<section class="hero">
 
-<div class="slide">
-<img src="imagens/banner2.jpg" alt="Banner 2">
-</div>
+    <div class="hero-content">
 
-<div class="slide">
-<img src="imagens/banner3.jpg" alt="Banner 3">
-</div>
+        <div class="hero-mini">
+            LUXO • SOFISTICAÇÃO • BELEZA
+        </div>
+
+        <h1>
+            Beleza premium para elevar sua autoestima.
+        </h1>
+
+        <p>
+            Descubra maquiagens, skincare e perfumes inspirados nas maiores marcas internacionais com uma experiência sofisticada e moderna.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="hero-btn btn-primary">
+                COMPRAR AGORA
+            </a>
+
+            <a href="#" class="hero-btn btn-secondary">
+                VER COLEÇÃO
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FLOAT CARD -->
+
+    <div class="float-card">
+
+        <h3>
+            Glow Collection ✨
+        </h3>
+
+        <p>
+            Nova coleção premium inspirada nas tendências internacionais de beleza e maquiagem.
+        </p>
+
+        <button>
+            VER LANÇAMENTOS
+        </button>
+
+    </div>
 
 </section>
 
-<script>
+<!-- CATEGORIAS -->
 
-const slides =
-document.querySelectorAll(".slide");
+<section class="categories">
 
-let currentSlide = 0;
+    <div class="categories-container">
 
-function nextSlide(){
+        <!-- CARD 1 -->
 
-slides[currentSlide]
-.classList.remove("active");
+        <div class="category-card">
 
-currentSlide++;
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1887&auto=format&fit=crop">
 
-if(currentSlide >= slides.length){
-currentSlide = 0;
-}
+            <div class="category-overlay">
 
-slides[currentSlide]
-.classList.add("active");
+                <h3>
+                    Maquiagem
+                </h3>
 
-}
+            </div>
 
-setInterval(nextSlide,5000);
+        </div>
 
-</script>
+        <!-- CARD 2 -->
+
+        <div class="category-card">
+
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1974&auto=format&fit=crop">
+
+            <div class="category-overlay">
+
+                <h3>
+                    Skincare
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="category-card">
+
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1887&auto=format&fit=crop">
+
+            <div class="category-overlay">
+
+                <h3>
+                    Perfumes
+                </h3>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="category-card">
+
+            <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1974&auto=format&fit=crop">
+
+            <div class="category-overlay">
+
+                <h3>
+                    Hair Care
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 </html>
+<!-- ========================================= -->
+<!-- PARTE 2 - PRODUTOS + BANNERS + BENEFÍCIOS -->
+<!-- COLE ABAIXO DA PARTE DAS CATEGORIAS -->
+<!-- ========================================= -->
+
+<!-- PRODUTOS EM DESTAQUE -->
+
+<section class="featured-products">
+
+    <div class="section-title">
+
+        <span>
+            FAVORITOS DA BOCABELLA
+        </span>
+
+        <h2>
+            Produtos em destaque
+        </h2>
+
+        <p>
+            Os produtos mais desejados do momento com aparência premium e sofisticação.
+        </p>
+
+    </div>
+
+    <div class="products-container">
+
+        <!-- PRODUTO 1 -->
+
+        <div class="product-card">
+
+            <div class="product-badge">
+                -30%
+            </div>
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1631730486784-7d7d0d2f6e9c?q=80&w=1887&auto=format&fit=crop">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    MAQUIAGEM
+                </div>
+
+                <h3>
+                    Base Velvet Skin Premium
+                </h3>
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div class="prices">
+
+                    <span class="old-price">
+                        R$ 129,90
+                    </span>
+
+                    <span class="new-price">
+                        R$ 89,90
+                    </span>
+
+                </div>
+
+                <button>
+                    COMPRAR AGORA
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUTO 2 -->
+
+        <div class="product-card">
+
+            <div class="product-badge">
+                NOVO
+            </div>
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=1887&auto=format&fit=crop">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    SKINCARE
+                </div>
+
+                <h3>
+                    Sérum Glow Repair
+                </h3>
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div class="prices">
+
+                    <span class="old-price">
+                        R$ 159,90
+                    </span>
+
+                    <span class="new-price">
+                        R$ 119,90
+                    </span>
+
+                </div>
+
+                <button>
+                    COMPRAR AGORA
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUTO 3 -->
+
+        <div class="product-card">
+
+            <div class="product-badge">
+                HOT
+            </div>
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=1887&auto=format&fit=crop">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    PERFUME
+                </div>
+
+                <h3>
+                    Essence Luxury Gold
+                </h3>
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div class="prices">
+
+                    <span class="old-price">
+                        R$ 229,90
+                    </span>
+
+                    <span class="new-price">
+                        R$ 169,90
+                    </span>
+
+                </div>
+
+                <button>
+                    COMPRAR AGORA
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUTO 4 -->
+
+        <div class="product-card">
+
+            <div class="product-badge">
+                -15%
+            </div>
+
+            <div class="product-image">
+
+                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?q=80&w=1887&auto=format&fit=crop">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    CABELOS
+                </div>
+
+                <h3>
+                    Hair Luxury Treatment
+                </h3>
+
+                <div class="stars">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div class="prices">
+
+                    <span class="old-price">
+                        R$ 139,90
+                    </span>
+
+                    <span class="new-price">
+                        R$ 99,90
+                    </span>
+
+                </div>
+
+                <button>
+                    COMPRAR AGORA
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BANNERS -->
+
+<section class="double-banners">
+
+    <div class="banner-box banner-1">
+
+        <div class="banner-overlay">
+
+            <span>
+                NOVA COLEÇÃO
+            </span>
+
+            <h2>
+                Glow Makeup
+            </h2>
+
+            <p>
+                Tendências premium inspiradas nas maiores marcas internacionais.
+            </p>
+
+            <a href="#">
+                EXPLORAR
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="banner-box banner-2">
+
+        <div class="banner-overlay">
+
+            <span>
+                SKINCARE
+            </span>
+
+            <h2>
+                Sua pele radiante
+            </h2>
+
+            <p>
+                Produtos selecionados para elevar sua rotina de cuidados.
+            </p>
+
+            <a href="#">
+                VER PRODUTOS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+
+<section class="benefits">
+
+    <div class="benefits-container">
+
+        <div class="benefit-item">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>
+                Entrega Rápida
+            </h3>
+
+            <p>
+                Enviamos para todo Brasil com segurança e agilidade.
+            </p>
+
+        </div>
+
+        <div class="benefit-item">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <h3>
+                Compra Segura
+            </h3>
+
+            <p>
+                Seus dados protegidos em ambiente totalmente seguro.
+            </p>
+
+        </div>
+
+        <div class="benefit-item">
+
+            <i class="fa-solid fa-gem"></i>
+
+            <h3>
+                Qualidade Premium
+            </h3>
+
+            <p>
+                Produtos inspirados nas maiores marcas internacionais.
+            </p>
+
+        </div>
+
+        <div class="benefit-item">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>
+                Suporte Humanizado
+            </h3>
+
+            <p>
+                Atendimento rápido e especializado para você.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* ========================================= */
+/* PRODUTOS */
+/* ========================================= */
+
+.featured-products{
+
+    width:100%;
+    padding:40px 30px 90px;
+
+    background:white;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:55px;
+
+}
+
+.section-title span{
+
+    color:var(--rosa);
+
+    font-size:13px;
+    font-weight:600;
+
+    letter-spacing:3px;
+
+}
+
+.section-title h2{
+
+    font-size:48px;
+    font-family:'Playfair Display',serif;
+
+    color:var(--preto);
+
+    margin:15px 0;
+
+}
+
+.section-title p{
+
+    max-width:650px;
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+/* GRID */
+
+.products-container{
+
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+}
+
+/* CARD */
+
+.product-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.5s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,0.12);
+
+}
+
+/* BADGE */
+
+.product-badge{
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    background:var(--rosa);
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+    font-weight:600;
+
+    z-index:10;
+
+}
+
+/* IMG */
+
+.product-image{
+
+    width:100%;
+    height:320px;
+
+    overflow:hidden;
+
+    background:#f5f5f5;
+
+}
+
+.product-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* INFO */
+
+.product-info{
+
+    padding:25px;
+
+}
+
+.product-category{
+
+    color:var(--rosa);
+
+    font-size:12px;
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+}
+
+.product-info h3{
+
+    font-size:22px;
+    line-height:1.4;
+
+    color:var(--preto);
+
+    margin-bottom:15px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+/* STARS */
+
+.stars{
+
+    display:flex;
+    gap:4px;
+
+    color:#f5b301;
+
+    margin-bottom:18px;
+
+}
+
+/* PRICES */
+
+.prices{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:22px;
+
+}
+
+.old-price{
+
+    text-decoration:line-through;
+    color:#999;
+
+    font-size:15px;
+
+}
+
+.new-price{
+
+    color:var(--preto);
+
+    font-size:28px;
+    font-weight:700;
+
+}
+
+/* BUTTON */
+
+.product-info button{
+
+    width:100%;
+    height:52px;
+
+    border:none;
+    border-radius:50px;
+
+    background:var(--preto);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.product-info button:hover{
+
+    background:var(--rosa);
+
+    transform:translateY(-3px);
+
+}
+
+/* ========================================= */
+/* BANNERS */
+/* ========================================= */
+
+.double-banners{
+
+    width:100%;
+
+    padding:0 30px 90px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.banner-box{
+
+    height:420px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.banner-1{
+
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.10)),
+    url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+.banner-2{
+
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.10)),
+    url('https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?q=80&w=1887&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+/* OVERLAY */
+
+.banner-overlay{
+
+    width:100%;
+    height:100%;
+
+    padding:50px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    color:white;
+
+}
+
+.banner-overlay span{
+
+    font-size:13px;
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+}
+
+.banner-overlay h2{
+
+    font-size:52px;
+    line-height:1.1;
+
+    margin-bottom:18px;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.banner-overlay p{
+
+    max-width:420px;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+.banner-overlay a{
+
+    width:200px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:var(--preto);
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.banner-overlay a:hover{
+
+    background:var(--rosa);
+    color:white;
+
+}
+
+/* ========================================= */
+/* BENEFITS */
+/* ========================================= */
+
+.benefits{
+
+    width:100%;
+
+    padding:0 30px 90px;
+
+}
+
+.benefits-container{
+
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.benefit-item{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.04);
+
+}
+
+.benefit-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,0.08);
+
+}
+
+.benefit-item i{
+
+    font-size:38px;
+
+    color:var(--rosa);
+
+    margin-bottom:20px;
+
+}
+
+.benefit-item h3{
+
+    color:var(--preto);
+
+    margin-bottom:12px;
+
+}
+
+.benefit-item p{
+
+    line-height:1.8;
+    font-size:14px;
+
+}
+
+/* ========================================= */
+/* RESPONSIVO */
+/* ========================================= */
+
+@media(max-width:1200px){
+
+    .products-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .double-banners{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .benefits-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section-title h2{
+
+        font-size:38px;
+
+    }
+
+    .products-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .banner-overlay{
+
+        padding:35px;
+
+    }
+
+    .banner-overlay h2{
+
+        font-size:38px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .featured-products,
+    .double-banners,
+    .benefits{
+
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+    .benefits-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .banner-box{
+
+        height:340px;
+
+    }
+
+}
+
+</style>
