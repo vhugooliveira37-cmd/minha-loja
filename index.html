@@ -817,3 +817,773 @@ RESPONSIVO
     </div>
 
 </section>
+<style>
+
+/* =========================
+MINI BANNERS PREMIUM
+========================= */
+
+.mini-banners{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin:90px auto;
+
+}
+
+/* CARD */
+
+.mini-banner{
+
+    height:240px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+
+    transition:0.4s ease;
+
+}
+
+/* OVERLAY */
+
+.mini-banner::after{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.02)
+    );
+
+}
+
+/* HOVER */
+
+.mini-banner:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 22px 45px rgba(0,0,0,0.12);
+
+}
+
+/* IMAGE */
+
+.mini-banner img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.6s ease;
+
+}
+
+.mini-banner:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* CONTENT */
+
+.mini-banner-content{
+
+    position:absolute;
+
+    left:28px;
+
+    bottom:28px;
+
+    z-index:2;
+
+    color:white;
+
+}
+
+/* SMALL */
+
+.mini-banner-content span{
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:0.9;
+
+}
+
+/* TITLE */
+
+.mini-banner-content h3{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title{
+
+    font-size:46px;
+
+    font-weight:900;
+
+    margin-bottom:45px;
+
+    color:var(--preto);
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+/* LINE */
+
+.section-title::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-12px;
+
+    width:70%;
+
+    height:5px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    to right,
+    var(--rosa),
+    transparent
+    );
+
+}
+
+/* =========================
+PRODUTOS
+========================= */
+
+.lista-produtos{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    margin-bottom:100px;
+
+}
+
+/* CARD */
+
+.produto-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:1px solid #f1f1f1;
+
+    box-shadow:0 12px 35px rgba(0,0,0,0.04);
+
+    transition:0.4s ease;
+
+}
+
+.produto-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 24px 50px rgba(0,0,0,0.10);
+
+}
+
+/* IMAGE */
+
+.produto-img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+    transition:0.5s ease;
+
+}
+
+.produto-card:hover .produto-img{
+
+    transform:scale(1.05);
+
+}
+
+/* INFO */
+
+.produto-info{
+
+    padding:24px;
+
+}
+
+/* BRAND */
+
+.produto-marca{
+
+    color:var(--rosa);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+/* NAME */
+
+.produto-nome{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+    margin-bottom:14px;
+
+}
+
+/* OLD PRICE */
+
+.produto-preco-antigo{
+
+    color:#999;
+
+    text-decoration:line-through;
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+}
+
+/* PRICE */
+
+.produto-preco{
+
+    font-size:30px;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+
+}
+
+/* BUTTON */
+
+.botao-comprar{
+
+    width:100%;
+
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:var(--preto);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.35s ease;
+
+}
+
+.botao-comprar:hover{
+
+    background:var(--rosa);
+
+    transform:translateY(-3px);
+
+}
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:992px){
+
+    .mini-banners{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .lista-produtos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .mini-banners{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .lista-produtos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section-title{
+
+        font-size:34px;
+
+    }
+
+}
+
+</style>
+
+<!-- MINI BANNERS -->
+
+<section class="container mini-banners">
+
+    <div class="mini-banner">
+
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-content">
+
+            <span>
+                Luxury Makeup
+            </span>
+
+            <h3>
+                Glow Collection
+            </h3>
+
+        </div>
+
+    </div>
+
+    <div class="mini-banner">
+
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-content">
+
+            <span>
+                Premium Skin
+            </span>
+
+            <h3>
+                Beauty Care
+            </h3>
+
+        </div>
+
+    </div>
+
+    <div class="mini-banner">
+
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-content">
+
+            <span>
+                New Season
+            </span>
+
+            <h3>
+                Soft Glam
+            </h3>
+
+        </div>
+
+    </div>
+
+    <div class="mini-banner">
+
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-content">
+
+            <span>
+                Exclusive
+            </span>
+
+            <h3>
+                Luxury Beauty
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TITLE -->
+
+<section class="container">
+
+    <h2 class="section-title">
+        Produtos em destaque ✨
+    </h2>
+
+</section>
+
+<!-- PRODUTOS -->
+
+<section class="container lista-produtos">
+
+    <div class="produto-card">
+
+        <img class="produto-img"
+        src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800">
+
+        <div class="produto-info">
+
+            <div class="produto-marca">
+                FENTY BEAUTY
+            </div>
+
+            <h3 class="produto-nome">
+                Velvet Matte Lipstick
+            </h3>
+
+            <div class="produto-preco-antigo">
+                R$ 399,00
+            </div>
+
+            <div class="produto-preco">
+                R$ 259,00
+            </div>
+
+            <button class="botao-comprar">
+                Comprar agora
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="produto-card">
+
+        <img class="produto-img"
+        src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800">
+
+        <div class="produto-info">
+
+            <div class="produto-marca">
+                DIOR
+            </div>
+
+            <h3 class="produto-nome">
+                Glow Beauty Serum
+            </h3>
+
+            <div class="produto-preco-antigo">
+                R$ 420,00
+            </div>
+
+            <div class="produto-preco">
+                R$ 289,00
+            </div>
+
+            <button class="botao-comprar">
+                Comprar agora
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="produto-card">
+
+        <img class="produto-img"
+        src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=800">
+
+        <div class="produto-info">
+
+            <div class="produto-marca">
+                RARE BEAUTY
+            </div>
+
+            <h3 class="produto-nome">
+                Premium Skin Glow
+            </h3>
+
+            <div class="produto-preco-antigo">
+                R$ 499,00
+            </div>
+
+            <div class="produto-preco">
+                R$ 319,00
+            </div>
+
+            <button class="botao-comprar">
+                Comprar agora
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="produto-card">
+
+        <img class="produto-img"
+        src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800">
+
+        <div class="produto-info">
+
+            <div class="produto-marca">
+                YSL
+            </div>
+
+            <h3 class="produto-nome">
+                Luxury Face Primer
+            </h3>
+
+            <div class="produto-preco-antigo">
+                R$ 390,00
+            </div>
+
+            <div class="produto-preco">
+                R$ 249,00
+            </div>
+
+            <button class="botao-comprar">
+                Comprar agora
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+PARTE 4 — MINI BANNERS PREMIUM
+========================= -->
+
+<section class="mini-banners">
+
+    <!-- BANNER 1 -->
+
+    <div class="mini-banner">
+
+        <img 
+        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-overlay">
+
+            <span>Luxury Makeup</span>
+
+            <h3>Glow Collection</h3>
+
+        </div>
+
+    </div>
+
+    <!-- BANNER 2 -->
+
+    <div class="mini-banner">
+
+        <img 
+        src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-overlay">
+
+            <span>Premium Skin</span>
+
+            <h3>Beauty Care</h3>
+
+        </div>
+
+    </div>
+
+    <!-- BANNER 3 -->
+
+    <div class="mini-banner">
+
+        <img 
+        src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-overlay">
+
+            <span>New Season</span>
+
+            <h3>Soft Glam</h3>
+
+        </div>
+
+    </div>
+
+    <!-- BANNER 4 -->
+
+    <div class="mini-banner">
+
+        <img 
+        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="mini-banner-overlay">
+
+            <span>Exclusive</span>
+
+            <h3>Luxury Beauty</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CSS MINI BANNERS -->
+
+<style>
+
+.mini-banners{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+    margin:70px 0;
+}
+
+.mini-banner{
+    height:220px;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+    transition:0.4s ease;
+}
+
+.mini-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s ease;
+}
+
+.mini-banner::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.05)
+    );
+}
+
+.mini-banner-overlay{
+    position:absolute;
+    left:25px;
+    bottom:25px;
+    z-index:2;
+    color:white;
+}
+
+.mini-banner-overlay span{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:0.9;
+}
+
+.mini-banner-overlay h3{
+    margin-top:10px;
+    font-size:28px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.mini-banner:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+.mini-banner:hover img{
+    transform:scale(1.08);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:992px){
+
+    .mini-banners{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .mini-banners{
+        grid-template-columns:1fr;
+    }
+
+    .mini-banner{
+        height:260px;
+    }
+
+}
+
+</style>
