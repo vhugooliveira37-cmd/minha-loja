@@ -6,7 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BOCABELLA</title>
 
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+
+/* RESET */
 
 *{
     margin:0;
@@ -14,14 +22,39 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fff;
-    color:#111;
+/* PALETA PREMIUM */
+
+:root{
+    --rosa:#d8a7b1;
+    --rosa-hover:#c7929d;
+    --rosa-claro:#f8eef1;
+    --bege:#f6f1ec;
+    --preto:#111111;
+    --cinza:#777;
+    --cinza-claro:#f8f8f8;
+    --borda:#ececec;
+    --sombra:0 10px 35px rgba(0,0,0,0.06);
+    --sombra-hover:0 15px 45px rgba(0,0,0,0.10);
 }
 
+/* BODY */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:white;
+    color:var(--preto);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* CONTAINER */
+
 .container{
-    width:95%;
+    width:92%;
     max-width:1400px;
     margin:auto;
 }
@@ -29,12 +62,16 @@ body{
 /* HEADER */
 
 header{
-    background:white;
-    border-bottom:1px solid #eee;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #f1f1f1;
     position:sticky;
     top:0;
     z-index:999;
+    transition:0.35s ease;
 }
+
+/* TOP BAR */
 
 .top-bar{
     display:flex;
@@ -44,25 +81,51 @@ header{
     gap:30px;
 }
 
+/* LOGO */
+
 .logo{
     font-size:30px;
     font-weight:900;
-    letter-spacing:5px;
+    letter-spacing:6px;
+    color:var(--preto);
+    cursor:pointer;
+    transition:0.3s ease;
+    user-select:none;
 }
+
+.logo:hover{
+    color:var(--rosa);
+    transform:scale(1.02);
+}
+
+/* BUSCA */
 
 .search-container{
     flex:1;
-    max-width:520px;
+    max-width:540px;
+    position:relative;
 }
 
 .search-bar{
     width:100%;
-    padding:15px 24px;
+    padding:16px 24px;
     border-radius:50px;
-    border:1px solid #ddd;
+    border:1px solid var(--borda);
     background:#fafafa;
     outline:none;
-    font-size:15px;
+    font-size:14px;
+    font-family:'Poppins', sans-serif;
+    transition:0.3s ease;
+}
+
+.search-bar::placeholder{
+    color:#999;
+}
+
+.search-bar:focus{
+    border-color:var(--rosa);
+    background:white;
+    box-shadow:0 0 0 5px rgba(216,167,177,0.12);
 }
 
 /* ÍCONES */
@@ -70,24 +133,29 @@ header{
 .header-icons{
     display:flex;
     align-items:center;
-    gap:26px;
+    gap:18px;
 }
+
+/* WRAPPER */
 
 .icon-wrapper{
     position:relative;
-    width:42px;
-    height:42px;
+    width:46px;
+    height:46px;
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius:50%;
-    transition:0.3s;
+    transition:0.3s ease;
     cursor:pointer;
 }
 
 .icon-wrapper:hover{
-    background:#f6eeee;
+    background:var(--rosa-claro);
+    transform:translateY(-2px);
 }
+
+/* SVG */
 
 .icon-wrapper svg{
     width:24px;
@@ -99,12 +167,31 @@ header{
     visibility:visible !important;
     display:block;
     overflow:visible;
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .icon-wrapper:hover svg{
-    stroke:#d89b9b;
+    stroke:var(--rosa);
     transform:scale(1.08);
+}
+
+/* CONTADOR */
+
+.icon-count{
+    position:absolute;
+    top:-2px;
+    right:-2px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--rosa);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+    box-shadow:0 5px 12px rgba(216,167,177,0.35);
 }
 
 /* TOOLTIP */
@@ -115,13 +202,14 @@ header{
     right:-70px;
     width:240px;
     background:white;
-    border-radius:20px;
+    border-radius:22px;
     padding:22px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    box-shadow:0 20px 45px rgba(0,0,0,0.12);
     opacity:0;
     visibility:hidden;
-    transition:0.3s;
+    transition:0.3s ease;
     z-index:999;
+    border:1px solid #f3f3f3;
 }
 
 .icon-wrapper:hover .tooltip-box{
@@ -133,23 +221,32 @@ header{
 .tooltip-box h4{
     margin-bottom:10px;
     font-size:14px;
+    font-weight:700;
 }
 
 .tooltip-box p{
     font-size:13px;
-    color:#777;
+    color:var(--cinza);
     margin-bottom:14px;
+    line-height:1.5;
 }
 
 .tooltip-box button{
     width:100%;
     border:none;
-    background:#111;
+    background:var(--preto);
     color:white;
-    padding:12px;
-    border-radius:12px;
-    font-weight:bold;
+    padding:13px;
+    border-radius:14px;
+    font-weight:600;
+    font-family:'Poppins', sans-serif;
     cursor:pointer;
+    transition:0.3s ease;
+}
+
+.tooltip-box button:hover{
+    background:var(--rosa);
+    transform:translateY(-2px);
 }
 
 /* MENU */
@@ -157,231 +254,640 @@ header{
 nav{
     display:flex;
     justify-content:center;
-    gap:45px;
+    align-items:center;
+    gap:42px;
     padding-bottom:18px;
 }
 
+/* LINKS MENU */
+
 nav a{
     text-decoration:none;
-    color:#111;
-    font-size:14px;
-    font-weight:bold;
-    transition:0.3s;
+    color:var(--preto);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    position:relative;
+    transition:0.3s ease;
+}
+
+/* LINHA HOVER */
+
+nav a::after{
+    content:'';
+    position:absolute;
+    bottom:-8px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:var(--rosa);
+    transition:0.3s ease;
+    border-radius:10px;
 }
 
 nav a:hover{
-    color:#d89b9b;
+    color:var(--rosa);
 }
 
-/* BANNER PRINCIPAL */
+nav a:hover::after{
+    width:100%;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .top-bar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .search-container{
+        width:100%;
+        max-width:100%;
+    }
+
+    .logo{
+        font-size:26px;
+    }
+
+    .header-icons{
+        gap:12px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        gap:20px;
+        padding-bottom:20px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .tooltip-box{
+        display:none;
+    }
+
+}
+/* =========================
+BANNER PRINCIPAL PREMIUM
+========================= */
 
 .banner-principal{
-    margin-top:25px;
-    height:520px;
-    border-radius:28px;
+    margin-top:30px;
+    height:560px;
+    border-radius:34px;
     overflow:hidden;
     position:relative;
     background:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.10);
+    animation:fadeBanner 1s ease;
 }
+
+/* EFEITO LEVE DE ZOOM */
+
+.banner-principal::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.08);
+    z-index:1;
+}
+
+/* OVERLAY */
 
 .overlay{
     width:100%;
     height:100%;
-    background:linear-gradient(to right, rgba(0,0,0,0.72), rgba(0,0,0,0.15));
+    background:
+    linear-gradient(
+    to right,
+    rgba(0,0,0,0.76),
+    rgba(0,0,0,0.28)
+    );
     display:flex;
     align-items:center;
-    padding:60px;
+    padding:70px;
+    position:relative;
+    z-index:2;
 }
+
+/* CONTEÚDO */
 
 .banner-content{
     color:white;
-    max-width:500px;
+    max-width:560px;
+    animation:fadeUp 1.1s ease;
 }
+
+/* TEXTO PEQUENO */
 
 .banner-content span{
-    letter-spacing:3px;
-    font-size:13px;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:#f0d9df;
 }
 
+/* TITULO */
+
 .banner-content h1{
-    font-size:60px;
-    margin:18px 0;
-    line-height:1.1;
+    font-size:68px;
+    margin:22px 0;
+    line-height:1.05;
+    font-weight:800;
 }
+
+/* DESCRIÇÃO */
 
 .banner-content p{
     font-size:18px;
-    margin-bottom:30px;
+    line-height:1.8;
+    color:#f5f5f5;
+    margin-bottom:35px;
 }
+
+/* BOTÃO */
 
 .banner-btn{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     background:white;
     color:black;
-    padding:16px 30px;
-    border-radius:40px;
+    padding:17px 34px;
+    border-radius:50px;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:700;
+    font-size:14px;
+    transition:0.35s ease;
+    box-shadow:0 10px 25px rgba(255,255,255,0.15);
 }
 
-/* TITULOS */
+/* HOVER BOTÃO */
+
+.banner-btn:hover{
+    background:var(--rosa);
+    color:white;
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(216,167,177,0.35);
+}
+
+/* =========================
+TÍTULOS
+========================= */
 
 .section-title{
-    font-size:42px;
-    margin:60px 0 30px;
+    font-size:44px;
+    font-weight:800;
+    margin:70px 0 35px;
+    color:var(--preto);
+    position:relative;
+    display:inline-block;
+    letter-spacing:-1px;
 }
 
-/* PRODUTOS */
+/* LINHA DECORATIVA */
+
+.section-title::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:65%;
+    height:4px;
+    border-radius:20px;
+    background:linear-gradient(to right,var(--rosa),transparent);
+}
+
+/* =========================
+LISTA PRODUTOS
+========================= */
 
 .lista-produtos{
     display:flex;
-    gap:22px;
+    gap:24px;
     flex-wrap:wrap;
-    margin-bottom:60px;
+    margin-bottom:70px;
 }
+
+/* CARD */
 
 .produto-card{
     background:white;
-    border:1px solid #eee;
-    border-radius:22px;
+    border:1px solid #f1f1f1;
+    border-radius:28px;
     overflow:hidden;
     width:300px;
-    transition:0.3s;
+    transition:0.4s ease;
+    position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,0.04);
 }
 
+/* HOVER CARD */
+
 .produto-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+    transform:translateY(-10px);
+    box-shadow:0 22px 45px rgba(0,0,0,0.10);
 }
+
+/* IMAGEM */
 
 .produto-img{
     width:100%;
-    height:320px;
+    height:340px;
     object-fit:cover;
+    transition:0.5s ease;
 }
+
+/* ZOOM IMAGEM */
+
+.produto-card:hover .produto-img{
+    transform:scale(1.05);
+}
+
+/* INFO */
 
 .produto-info{
-    padding:18px;
+    padding:22px;
 }
+
+/* MARCA */
 
 .produto-marca{
-    color:#d89b9b;
-    font-size:12px;
-    letter-spacing:1px;
-    margin-bottom:8px;
+    color:var(--rosa);
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    font-weight:700;
+    text-transform:uppercase;
 }
 
+/* NOME */
+
 .produto-nome{
-    font-size:16px;
-    font-weight:bold;
-    margin-bottom:12px;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:14px;
+    line-height:1.5;
+    color:var(--preto);
 }
+
+/* PREÇO ANTIGO */
 
 .produto-preco-antigo{
     text-decoration:line-through;
     color:#999;
     margin-bottom:8px;
+    font-size:14px;
 }
 
+/* PREÇO */
+
 .produto-preco{
-    font-size:26px;
+    font-size:30px;
     font-weight:900;
-    margin-bottom:16px;
+    margin-bottom:18px;
+    color:var(--preto);
 }
+
+/* BOTÃO */
 
 .botao-comprar{
     width:100%;
-    padding:14px;
+    padding:15px;
     border:none;
-    border-radius:14px;
-    background:#111;
+    border-radius:16px;
+    background:var(--preto);
     color:white;
-    font-weight:bold;
+    font-weight:700;
+    font-family:'Poppins', sans-serif;
     cursor:pointer;
+    transition:0.35s ease;
+    font-size:14px;
 }
 
-/* MINI BANNERS */
+/* HOVER BOTÃO */
+
+.botao-comprar:hover{
+    background:var(--rosa);
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(216,167,177,0.30);
+}
+
+/* =========================
+ANIMAÇÕES
+========================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeBanner{
+    from{
+        opacity:0;
+        transform:scale(1.02);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+    .banner-principal{
+        height:480px;
+        border-radius:24px;
+    }
+
+    .overlay{
+        padding:35px;
+    }
+
+    .banner-content h1{
+        font-size:42px;
+    }
+
+    .banner-content p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .banner-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .lista-produtos{
+        justify-content:center;
+    }
+
+    .produto-card{
+        width:100%;
+        max-width:350px;
+    }
+
+}
+/* =========================
+MINI BANNERS PREMIUM
+========================= */
 
 .mini-banners{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    margin-bottom:80px;
+    gap:22px;
+    margin-bottom:90px;
 }
 
+/* CARD BANNER */
+
 .mini-banner{
-    height:190px;
-    border-radius:22px;
+    height:210px;
+    border-radius:28px;
     overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(0,0,0,0.06);
+    transition:0.4s ease;
 }
+
+/* OVERLAY SUAVE */
+
+.mini-banner::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.22),
+    rgba(0,0,0,0.02)
+    );
+    opacity:0;
+    transition:0.4s ease;
+}
+
+/* HOVER */
+
+.mini-banner:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.10);
+}
+
+.mini-banner:hover::after{
+    opacity:1;
+}
+
+/* IMAGEM */
 
 .mini-banner img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:0.4s;
+    transition:0.5s ease;
 }
+
+/* ZOOM */
 
 .mini-banner:hover img{
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
-/* SEÇÕES PERFUME */
+/* =========================
+SEÇÕES PERFUME
+========================= */
 
 .perfume-section{
-    margin-bottom:90px;
+    margin-bottom:110px;
 }
 
+/* TITULO */
+
 .perfume-title{
-    font-size:30px;
-    font-weight:900;
-    margin-bottom:30px;
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:35px;
+    color:var(--preto);
+    position:relative;
+    display:inline-block;
+    letter-spacing:-1px;
 }
+
+/* LINHA DECORATIVA */
+
+.perfume-title::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:60%;
+    height:4px;
+    border-radius:20px;
+    background:linear-gradient(to right,var(--rosa),transparent);
+}
+
+/* LAYOUT */
 
 .perfume-layout{
     display:flex;
-    gap:35px;
+    gap:38px;
     align-items:flex-start;
 }
+
+/* BANNER LATERAL */
 
 .perfume-banner{
     width:320px;
     flex-shrink:0;
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:0 18px 40px rgba(0,0,0,0.08);
 }
+
+/* IMAGEM BANNER */
 
 .perfume-banner img{
     width:100%;
-    border-radius:24px;
+    border-radius:30px;
+    transition:0.5s ease;
+    display:block;
 }
+
+/* HOVER */
+
+.perfume-banner:hover img{
+    transform:scale(1.05);
+}
+
+/* GRID */
 
 .perfume-products{
     flex:1;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:22px;
+    gap:24px;
 }
+
+/* CARD PERFUME */
+
+.perfume-card{
+    transition:0.35s ease;
+    cursor:pointer;
+}
+
+/* HOVER CARD */
+
+.perfume-card:hover{
+    transform:translateY(-6px);
+}
+
+/* IMAGEM */
 
 .perfume-card img{
     width:100%;
-    height:250px;
+    height:260px;
     object-fit:cover;
-    border-radius:20px;
+    border-radius:24px;
+    transition:0.45s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
+
+/* ZOOM */
+
+.perfume-card:hover img{
+    transform:scale(1.04);
+    box-shadow:0 18px 35px rgba(0,0,0,0.10);
+}
+
+/* TITULO */
 
 .perfume-card h4{
-    margin-top:14px;
-    font-size:14px;
-    line-height:1.4;
+    margin-top:16px;
+    font-size:15px;
+    line-height:1.5;
+    font-weight:700;
+    color:var(--preto);
 }
+
+/* PREÇO */
 
 .perfume-card p{
-    margin-top:10px;
-    font-size:24px;
-    font-weight:bold;
+    margin-top:12px;
+    font-size:26px;
+    font-weight:900;
+    color:var(--preto);
 }
 
+/* =========================
+RESPONSIVO
+========================= */
+
+@media(max-width:992px){
+
+    .mini-banners{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .perfume-layout{
+        flex-direction:column;
+    }
+
+    .perfume-banner{
+        width:100%;
+    }
+
+    .perfume-products{
+        grid-template-columns:repeat(2,1fr);
+        width:100%;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .mini-banners{
+        grid-template-columns:1fr;
+    }
+
+    .mini-banner{
+        height:240px;
+    }
+
+    .perfume-title{
+        font-size:28px;
+    }
+
+    .perfume-products{
+        grid-template-columns:1fr;
+    }
+
+    .perfume-card img{
+        height:320px;
+    }
+
+}
 /* MOSAICO */
 
 .mosaico{
