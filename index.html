@@ -38,12 +38,23 @@
         /* HEADER */
         header { width: 100%; background: white; position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #eee; }
         .header-container { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
+        
         .logo { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; cursor: pointer; }
         .boca { color: var(--preto); }
         .bella { color: var(--rosa); }
+
+        .search-box { width: 480px; height: 54px; background: var(--branco); border-radius: 60px; border: 1px solid #eee; display: flex; align-items: center; padding: 0 22px; }
+        .search-box input { width: 100%; border: none; outline: none; background: none; font-size: 15px; }
+
         .header-icons { display: flex; align-items: center; gap: 25px; }
         .header-icons i { font-size: 22px; cursor: pointer; transition: .3s; }
         .header-icons i:hover { color: var(--rosa); }
+
+        /* MENU */
+        .menu { width: 100%; background: white; }
+        .menu-container { max-width: 1400px; margin: auto; display: flex; justify-content: center; gap: 45px; padding: 18px 20px; }
+        .menu-container a { text-decoration: none; color: var(--preto); font-size: 14px; font-weight: 500; transition: .3s; }
+        .menu-container a:hover { color: var(--rosa); }
 
         /* HERO SECTION */
         .hero { width: 100%; min-height: 90vh; position: relative; display: flex; align-items: center; padding: 90px 80px; overflow: hidden; }
@@ -79,31 +90,13 @@
     <header>
         <div class="header-container">
             <div class="logo"><span class="boca">Boca</span><span class="bella">Bella</span></div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="O que você está procurando?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
             <div class="header-icons">
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-user"></i>
                 <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-mini">LUXO • SOFISTICAÇÃO • BELEZA</div>
-            <h1>Beleza premium para elevar sua autoestima.</h1>
-            <p>Descubra maquiagens, skincare e perfumes inspirados nas maiores marcas internacionais com uma experiência sofisticada e moderna.</p>
-            <div class="hero-buttons">
-                <a href="#" class="hero-btn btn-primary">COMPRAR AGORA</a>
-                <a href="#" class="hero-btn btn-secondary">VER COLEÇÃO</a>
-            </div>
-        </div>
-
-        <div class="float-card">
-            <h3>Glow Collection ✨</h3>
-            <p>Nova coleção premium inspirada nas tendências internacionais de beleza e maquiagem.</p>
-            <button>VER LANÇAMENTOS</button>
-        </div>
-    </section>
-
-</body>
-</html>
