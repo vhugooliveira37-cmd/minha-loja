@@ -1,173 +1,685 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>BocaBella</title>
+<title>BocaBella | Beleza Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
+
+:root{
+
+    --preto:#111111;
+    --preto2:#1b1b1b;
+
+    --nude:#D8B7A3;
+    --rosa:#C98C8C;
+
+    --branco:#F8F6F4;
+    --cinza:#ece8e5;
+
+    --dourado:#C8A97E;
+
+    --texto:#444;
+
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#fff;
+
+    font-family:'Poppins',sans-serif;
+    background:var(--branco);
+    overflow-x:hidden;
+    color:var(--texto);
+
 }
 
-/* TOPO */
+/* SCROLL */
 
-.top-bar{
-    background:#111;
-    color:#fff;
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--nude);
+    border-radius:20px;
+}
+
+/* TOPBAR */
+
+.topbar{
+
+    width:100%;
+    height:42px;
+
+    background:var(--preto);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+    position:relative;
+
+}
+
+.topbar-slider{
+
+    position:absolute;
+    width:100%;
     text-align:center;
-    padding:10px;
-    font-size:14px;
+
+    color:white;
+    font-size:13px;
     font-weight:500;
+    letter-spacing:1px;
+
+    opacity:0;
+    animation:topbar 16s infinite;
+
+}
+
+.topbar-slider:nth-child(2){
+    animation-delay:4s;
+}
+
+.topbar-slider:nth-child(3){
+    animation-delay:8s;
+}
+
+.topbar-slider:nth-child(4){
+    animation-delay:12s;
+}
+
+@keyframes topbar{
+
+    0%{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    5%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    25%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    30%{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    100%{
+        opacity:0;
+    }
+
 }
 
 /* HEADER */
 
-.header-container{
-    max-width:1400px;
-    margin:auto;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+header{
+
+    width:100%;
+    background:white;
+
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    border-bottom:1px solid #eee;
+
 }
+
+.header-container{
+
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:20px 40px;
+
+}
+
+/* LOGO */
 
 .logo{
+
+    font-family:'Playfair Display',serif;
     font-size:42px;
     font-weight:700;
-    color:#111;
+
+    color:var(--preto);
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
 }
 
+.logo span{
+    color:var(--rosa);
+}
+
+/* SEARCH */
+
 .search-box{
-    width:45%;
+
+    width:480px;
+    height:52px;
+
+    background:var(--branco);
+
+    border-radius:60px;
+
     display:flex;
+    align-items:center;
+
+    padding:0 22px;
+
+    border:1px solid #eee;
+
 }
 
 .search-box input{
+
     width:100%;
-    height:48px;
-    border:1px solid #ddd;
-    padding:0 15px;
-    outline:none;
-}
-
-.search-box button{
-    width:60px;
     border:none;
-    background:#111;
-    color:#fff;
-    cursor:pointer;
+    outline:none;
+
+    background:none;
+
+    font-size:15px;
+    color:var(--texto);
+
 }
 
-.icons{
+.search-box i{
+    color:#888;
+    font-size:18px;
+}
+
+/* ICONS */
+
+.header-icons{
+
     display:flex;
-    gap:20px;
+    align-items:center;
+    gap:25px;
+
+}
+
+.header-icons i{
+
     font-size:22px;
+    color:var(--preto);
+
     cursor:pointer;
+    transition:.3s;
+
+}
+
+.header-icons i:hover{
+
+    color:var(--rosa);
+    transform:translateY(-2px);
+
 }
 
 /* MENU */
 
 .menu{
+
+    width:100%;
+    background:white;
+
+}
+
+.menu-container{
+
+    max-width:1400px;
+    margin:auto;
+
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:50px;
-    border-top:1px solid #eee;
-    border-bottom:1px solid #eee;
-    height:60px;
+    gap:45px;
+
+    padding:18px 20px;
+
 }
 
-.menu a{
+.menu-container a{
+
     text-decoration:none;
-    color:#111;
+    color:var(--preto);
+
     font-size:14px;
-    font-weight:600;
+    font-weight:500;
+
+    position:relative;
+
     transition:.3s;
+
 }
 
-.menu a:hover{
-    color:#a30000;
+.menu-container a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:2px;
+
+    background:var(--rosa);
+
+    transition:.3s;
+
 }
 
-.exclusive{
-    color:#a30000 !important;
+.menu-container a:hover{
+
+    color:var(--rosa);
+
 }
 
-.offers{
-    background:#a30000;
-    color:white !important;
-    padding:20px 25px;
-    height:100%;
+.menu-container a:hover::after{
+
+    width:100%;
+
+}
+
+/* HERO */
+
+.hero{
+
+    width:100%;
+    min-height:88vh;
+
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.70), rgba(0,0,0,0.20)),
+    url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1974&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
     display:flex;
     align-items:center;
+
+    padding:80px;
+
 }
 
-/* BANNER */
+.hero-content{
 
-.hero-slider{
-    position:relative;
-    width:100%;
-    height:550px;
-    overflow:hidden;
+    max-width:650px;
+    color:white;
+
 }
 
-.slide{
+.hero-sub{
+
+    font-size:14px;
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    color:var(--nude);
+
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:78px;
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+    color:#f0f0f0;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+}
+
+.hero-btn{
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.btn-primary{
+
+    background:var(--rosa);
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    background:#b97575;
+    transform:translateY(-4px);
+
+}
+
+.btn-secondary{
+
+    border:1px solid rgba(255,255,255,0.4);
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+    color:var(--preto);
+
+}
+
+/* FLOAT CARD */
+
+.float-card{
+
+    width:320px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.18);
+
+    border-radius:30px;
+
+    padding:30px;
+
     position:absolute;
-    width:100%;
-    height:100%;
-    opacity:0;
-    transition:opacity .8s ease;
+
+    right:80px;
+    bottom:60px;
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
 }
 
-.slide.active{
-    opacity:1;
+.float-card h3{
+
+    font-size:24px;
+    margin-bottom:12px;
+
 }
 
-.slide img{
+.float-card p{
+
+    font-size:14px;
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.float-card button{
+
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:50px;
+
+    border:none;
+    border-radius:50px;
+
+    background:white;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.float-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* BENEFITS */
+
+.benefits{
+
+    width:100%;
+    background:white;
+
+    padding:40px 20px;
+
+}
+
+.benefits-container{
+
+    max-width:1300px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.benefit-box{
+
+    background:var(--branco);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.benefit-box:hover{
+
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+
+}
+
+.benefit-box i{
+
+    font-size:34px;
+    color:var(--rosa);
+
+    margin-bottom:18px;
+
+}
+
+.benefit-box h4{
+
+    color:var(--preto);
+    margin-bottom:10px;
+
+}
+
+.benefit-box p{
+
+    font-size:14px;
+    line-height:1.7;
+
 }
 
 /* RESPONSIVO */
 
-@media(max-width:900px){
+@media(max-width:1200px){
 
-.header-container{
-    flex-direction:column;
-    gap:15px;
+    .search-box{
+        width:350px;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
 }
 
-.search-box{
-    width:100%;
+@media(max-width:992px){
+
+    .search-box{
+        display:none;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .hero{
+
+        padding:60px 30px;
+        min-height:90vh;
+
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .float-card{
+
+        position:relative;
+
+        right:auto;
+        bottom:auto;
+
+        margin-top:40px;
+
+        width:100%;
+        max-width:400px;
+
+    }
+
+    .benefits-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
 }
 
-.menu{
-    flex-wrap:wrap;
-    gap:20px;
-    height:auto;
-    padding:15px;
+@media(max-width:768px){
+
+    .header-container{
+
+        padding:18px 20px;
+
+    }
+
+    .logo{
+        font-size:34px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+        width:100%;
+
+    }
+
+    .hero-btn{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .benefits-container{
+
+        grid-template-columns:1fr;
+
+    }
+
 }
 
-.hero-slider{
-    height:300px;
-}
+@media(max-width:500px){
 
-.logo{
-    font-size:34px;
-}
+    .hero{
+        padding:50px 20px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .topbar-slider{
+        font-size:11px;
+    }
 
 }
 
@@ -176,120 +688,201 @@ body{
 
 <body>
 
-<div class="top-bar">
-    <span id="topMessage">
-        🚚 Frete grátis acima de R$199
-    </span>
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+    <div class="topbar-slider">
+        FRETE GRÁTIS PARA TODO BRASIL ACIMA DE R$149
+    </div>
+
+    <div class="topbar-slider">
+        5% OFF NO PIX + ENTREGA RÁPIDA
+    </div>
+
+    <div class="topbar-slider">
+        PARCELAMENTO EM ATÉ 12X SEM JUROS
+    </div>
+
+    <div class="topbar-slider">
+        PRODUTOS ORIGINAIS E PREMIUM
+    </div>
+
 </div>
+
+<!-- HEADER -->
 
 <header>
 
-<div class="header-container">
+    <div class="header-container">
 
-    <div class="logo">
-        BocaBella
+        <div class="logo">
+            Boca<span>Bella</span>
+        </div>
+
+        <div class="search-box">
+
+            <input type="text" placeholder="O que você está procurando?">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+        <div class="header-icons">
+
+            <i class="fa-regular fa-heart"></i>
+
+            <i class="fa-regular fa-user"></i>
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+        </div>
+
     </div>
 
-    <div class="search-box">
-        <input type="text" placeholder="O que você procura?">
-        <button>🔍</button>
+    <!-- MENU -->
+
+    <div class="menu">
+
+        <div class="menu-container">
+
+            <a href="#">MAQUIAGEM</a>
+
+            <a href="#">SKINCARE</a>
+
+            <a href="#">PERFUMES</a>
+
+            <a href="#">CABELOS</a>
+
+            <a href="#">LANÇAMENTOS</a>
+
+            <a href="#">PROMOÇÕES</a>
+
+            <a href="#">MARCAS</a>
+
+        </div>
+
     </div>
-
-    <div class="icons">
-        <span>👤</span>
-        <span>♡</span>
-        <span>👜</span>
-    </div>
-
-</div>
-
-<nav class="menu">
-
-    <a href="#">MAQUIAGEM</a>
-
-    <a href="#">PERFUMES</a>
-
-    <a href="#">SKINCARE</a>
-
-    <a href="#">CABELOS</a>
-
-    <a href="#" class="exclusive">
-        SÓ NA BOCABELLA
-    </a>
-
-    <a href="#" class="offers">
-        OFERTAS
-    </a>
-
-</nav>
 
 </header>
 
-<section class="hero-slider">
+<!-- HERO -->
 
-    <div class="slide active">
-        <img src="imagens/banner1.jpg" alt="">
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-sub">
+            LUXO • SOFISTICAÇÃO • BELEZA
+        </div>
+
+        <h1>
+            Sua beleza merece o melhor.
+        </h1>
+
+        <p>
+            Descubra produtos premium de maquiagem, skincare e perfumes com aparência sofisticada, qualidade impecável e entrega rápida para todo Brasil.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="hero-btn btn-primary">
+                COMPRAR AGORA
+            </a>
+
+            <a href="#" class="hero-btn btn-secondary">
+                EXPLORAR COLEÇÃO
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="slide">
-        <img src="imagens/banner2.jpg" alt="">
-    </div>
+    <!-- CARD FLOAT -->
 
-    <div class="slide">
-        <img src="imagens/banner3.jpg" alt="">
+    <div class="float-card">
+
+        <h3>
+            Glow Collection ✨
+        </h3>
+
+        <p>
+            Nova coleção premium inspirada nas maiores marcas internacionais de beleza.
+        </p>
+
+        <button>
+            VER LANÇAMENTOS
+        </button>
+
     </div>
 
 </section>
 
-<script>
+<!-- BENEFITS -->
 
-/* TOPO ROTATIVO */
+<section class="benefits">
 
-const messages = [
-    "🚚 Frete grátis acima de R$199",
-    "🎁 Ganhe brindes exclusivos",
-    "💄 Até 50% OFF em maquiagem"
-];
+    <div class="benefits-container">
 
-let messageIndex = 0;
+        <div class="benefit-box">
 
-setInterval(() => {
+            <i class="fa-solid fa-truck-fast"></i>
 
-    messageIndex++;
+            <h4>
+                Entrega Rápida
+            </h4>
 
-    if(messageIndex >= messages.length){
-        messageIndex = 0;
-    }
+            <p>
+                Enviamos para todo Brasil com agilidade e segurança.
+            </p>
 
-    document.getElementById("topMessage").innerText =
-    messages[messageIndex];
+        </div>
 
-},4000);
+        <div class="benefit-box">
 
-/* BANNERS */
+            <i class="fa-solid fa-shield-heart"></i>
 
-const slides =
-document.querySelectorAll(".slide");
+            <h4>
+                Compra Segura
+            </h4>
 
-let currentSlide = 0;
+            <p>
+                Ambiente protegido e pagamentos totalmente seguros.
+            </p>
 
-setInterval(() => {
+        </div>
 
-    slides[currentSlide]
-    .classList.remove("active");
+        <div class="benefit-box">
 
-    currentSlide++;
+            <i class="fa-solid fa-gem"></i>
 
-    if(currentSlide >= slides.length){
-        currentSlide = 0;
-    }
+            <h4>
+                Produtos Premium
+            </h4>
 
-    slides[currentSlide]
-    .classList.add("active");
+            <p>
+                Trabalhamos apenas com produtos selecionados e de qualidade.
+            </p>
 
-},5000);
+        </div>
 
-</script>
+        <div class="benefit-box">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h4>
+                Suporte Humanizado
+            </h4>
+
+            <p>
+                Atendimento rápido e especializado para você.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 </html>
