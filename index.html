@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BocaBella | Beleza Premium</title>
 
+    <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
@@ -19,6 +20,32 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--branco); color: var(--texto); overflow-x: hidden; }
+        /* ESTILO DA SEÇÃO DE PRODUTOS */
+.best-sellers { padding: 80px 40px; background: white; }
+.container-best { max-width: 1400px; margin: auto; }
+.title-best { font-size: 24px; font-weight: 700; margin-bottom: 40px; color: var(--preto); }
+
+.product-slider { position: relative; display: flex; align-items: center; }
+.grid-products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
+
+.card-prod { position: relative; padding: 20px; text-align: left; }
+.card-prod img { width: 100%; height: 250px; object-fit: contain; margin-bottom: 15px; }
+
+.badge-tag { background: var(--preto); color: white; padding: 3px 8px; font-size: 9px; font-weight: bold; position: absolute; top: 20px; left: 20px; }
+.heart-icon { position: absolute; top: 20px; right: 20px; font-size: 20px; color: #555; cursor: pointer; }
+
+.card-prod h3 { font-size: 14px; font-weight: 700; margin-bottom: 5px; color: var(--preto); }
+.card-prod p { font-size: 13px; color: #666; margin-bottom: 5px; }
+.options { font-size: 12px; color: #999; display: block; margin-bottom: 15px; }
+
+.price-big { display: block; font-weight: 800; font-size: 18px; color: var(--preto); }
+.price-small { font-size: 13px; color: #444; }
+
+/* BOTÕES DE NAVEGAÇÃO */
+.slider-btn { position: absolute; top: 40%; background: white; border: 1px solid #ddd; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: .3s; }
+.slider-btn.left { left: -60px; }
+.slider-btn.right { right: -60px; }
+.slider-btn:hover { background: var(--rosa); color: white; border-color: var(--rosa); }
 
         /* TOPBAR */
         .topbar { width: 100%; height: 42px; background: var(--preto); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
@@ -38,14 +65,11 @@
         /* HEADER */
         header { width: 100%; background: white; position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #eee; }
         .header-container { max-width: 1400px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 22px 40px; }
-        
         .logo { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; cursor: pointer; }
         .boca { color: var(--preto); }
         .bella { color: var(--rosa); }
-
         .search-box { width: 480px; height: 54px; background: var(--branco); border-radius: 60px; border: 1px solid #eee; display: flex; align-items: center; padding: 0 22px; }
         .search-box input { width: 100%; border: none; outline: none; background: none; font-size: 15px; }
-
         .header-icons { display: flex; align-items: center; gap: 25px; }
         .header-icons i { font-size: 22px; cursor: pointer; transition: .3s; }
         .header-icons i:hover { color: var(--rosa); }
@@ -53,24 +77,22 @@
         /* MENU */
         .menu { width: 100%; background: white; border-bottom: 1px solid #f0f0f0; }
         .menu-container { max-width: 1400px; margin: auto; display: flex; justify-content: center; gap: 40px; padding: 15px 20px; }
-        .menu-container a { text-decoration: none; color: var(--preto); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; transition: .3s; }
+        .menu-container a { text-decoration: none; color: var(--preto); font-size: 13px; font-weight: 600; transition: .3s; }
         .menu-container a:hover { color: var(--rosa); }
 
         /* HERO SECTION */
         .hero { width: 100%; min-height: 90vh; position: relative; display: flex; align-items: center; padding: 90px 80px; overflow: hidden; }
         .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.15)), url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1974&auto=format&fit=crop'); background-size: cover; background-position: center; z-index: -2; transform: scale(1.05); }
-        
         .hero-content { max-width: 650px; color: white; }
         .hero-mini { font-size: 13px; letter-spacing: 4px; margin-bottom: 22px; color: var(--nude); }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 78px; line-height: 1.1; margin-bottom: 25px; }
         .hero p { font-size: 17px; line-height: 1.9; margin-bottom: 35px; color: #f2f2f2; }
-        
         .hero-buttons { display: flex; gap: 18px; }
         .hero-btn { padding: 16px 34px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 600; transition: .4s; }
         .btn-primary { background: var(--rosa); color: white; }
         .btn-secondary { border: 1px solid rgba(255,255,255,0.4); color: white; backdrop-filter: blur(10px); }
         .hero-btn:hover { transform: translateY(-4px); }
-
+        
         /* FLOAT CARD */
         .float-card { position: absolute; right: 80px; bottom: 70px; width: 320px; background: rgba(255,255,255,0.12); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.18); border-radius: 30px; padding: 30px; color: white; }
         .float-card h3 { font-size: 26px; margin-bottom: 14px; }
@@ -80,6 +102,7 @@
 </head>
 <body>
 
+    <!-- TOPBAR -->
     <div class="topbar">
         <div class="topbar-text">FRETE GRÁTIS PARA TODO BRASIL ACIMA DE R$149</div>
         <div class="topbar-text">5% OFF NO PIX + ENTREGA RÁPIDA</div>
@@ -87,22 +110,20 @@
         <div class="topbar-text">PRODUTOS ORIGINAIS E PREMIUM</div>
     </div>
 
+    <!-- HEADER -->
     <header>
         <div class="header-container">
             <div class="logo"><span class="boca">Boca</span><span class="bella">Bella</span></div>
-            
             <div class="search-box">
                 <input type="text" placeholder="O que você está procurando?">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-
             <div class="header-icons">
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-user"></i>
                 <i class="fa-solid fa-bag-shopping"></i>
             </div>
         </div>
-
         <div class="menu">
             <div class="menu-container">
                 <a href="#">MAQUIAGEM</a>
@@ -116,6 +137,7 @@
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-mini">LUXO • SOFISTICAÇÃO • BELEZA</div>
@@ -126,7 +148,6 @@
                 <a href="#" class="hero-btn btn-secondary">VER COLEÇÃO</a>
             </div>
         </div>
-
         <div class="float-card">
             <h3>Glow Collection ✨</h3>
             <p>Nova coleção premium inspirada nas tendências internacionais de beleza e maquiagem.</p>
@@ -134,66 +155,74 @@
         </div>
     </section>
 <!-- OS MAIS VENDIDOS -->
-<section class="bestsellers">
-    <div class="bestsellers-container">
-        <h2 class="section-title">OS MAIS VENDIDOS</h2>
-        
-        <div class="product-grid">
-            <!-- Produto 1 -->
-            <div class="product-card">
-                <div class="badge">SÓ NA BOCABELLA</div>
-                <i class="fa-regular fa-heart fav-icon"></i>
-                <img src="https://via.placeholder.com/200" alt="Produto">
-                <h4>DIOR BACKSTAGE</h4>
-                <p>paleta de iluminador dior backstage glow maximizer</p>
-                <span class="options">(5 opções)</span>
-                <div class="price-info">
-                    <p class="main-price">R$ 464,00</p>
-                    <p class="sub-price">OU 10X DE R$ 46,40</p>
-                </div>
-            </div>
+    <section class="best-sellers">
+        <div class="container-best">
+            <h2 class="title-best">OS MAIS VENDIDOS</h2>
+            
+            <div class="product-slider">
+                <!-- BOTÃO ESQUERDO -->
+                <button class="slider-btn left"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="grid-products">
+                    <!-- CARD 1 -->
+                    <div class="card-prod">
+                        <div class="badge-tag">SÓ NA BOCABELLA</div>
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=300" alt="Produto">
+                        <h3>DIOR BACKSTAGE</h3>
+                        <p>paleta de iluminador dior backstage glow maximizer</p>
+                        <span class="options">(5 opções)</span>
+                        <div class="price-box">
+                            <span class="price-big">R$ 464,00</span>
+                            <span class="price-small">OU 10X DE R$ 46,40</span>
+                        </div>
+                    </div>
 
-            <!-- Produto 2 -->
-            <div class="product-card">
-                <div class="badge">SÓ NA BOCABELLA</div>
-                <i class="fa-regular fa-heart fav-icon"></i>
-                <img src="https://via.placeholder.com/200" alt="Produto">
-                <h4>YVES SAINT LAURENT</h4>
-                <p>blush em pó ysl make me blush</p>
-                <span class="options">(12 opções)</span>
-                <div class="price-info">
-                    <p class="main-price">R$ 539,00</p>
-                    <p class="sub-price">OU 10X DE R$ 53,90</p>
-                </div>
-            </div>
+                    <!-- CARD 2 -->
+                    <div class="card-prod">
+                        <div class="badge-tag">SÓ NA BOCABELLA</div>
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=300" alt="Produto">
+                        <h3>YVES SAINT LAURENT</h3>
+                        <p>blush em pó ysl make me blush</p>
+                        <span class="options">(12 opções)</span>
+                        <div class="price-box">
+                            <span class="price-big">R$ 539,00</span>
+                            <span class="price-small">OU 10X DE R$ 53,90</span>
+                        </div>
+                    </div>
 
-            <!-- Produto 3 -->
-            <div class="product-card">
-                <i class="fa-regular fa-heart fav-icon"></i>
-                <img src="https://via.placeholder.com/200" alt="Produto">
-                <h4>FRAN BY FRANCINY EHLKE</h4>
-                <p>gloss labial fran by franciny ehlke franboesa</p>
-                <span class="options">(1 opção)</span>
-                <div class="price-info">
-                    <p class="main-price">R$ 70,00</p>
-                    <p class="sub-price">OU 3X DE R$ 23,33</p>
-                </div>
-            </div>
+                    <!-- CARD 3 -->
+                    <div class="card-prod">
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=300" alt="Produto">
+                        <h3>FRAN BY FRANCINY EHLKE</h3>
+                        <p>gloss labial fran by franciny ehlke franboesa</p>
+                        <span class="options">(1 opção)</span>
+                        <div class="price-box">
+                            <span class="price-big">R$ 70,00</span>
+                            <span class="price-small">OU 3X DE R$ 23,33</span>
+                        </div>
+                    </div>
 
-            <!-- Produto 4 -->
-            <div class="product-card">
-                <i class="fa-regular fa-heart fav-icon"></i>
-                <img src="https://via.placeholder.com/200" alt="Produto">
-                <h4>LANCÔME</h4>
-                <p>perfume lancôme la vie est belle feminino eau de parfum</p>
-                <span class="options">(4 opções)</span>
-                <div class="price-info">
-                    <p class="main-price">R$ 1.187,00</p>
-                    <p class="sub-price">OU 10X DE R$ 118,70</p>
+                    <!-- CARD 4 -->
+                    <div class="card-prod">
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=300" alt="Produto">
+                        <h3>LANCÔME</h3>
+                        <p>perfume lancôme la vie est belle feminino eau de parfum</p>
+                        <span class="options">(4 opções)</span>
+                        <div class="price-box">
+                            <span class="price-big">R$ 1.187,00</span>
+                            <span class="price-small">OU 10X DE R$ 118,70</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- BOTÃO DIREITO -->
+                <button class="slider-btn right"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </body>
 </html>
